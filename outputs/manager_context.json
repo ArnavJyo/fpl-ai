@@ -1,0 +1,25 @@
+{
+  "status": "public_last_deadline_snapshot",
+  "team_id": 10123827,
+  "team_name": "Hooligans Fc",
+  "picks_gameweek": 5,
+  "player_ids": [
+    1,
+    579,
+    145,
+    391,
+    368,
+    426,
+    399,
+    15,
+    7,
+    379,
+    165,
+    496,
+    422,
+    393,
+    441
+  ],
+  "last_deadline_bank_tenths": 36,
+  "note": "Public squad from the GW5 deadline; later transfers may not be reflected. Exact transfer planning needs your current squad, selling prices, bank, and remaining free transfers."
+}

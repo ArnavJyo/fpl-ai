@@ -1,0 +1,4 @@
+{
+  "checkpoint": "models/model_gw5_experimental.pt",
+  "training_status": "experimental"
+}

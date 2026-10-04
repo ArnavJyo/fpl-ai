@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-04T13:18:34.704118+00:00",
+  "stages": [
+    {
+      "name": "Refresh source tables",
+      "status": "complete",
+      "duration_seconds": 0.545
+    },
+    {
+      "name": "Build past-only features",
+      "status": "complete",
+      "duration_seconds": 3.307
+    },
+    {
+      "name": "Score baseline on available full folds",
+      "status": "complete",
+      "duration_seconds": 0.015
+    },
+    {
+      "name": "Train points model",
+      "status": "complete",
+      "duration_seconds": 4.327
+    },
+    {
+      "name": "Generate upcoming forecasts",
+      "status": "complete",
+      "duration_seconds": 0.025
+    },
+    {
+      "name": "Archive forecast before deadline",
+      "status": "complete",
+      "duration_seconds": 0.021
+    },
+    {
+      "name": "Optimize squad and lineup",
+      "status": "complete",
+      "duration_seconds": 0.57
+    },
+    {
+      "name": "Build dashboard and performance tracker",
+      "status": "complete",
+      "duration_seconds": 0.033
+    }
+  ],
+  "offline": false,
+  "refresh": false,
+  "team_id": 10123827,
+  "allow_experimental": true,
+  "skip_training": false,
+  "gameweek": 6,
+  "training_status": "experimental",
+  "dashboard": "/Users/arnavjyotshi/fpl-ai/outputs/dashboard/index.html",
+  "finished_at": "2026-10-04T13:18:43.547874+00:00"
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FPL points model · exploratory backtest</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #182e35; background: #f3f5f3; }
+    body { margin: 0; }
+    main { max-width: 1150px; margin: auto; padding: 40px 24px 70px; }
+    h1 { font-size: clamp(28px, 5vw, 44px); margin: 12px 0; letter-spacing: -.04em; }
+    h2 { margin-top: 0; font-size: 22px; }
+    p, li { line-height: 1.65; }
+    .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: #207a73; font-weight: 700; }
+    .notice { border-left: 4px solid #c65b31; background: #fff2e9; padding: 14px 18px; margin: 24px 0; }
+    section { background: white; border: 1px solid #dfe6e3; border-radius: 12px; padding: 24px; margin-top: 20px; }
+    .facts { display: flex; gap: 10px; flex-wrap: wrap; }
+    .fact { background: #eaf2ee; border-radius: 6px; padding: 10px 14px; }
+    .scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    td, th { padding: 11px 12px; border-bottom: 1px solid #e6ece9; text-align: right; white-space: nowrap; }
+    td:first-child, th:first-child { text-align: left; }
+    thead th { background: #edf3f0; }
+    tbody tr:hover { background: #f4f8f6; }
+    img { width: 100%; height: auto; }
+    .muted { color: #50646c; font-size: 14px; }
+    label { display: inline-flex; gap: 8px; align-items: center; margin: 0 15px 12px 0; }
+    input, select { font: inherit; border: 1px solid #bccac4; border-radius: 6px; padding: 8px 10px; }
+    button { border: none; background: none; color: inherit; font: inherit; font-weight: 650; cursor: pointer; padding: 0; }
+    [hidden] { display: none !important; }
+    .table-wrap { max-height: 520px; overflow: auto; }
+    #players thead { position: sticky; top: 0; z-index: 1; }
+    a { color: #207a73; }
+    @media (max-width: 600px) { main { padding: 24px 12px; } section { padding: 18px 12px; } }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">FPL AI · Historical model check</div>
+  <h1>Does the network improve predictions?</h1>
+  <p>Train on GW {{TRAIN_WEEKS}}. Select the stopping epoch on GW {{VALIDATION_WEEKS}}.
+     Assess GW {{TEST_WEEKS}} after weights are frozen.</p>
+  <div class="notice"><strong>Exploratory result.</strong> One historical split and one seed cannot establish future accuracy.
+    These weeks were already available during development. Later weeks are still needed for final evaluation.</div>
+  <div class="facts">
+    <span class="fact">Architecture: {{ARCHITECTURE}}</span>
+    <span class="fact">Selected epoch: {{BEST_EPOCH}} / {{EPOCHS_RUN}} run</span>
+    <span class="fact">Seed: {{SEED}}</span>
+  </div>
+  <section>
+    <h2>Prediction errors</h2>
+    <p class="muted">Lower MAE and RMSE are better. Mean error is predicted minus actual; negative means underprediction.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Period</th><th>Rows</th><th>NN MAE</th><th>Baseline MAE</th><th>NN RMSE</th><th>Baseline RMSE</th><th>NN mean error</th><th>Baseline mean error</th></tr></thead>
+      <tbody>{{METRIC_ROWS}}</tbody>
+    </table></div>
+    <p>Assessment MAE winner: <strong>{{TEST_MAE_WINNER}}</strong>. RMSE winner: <strong>{{TEST_RMSE_WINNER}}</strong>.</p>
+  </section>
+  <section>
+    <h2>Predictions versus actual points</h2>
+    <p class="muted">Each dot is a player-week. The dashed line is a perfect prediction. The same axes are used for both models;
+      points below the line are underpredictions. Overlapping dots can represent multiple players.</p>
+    <img src="data:image/png;base64,{{SCATTER_IMAGE}}" alt="Side-by-side plots of neural network and baseline predictions against actual assessment-week points">
+  </section>
+  <section>
+    <h2>Did it find the high-scoring players?</h2>
+    <p class="muted">Select the highest-ranked players and add their actual points. Best top-k uses hindsight.
+      Overlap compares the selected IDs with the actual top-k; score ties use player ID. Rank correlation uses average ranks for ties.
+      This comparison ignores squad constraints.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>GW</th><th>Model</th><th>Top-k</th><th>Actual points selected</th><th>Best top-k points</th><th>Points shortfall</th><th>Overlap</th><th>Rank correlation</th></tr></thead>
+      <tbody>{{RANKING_ROWS}}</tbody>
+    </table></div>
+  </section>
+  <section>
+    <h2>Why this epoch was selected</h2>
+    <p class="muted">Weight updates use training rows. The validation MAE selects the checkpoint.
+      Assessment-week outcomes do not enter this loop.</p>
+    <img src="data:image/png;base64,{{CURVE_IMAGE}}" alt="Training loss and validation MAE by epoch, showing the selected epoch">
+  </section>
+  <section>
+    <h2>Inspect individual players</h2>
+    <p class="muted">Click a column heading to sort. Names are current display labels and never enter training.</p>
+    <label>Period <select id="period"><option value="test">Assessment</option><option value="validation">Validation</option><option value="all">Both</option></select></label>
+    <label>Find player <input id="search" type="search" placeholder="Name or player ID"></label>
+    <span id="count" class="muted" aria-live="polite"></span>
+    <div class="table-wrap"><table id="players">
+      <thead><tr><th><button data-column="0">Period ↕</button></th><th><button data-column="1">GW ↕</button></th>
+        <th><button data-column="2">ID ↕</button></th><th><button data-column="3">Player ↕</button></th>
+        <th><button data-column="4">Actual ↕</button></th><th><button data-column="5">NN ↕</button></th>
+        <th><button data-column="6">Baseline ↕</button></th><th><button data-column="7">NN error ↕</button></th>
+        <th><button data-column="8">Baseline error ↕</button></th></tr></thead>
+      <tbody>{{PREDICTION_ROWS}}</tbody>
+    </table></div>
+  </section>
+  <section>
+    <h2>What this result can tell us</h2>
+    <ul>{{LIMITATIONS}}</ul>
+    <p>Read <a href="metrics.json">the complete metrics</a> or
+      <a href="predictions.csv">the player table as CSV</a>.</p>
+  </section>
+</main>
+<script>
+  const table = document.querySelector('#players');
+  const body = table.querySelector('tbody');
+  const period = document.querySelector('#period');
+  const search = document.querySelector('#search');
+  const count = document.querySelector('#count');
+  function filterRows() {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    for (const row of body.rows) {
+      const matchesPeriod = period.value === 'all' || row.dataset.split === period.value;
+      const matchesPlayer = `${row.cells[2].textContent} ${row.cells[3].textContent}`.toLowerCase().includes(query);
+      row.hidden = !(matchesPeriod && matchesPlayer);
+      if (!row.hidden) visible++;
+    }
+    count.textContent = `${visible} player rows`;
+  }
+  period.addEventListener('change', filterRows);
+  search.addEventListener('input', filterRows);
+  let lastColumn = -1;
+  let ascending = false;
+  table.querySelector('thead').addEventListener('click', event => {
+    const button = event.target.closest('button[data-column]');
+    if (!button) return;
+    const column = Number(button.dataset.column);
+    ascending = column === lastColumn ? !ascending : false;
+    lastColumn = column;
+    const rows = Array.from(body.rows);
+    rows.sort((a, b) => {
+      const aCell = a.cells[column], bCell = b.cells[column];
+      const delta = aCell.hasAttribute('data-value')
+        ? Number(aCell.dataset.value) - Number(bCell.dataset.value)
+        : aCell.textContent.localeCompare(bCell.textContent);
+      return ascending ? delta : -delta;
+    });
+    rows.forEach(row => body.appendChild(row));
+  });
+  filterRows();
+</script>
+</body>
+</html>

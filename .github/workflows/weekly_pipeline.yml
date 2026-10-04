@@ -1,0 +1,120 @@
+name: FPL forecasts and squad
+
+on:
+  schedule:
+    # Daily at 05:23 UTC (10:53 IST): capture prices, injuries, and new results.
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+    inputs:
+      allow_experimental:
+        description: Allow fitting before a complete 6 + 4-week validation fold exists
+        type: boolean
+        default: true
+      publish_dashboard:
+        description: Publish the dashboard to configured GitHub Pages
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fpl-weekly-pipeline
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      FPL_TEAM_ID: ${{ vars.FPL_TEAM_ID || '10123827' }}
+      FPL_MANAGER_STATE_JSON: ${{ secrets.FPL_MANAGER_STATE_JSON }}
+      ALLOW_EXPERIMENTAL: ${{ github.event_name == 'schedule' || inputs.allow_experimental }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+      - name: Test before generating forecasts
+        run: python -m unittest discover -s tests -v
+      - name: Restore historical snapshots and genuine forecast archives
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/player_snapshots.parquet
+            outputs/forecast_archive
+          key: fpl-observations-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            fpl-observations-${{ github.repository_id }}-
+      - name: Refresh and run the full pipeline
+        run: |
+          args=(--end-to-end --refresh --workers 6)
+          if [ "$ALLOW_EXPERIMENTAL" = "true" ]; then
+            args+=(--allow-experimental)
+          fi
+          python run_pipeline.py "${args[@]}"
+      - name: Upload completed forecasts, squad, dashboard, and model
+        uses: actions/upload-artifact@v7
+        with:
+          name: fpl-run-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            outputs/dashboard/
+            outputs/predictions.json
+            outputs/squad.json
+            outputs/manager_context.json
+            outputs/model_metrics.json
+            outputs/model_validation.parquet
+            outputs/baseline_metrics.json
+            outputs/pipeline_report.json
+            outputs/forecast_archive/
+            models/
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: fpl-failure-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: ignore
+          path: outputs/pipeline_report.json
+      - name: Package optional dashboard deployment
+        if: vars.PUBLISH_PAGES == 'true' || inputs.publish_dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: outputs/dashboard/
+      - name: Add run summary
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report = json.loads(Path('outputs/pipeline_report.json').read_text())
+          squad = json.loads(Path('outputs/squad.json').read_text())
+          summary = f"## FPL pipeline\n\nGW{report['gameweek']} · {report['training_status']} · {squad['mode']}\n\n"
+          summary += f"Expected points after hits: {squad['net_expected_points']:.2f}.\n\n"
+          summary += 'Download the run artifact and open `outputs/dashboard/index.html`.\n'
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as stream:
+              stream.write(summary)
+          PY
+
+  deploy:
+    if: vars.PUBLISH_PAGES == 'true' || inputs.publish_dashboard
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4

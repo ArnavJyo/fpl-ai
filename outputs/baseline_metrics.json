@@ -1,0 +1,26 @@
+{
+  "model": "rolling_points_mean",
+  "season_id": "2026-08-21T17:30:00Z",
+  "target": "total_points",
+  "baseline_feature_column": "total_points_mean_last_5",
+  "fallback_strategy": "training_target_mean",
+  "status": "awaiting_data",
+  "finished_gameweeks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "history_rows": 3216,
+  "prediction_gameweek": 6,
+  "prediction_input_rows": 667,
+  "min_train_gameweeks": 6,
+  "validation_window_gws": 4,
+  "minimum_finished_gameweeks": 10,
+  "additional_finished_gameweeks_needed": 5,
+  "historical_schedule_assumption": "Saved fixture assignment is assumed to match its pre-deadline schedule; past schedules are not archived.",
+  "folds": [],
+  "metrics": null,
+  "per_gameweek": []
+}

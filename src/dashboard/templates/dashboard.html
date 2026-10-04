@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FPL AI · Squad planner</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,sans-serif;color:#163b32;background:#f2f4ee}
+    *{box-sizing:border-box}body{margin:0}.wrap{max-width:1280px;margin:auto;padding:32px 28px 56px}
+    header{display:flex;justify-content:space-between;gap:20px;align-items:center}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#577165}
+    h1{font-size:clamp(30px,5vw,48px);letter-spacing:-1.5px;margin:8px 0}h2{font-size:22px;margin:0 0 14px}h3{font-size:16px}
+    p{line-height:1.6}a{color:#236c58}.badge{background:#fce8bd;color:#785107;border-radius:30px;padding:8px 14px;font-size:13px;white-space:nowrap}
+    .meta{font-size:13px;color:#63776e}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}
+    .card,section{border:1px solid #dce3d6;background:#fffef9;border-radius:16px;padding:22px}.card .label{font-size:12px;color:#677b71;text-transform:uppercase;letter-spacing:.7px}
+    .card .value{font-size:30px;font-weight:650;margin-top:8px}.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr);gap:22px;align-items:start}
+    section{margin-bottom:22px}.pitch{border-radius:12px;background:repeating-linear-gradient(0deg,#22634f 0px,#22634f 75px,#286b56 75px,#286b56 150px);padding:30px 10px;min-height:460px;border:2px solid #49866e;position:relative}
+    .pitch:before{content:'';position:absolute;inset:14px;border:1px solid #70a18c;border-radius:3px;pointer-events:none}.pitch-row{position:relative;display:flex;justify-content:space-around;gap:6px;margin:16px 0}
+    .player{min-width:62px;max-width:115px;text-align:center;color:white;font-size:12px;flex:1}.shirt{width:32px;height:32px;border-radius:8px;margin:auto auto 7px;background:#d4ef9b;color:#143e2d;display:grid;place-items:center;font-weight:700;border:2px solid white}
+    .player-name{font-weight:650;overflow-wrap:anywhere}.player-detail{font-size:10px;color:#d2e4d7;margin-top:3px}.bench{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:18px}.bench .player{color:#26483b;max-width:none}.bench .player-detail{color:#6d7e73}
+    .controls{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0;align-items:center}select,input,button{font:inherit;border:1px solid #cbd7c8;border-radius:7px;padding:9px 11px;background:white;color:inherit}
+    input{min-width:180px}label{font-size:13px}.scroll{overflow:auto;max-height:550px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:right;padding:12px 10px;border-bottom:1px solid #e4e8dc;white-space:nowrap}
+    th:first-child,td:first-child{text-align:left}thead{background:#edf1e6;position:sticky;top:0}th button{padding:0;border:0;background:transparent;font-size:12px;font-weight:650}
+    .transfer{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #e6ebdf}.muted{color:#697b71;font-size:13px;line-height:1.6}.downloads{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;margin-top:20px}
+    .empty{padding:24px;background:#f1f4eb;border-radius:10px;font-size:14px;color:#607469}.notice{border-left:4px solid #d3a83b;padding:2px 16px;background:#fff8e6;border-radius:0 7px 7px 0;margin:18px 0}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}header{align-items:start;flex-direction:column}.wrap{padding:22px 14px}.player{min-width:0}section{padding:16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header><div><div class="eyebrow">FPL AI · Weekly squad planner</div><h1 id="title">Your next gameweek</h1><div id="meta" class="meta"></div></div><span id="status" class="badge"></span></header>
+    <div id="model-note" class="notice"></div>
+    <div class="cards"><div class="card"><div class="label">Expected points after hits</div><div class="value" id="points"></div></div><div class="card"><div class="label">Bank after selection</div><div class="value" id="bank"></div></div><div class="card"><div class="label">Formation</div><div class="value" id="formation"></div></div><div class="card"><div class="label">Transfers / hit</div><div class="value" id="transfers"></div></div></div>
+    <div class="grid">
+      <section><h2>Starting XI &amp; bench</h2><div class="controls"><label>View <select id="view"></select></label></div><p id="view-note" class="muted"></p><div id="pitch" class="pitch"></div><div id="bench" class="bench"></div><p class="muted">Captain is marked C; vice-captain VC. Outfield substitutes are shown in order, followed by the reserve goalkeeper.</p></section>
+      <section><h2 id="team-name">Squad context</h2><p id="manager-note" class="muted"></p><h3>Transfer plan</h3><div id="transfer-list"></div><p id="gain" class="muted"></p><h3>How to read the projection</h3><p class="muted">The total counts the scoring players, captain bonus, and transfer hits. It is an expected score, not a guarantee. The bench adds points only with Bench Boost. Chips shown here are supplied in your team state.</p><p class="muted">This plan covers one gameweek. It does not estimate automatic substitutions or the value of saving a transfer for later weeks.</p><div class="downloads"><a href="squad.json" download>Squad JSON</a><a href="players.csv" download>Player CSV</a><a href="predictions.json" download>Forecast JSON</a></div></section>
+    </div>
+    <section><h2>Player forecasts</h2><p class="muted">Compare players by expected points, price, and availability. Known blank gameweeks and unavailable players are shown with zero expected points.</p><div class="controls"><label>Search <input id="search" type="search" placeholder="Player or club"></label><label>Position <select id="position"><option value="">All</option><option>GKP</option><option>DEF</option><option>MID</option><option>FWD</option></select></label><span id="player-count" class="muted" aria-live="polite"></span></div><div class="scroll"><table id="players"><thead><tr><th><button data-column="web_name">Player ↕</button></th><th><button data-column="position">Position ↕</button></th><th><button data-column="short_name">Club ↕</button></th><th><button data-column="price_tenths">Price ↕</button></th><th><button data-column="predicted_points">Expected points ↕</button></th><th><button data-column="availability_pct">Availability ↕</button></th><th><button data-column="fixture_count">Fixtures ↕</button></th></tr></thead><tbody></tbody></table></div></section>
+    <section><h2>Forecasts checked against actual results</h2><p class="muted">Only forecasts saved before their deadline appear here once the gameweek finishes. The latest forecast before each deadline is retained. Model-development validation scores are separate.</p><div id="tracker"></div></section>
+    <p class="meta">Recommendations do not submit transfers or team changes to FPL.</p>
+  </main>
+  <script id="dashboard-data" type="application/json">{{DASHBOARD_DATA}}</script>
+  <script>
+    'use strict';
+    const data=JSON.parse(document.getElementById('dashboard-data').textContent), squad=data.squad;
+    const byId=new Map(data.players.map(p=>[p.element_id,p]));
+    const get=id=>document.getElementById(id), text=(id,value)=>{get(id).textContent=value;};
+    const node=(tag,content,cls)=>{const element=document.createElement(tag);if(content!==undefined)element.textContent=content;if(cls)element.className=cls;return element;};
+    const money=value=>'£'+(value/10).toFixed(1)+'m';
+    text('title','Gameweek '+squad.gameweek);text('status',squad.training_status==='experimental'?'Experimental model':'Model evaluated on historical folds');
+    text('meta',data.finished_gameweeks.length+' finished gameweeks · Source snapshot '+(data.source_observed_at?new Date(data.source_observed_at).toLocaleString():'unavailable'));
+    const model=squad.training_status==='experimental'?'This model has limited training history and no completed standard validation fold. Treat the projections as exploratory.':'Historical validation helps compare models; future performance can differ.';
+    get('model-note').appendChild(node('p',model));
+    text('team-name',squad.manager_context.team_name||'Your squad');
+    text('manager-note',squad.manager_context.note||(squad.mode==='transfers'?'Using your supplied current squad, selling prices, bank, and remaining free transfers.':'The selected squad is an unrestricted squad within the configured budget.'));
+    const select=get('view');select.appendChild(new Option(squad.mode==='transfers'?'Your optimized squad':'Unrestricted squad','optimized'));
+    if(squad.public_snapshot_lineup)select.appendChild(new Option('Your public GW'+squad.manager_context.picks_gameweek+' squad','public'));
+    function playerCard(id,lineup,benchIndex){const p=byId.get(id),card=node('div',undefined,'player');if(!p)return card;
+      const role=id===lineup.captain_id?'C':id===lineup.vice_captain_id?'VC':benchIndex!==undefined?(p.position==='GKP'?'GK':String(benchIndex+1)):p.position;
+      card.append(node('div',role,'shirt'),node('div',p.web_name,'player-name'),node('div',p.short_name+' · '+p.predicted_points.toFixed(2)+' pts','player-detail'));return card;}
+    function renderLineup(){const lineup=select.value==='public'?squad.public_snapshot_lineup:squad;
+      text('points',lineup.net_expected_points.toFixed(2));text('formation',[lineup.formation.DEF,lineup.formation.MID,lineup.formation.FWD].join('–'));
+      text('bank',select.value==='public'?'—':money(lineup.bank_after_tenths));text('transfers',select.value==='public'?'0 / 0 pts':lineup.transfers.count+' / '+lineup.transfer_hit_points+' pts');
+      text('view-note',select.value==='public'?'Best lineup from your public last-deadline squad. Transfers since GW'+squad.manager_context.picks_gameweek+' may not be reflected.':squad.mode==='transfers'?'Optimized around your supplied current team. Active chip: '+(squad.active_chip||'none')+'.':'A legal squad within the configured budget. This is a benchmark for comparison with your team.');
+      get('pitch').replaceChildren();get('bench').replaceChildren();['FWD','MID','DEF','GKP'].forEach(position=>{const row=node('div',undefined,'pitch-row');lineup.starting_xi_ids.filter(id=>byId.get(id).position===position).forEach(id=>row.appendChild(playerCard(id,lineup)));get('pitch').appendChild(row);});
+      lineup.bench_ids.forEach((id,index)=>get('bench').appendChild(playerCard(id,lineup,index)));}
+    select.addEventListener('change',renderLineup);renderLineup();
+    if(squad.mode==='transfers'){
+      if(!squad.transfers.count)get('transfer-list').appendChild(node('p','Keep your current squad; optimize the lineup.','empty'));
+      for(const direction of ['out','in'])for(const p of squad.transfer_details[direction]){const row=node('div',undefined,'transfer');row.append(node('span',(direction==='out'?'Sell ':'Buy ')+p.name),node('span',money(p.price_tenths)));get('transfer-list').appendChild(row);}
+      text('gain',squad.expected_gain_after_hits===null?'Your no-transfer lineup could not be scored under the availability constraints.':'Expected gain versus your best no-transfer XI: '+squad.expected_gain_after_hits.toFixed(2)+' points after hits.');
+    }else{get('transfer-list').appendChild(node('p','Exact transfers need your current squad, selling prices, bank, and remaining free transfers.','empty'));text('gain','Your public squad can be viewed on the pitch. The unrestricted squad is not an executable transfer plan.');}
+    let sortColumn='predicted_points',direction=-1;
+    function renderPlayers(){const query=get('search').value.toLowerCase(),position=get('position').value;
+      const players=data.players.filter(p=>(!position||p.position===position)&&(p.web_name+' '+p.short_name).toLowerCase().includes(query));
+      players.sort((a,b)=>{const av=a[sortColumn],bv=b[sortColumn];return direction*(typeof av==='number'?av-bv:String(av).localeCompare(String(bv)))||a.element_id-b.element_id;});
+      const body=get('players').tBodies[0];body.replaceChildren();players.forEach(p=>{const row=node('tr');[p.web_name,p.position,p.short_name,money(p.price_tenths),p.predicted_points.toFixed(2),p.availability_pct+'%',p.fixture_count].forEach(value=>row.appendChild(node('td',value)));body.appendChild(row);});text('player-count',players.length+' players');}
+    get('search').addEventListener('input',renderPlayers);get('position').addEventListener('change',renderPlayers);
+    document.querySelectorAll('[data-column]').forEach(button=>button.addEventListener('click',()=>{direction=sortColumn===button.dataset.column?-direction:(['web_name','position','short_name'].includes(button.dataset.column)?1:-1);sortColumn=button.dataset.column;renderPlayers();}));renderPlayers();
+    if(!data.tracker.length)get('tracker').appendChild(node('p','No completed gameweeks have an archived pre-deadline forecast yet. Upcoming forecasts will be checked after the results arrive.','empty'));
+    else{const scroll=node('div',undefined,'scroll'),table=node('table'),head=node('thead'),header=node('tr');['GW','Scored players','Missing outcomes','MAE','RMSE','Model status'].forEach(value=>header.appendChild(node('th',value)));head.appendChild(header);table.appendChild(head);const body=node('tbody');
+      data.tracker.forEach(record=>{const row=node('tr');[record.gameweek,record.scored_rows,record.unmatched_rows,record.metrics?record.metrics.mae.toFixed(3):'—',record.metrics?record.metrics.rmse.toFixed(3):'—',record.training_status].forEach(value=>row.appendChild(node('td',value)));body.appendChild(row);});table.appendChild(body);scroll.appendChild(table);get('tracker').appendChild(scroll);}
+  </script>
+</body>
+</html>

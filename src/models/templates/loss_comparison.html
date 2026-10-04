@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FPL · Huber versus MSE</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,sans-serif;color:#23322f;background:#f7f6f1}
+    body{max-width:1200px;margin:40px auto;padding:0 24px}h1{font-size:32px}h2{margin-top:32px}
+    p,li{line-height:1.6}section{background:white;border:1px solid #deded8;border-radius:12px;padding:22px;margin:22px 0}
+    img{width:100%;height:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:right;padding:11px;border-bottom:1px solid #e6e6df}
+    th:first-child,td:first-child{text-align:left}thead{background:#f0f4f2}button,input,select{font:inherit;padding:8px;border:1px solid #cdd5ce;border-radius:6px}
+    .controls{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:16px 0}.scroll{max-height:570px;overflow:auto}
+    .scroll thead{position:sticky;top:0}#players th{cursor:pointer}.note{color:#586760}a{color:#207a73}
+  </style>
+</head>
+<body>
+  <h1>Huber versus MSE</h1>
+  <p>{{CONTEXT}} Same network and preprocessing, paired seeds, epoch selection by validation RMSE.</p>
+  <section>
+    <h2>Comparison across seeds</h2>
+    <p>Preferred loss by mean validation RMSE: <strong>{{PREFERRED}}</strong>. This is an exploratory result; no model has been promoted.</p>
+    <div class="scroll"><table><thead><tr><th>Loss</th><th>Mean RMSE ± std</th><th>Mean MAE ± std</th><th>Top-k actual points ± std</th><th>Prediction std ± std</th></tr></thead><tbody>{{SUMMARY_ROWS}}</tbody></table></div>
+    <p>Rolling-points baseline: {{BASELINE}}.</p>
+    <p class="note">{{STD_DEFINITION}} Top-k points average totals across validation weeks. Prediction std measures differences among player predictions; it is not a prediction interval.</p>
+    <img src="data:image/png;base64,{{CHART}}" alt="Paired seed comparisons for RMSE, MAE, top-k points, and prediction spread">
+  </section>
+  <section>
+    <h2>Individual runs</h2>
+    <div class="scroll"><table><thead><tr><th>Loss</th><th>Seed</th><th>Selected epoch</th><th>Epochs run</th><th>RMSE</th><th>MAE</th><th>Top-k actual points</th><th>Prediction std</th></tr></thead><tbody>{{RUN_ROWS}}</tbody></table></div>
+    <p><a href="runs.csv">Download run metrics</a> · <a href="predictions.csv">Download player predictions</a> · <a href="metrics.json">Full results JSON</a></p>
+  </section>
+  <section>
+    <h2>Validation player predictions</h2>
+    <div class="controls"><label>Run <select id="run">{{RUN_OPTIONS}}</select></label><label>Player <input id="search" type="search" placeholder="Name or ID"></label><span id="count" aria-live="polite"></span></div>
+    <p class="note">Click a column heading to sort. Signed error = predicted − actual points.</p>
+    <div class="scroll"><table id="players"><thead><tr><th>Loss</th><th>Seed</th><th>GW</th><th>Player ID</th><th>Name</th><th>Actual</th><th>NN prediction</th><th>Baseline</th><th>NN error</th></tr></thead><tbody>{{PREDICTION_ROWS}}</tbody></table></div>
+  </section>
+  <section><h2>What this experiment can tell us</h2><ul>{{LIMITATIONS}}</ul></section>
+  <script>
+    const table=document.querySelector('#players'), body=table.tBodies[0], rows=Array.from(body.rows);
+    const run=document.querySelector('#run'), search=document.querySelector('#search'), count=document.querySelector('#count');
+    function filter(){const query=search.value.toLowerCase();let visible=0;rows.forEach(row=>{row.hidden=row.dataset.run!==run.value || !(row.cells[3].textContent+' '+row.cells[4].textContent).toLowerCase().includes(query);if(!row.hidden)visible++;});count.textContent=visible+' player rows';}
+    run.addEventListener('change',filter);search.addEventListener('input',filter);filter();
+    let previous=-1,ascending=true;
+    Array.from(table.tHead.rows[0].cells).forEach((header,index)=>{
+      header.tabIndex=0;header.setAttribute('role','button');header.setAttribute('aria-label','Sort by '+header.textContent);
+      function sort(){ascending=previous===index?!ascending:true;previous=index;
+        rows.sort((a,b)=>{const ac=a.cells[index],bc=b.cells[index];const difference=ac.dataset.value!==undefined?Number(ac.dataset.value)-Number(bc.dataset.value):ac.textContent.localeCompare(bc.textContent);return ascending?difference:-difference;});
+        rows.forEach(row=>body.appendChild(row));filter();}
+      header.addEventListener('click',sort);header.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();sort();}});
+    });
+  </script>
+</body></html>

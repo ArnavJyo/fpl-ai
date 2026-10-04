@@ -1,0 +1,583 @@
+{
+  "model": "mlp",
+  "training_status": "experimental",
+  "season_id": "2026-08-21T17:30:00Z",
+  "target": "total_points",
+  "trained_gameweeks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "history_rows": 3216,
+  "prediction_gameweek": 6,
+  "options": {
+    "seed": 42,
+    "num_threads": 1,
+    "weight_decay": 0.0001,
+    "huber_delta": 1.0,
+    "type": "mlp",
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "epochs": 100,
+    "early_stopping_patience": 10,
+    "loss": "huber",
+    "predict_horizon_gws": 1,
+    "min_gameweeks_for_training": 6,
+    "validation_window_gws": 4
+  },
+  "selection_metric": "validation_mae",
+  "folds": [],
+  "validation_metrics": null,
+  "baseline_metrics": null,
+  "baseline_comparison": null,
+  "per_gameweek": [],
+  "historical_schedule_assumption": "Saved fixture assignment is assumed to match its pre-deadline schedule; past schedules are not archived.",
+  "evaluation_scope": "One-gameweek predictions using past-only inputs; validation selects epochs. No untouched test period evaluated.",
+  "refit_epochs": 100,
+  "input_columns": [
+    "history_count_last_3",
+    "total_points_mean_last_3",
+    "minutes_mean_last_3",
+    "goals_scored_mean_last_3",
+    "assists_mean_last_3",
+    "expected_goals_mean_last_3",
+    "expected_assists_mean_last_3",
+    "expected_goal_involvements_mean_last_3",
+    "bonus_mean_last_3",
+    "ict_index_mean_last_3",
+    "clean_sheets_mean_last_3",
+    "saves_mean_last_3",
+    "goals_conceded_mean_last_3",
+    "appearance_rate_mean_last_3",
+    "sixty_minutes_rate_mean_last_3",
+    "start_rate_mean_last_3",
+    "history_count_last_5",
+    "total_points_mean_last_5",
+    "minutes_mean_last_5",
+    "goals_scored_mean_last_5",
+    "assists_mean_last_5",
+    "expected_goals_mean_last_5",
+    "expected_assists_mean_last_5",
+    "expected_goal_involvements_mean_last_5",
+    "bonus_mean_last_5",
+    "ict_index_mean_last_5",
+    "clean_sheets_mean_last_5",
+    "saves_mean_last_5",
+    "goals_conceded_mean_last_5",
+    "appearance_rate_mean_last_5",
+    "sixty_minutes_rate_mean_last_5",
+    "start_rate_mean_last_5",
+    "fixture_context_known",
+    "fixture_count",
+    "home_fixture_count",
+    "away_fixture_count",
+    "is_blank",
+    "is_double",
+    "opponent_goals_for_mean_last_3",
+    "opponent_goals_against_mean_last_3",
+    "opponent_xg_for_mean_last_3",
+    "opponent_xg_against_mean_last_3",
+    "opponent_history_matches_last_3",
+    "opponent_goals_for_mean_last_5",
+    "opponent_goals_against_mean_last_5",
+    "opponent_xg_for_mean_last_5",
+    "opponent_xg_against_mean_last_5",
+    "opponent_history_matches_last_5",
+    "price_tenths_prior",
+    "ownership_rank_prior",
+    "ownership_rank_change_prior",
+    "transfers_in_rate_prior",
+    "transfers_out_rate_prior",
+    "transfer_net_rate_prior",
+    "market_age_gameweeks",
+    "history_count_last_3__missing",
+    "total_points_mean_last_3__missing",
+    "minutes_mean_last_3__missing",
+    "goals_scored_mean_last_3__missing",
+    "assists_mean_last_3__missing",
+    "expected_goals_mean_last_3__missing",
+    "expected_assists_mean_last_3__missing",
+    "expected_goal_involvements_mean_last_3__missing",
+    "bonus_mean_last_3__missing",
+    "ict_index_mean_last_3__missing",
+    "clean_sheets_mean_last_3__missing",
+    "saves_mean_last_3__missing",
+    "goals_conceded_mean_last_3__missing",
+    "appearance_rate_mean_last_3__missing",
+    "sixty_minutes_rate_mean_last_3__missing",
+    "start_rate_mean_last_3__missing",
+    "history_count_last_5__missing",
+    "total_points_mean_last_5__missing",
+    "minutes_mean_last_5__missing",
+    "goals_scored_mean_last_5__missing",
+    "assists_mean_last_5__missing",
+    "expected_goals_mean_last_5__missing",
+    "expected_assists_mean_last_5__missing",
+    "expected_goal_involvements_mean_last_5__missing",
+    "bonus_mean_last_5__missing",
+    "ict_index_mean_last_5__missing",
+    "clean_sheets_mean_last_5__missing",
+    "saves_mean_last_5__missing",
+    "goals_conceded_mean_last_5__missing",
+    "appearance_rate_mean_last_5__missing",
+    "sixty_minutes_rate_mean_last_5__missing",
+    "start_rate_mean_last_5__missing",
+    "fixture_context_known__missing",
+    "fixture_count__missing",
+    "home_fixture_count__missing",
+    "away_fixture_count__missing",
+    "is_blank__missing",
+    "is_double__missing",
+    "opponent_goals_for_mean_last_3__missing",
+    "opponent_goals_against_mean_last_3__missing",
+    "opponent_xg_for_mean_last_3__missing",
+    "opponent_xg_against_mean_last_3__missing",
+    "opponent_history_matches_last_3__missing",
+    "opponent_goals_for_mean_last_5__missing",
+    "opponent_goals_against_mean_last_5__missing",
+    "opponent_xg_for_mean_last_5__missing",
+    "opponent_xg_against_mean_last_5__missing",
+    "opponent_history_matches_last_5__missing",
+    "price_tenths_prior__missing",
+    "ownership_rank_prior__missing",
+    "ownership_rank_change_prior__missing",
+    "transfers_in_rate_prior__missing",
+    "transfers_out_rate_prior__missing",
+    "transfer_net_rate_prior__missing",
+    "market_age_gameweeks__missing"
+  ],
+  "excluded_unobserved_columns": [
+    "price_tenths_snapshot",
+    "form_snapshot",
+    "ownership_percent_snapshot",
+    "availability_pct",
+    "is_penalty_taker",
+    "is_corner_taker",
+    "is_freekick_taker",
+    "position_GKP",
+    "position_DEF",
+    "position_MID",
+    "position_FWD",
+    "status_a",
+    "status_d",
+    "status_i",
+    "status_s",
+    "status_u"
+  ],
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "training_loss": 0.96379211233623
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.8975896856084985
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.8946836039201537
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.8843059661376536
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.8874244529809525
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.879833654384708
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.8836661660256078
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.8764969561230483
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.8634542363200022
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.8601849002031544
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.856974602042146
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.8670180355434987
+    },
+    {
+      "epoch": 13,
+      "training_loss": 0.8745164539090436
+    },
+    {
+      "epoch": 14,
+      "training_loss": 0.8576944710603401
+    },
+    {
+      "epoch": 15,
+      "training_loss": 0.8495204187744293
+    },
+    {
+      "epoch": 16,
+      "training_loss": 0.8449512020272402
+    },
+    {
+      "epoch": 17,
+      "training_loss": 0.8460563895714224
+    },
+    {
+      "epoch": 18,
+      "training_loss": 0.8404198256298084
+    },
+    {
+      "epoch": 19,
+      "training_loss": 0.8301534163418101
+    },
+    {
+      "epoch": 20,
+      "training_loss": 0.8321172888599225
+    },
+    {
+      "epoch": 21,
+      "training_loss": 0.8327679414654252
+    },
+    {
+      "epoch": 22,
+      "training_loss": 0.8324253950546037
+    },
+    {
+      "epoch": 23,
+      "training_loss": 0.825949537813367
+    },
+    {
+      "epoch": 24,
+      "training_loss": 0.8122629947330228
+    },
+    {
+      "epoch": 25,
+      "training_loss": 0.8202543747958853
+    },
+    {
+      "epoch": 26,
+      "training_loss": 0.8206792868191923
+    },
+    {
+      "epoch": 27,
+      "training_loss": 0.8151448885006691
+    },
+    {
+      "epoch": 28,
+      "training_loss": 0.8095914155096557
+    },
+    {
+      "epoch": 29,
+      "training_loss": 0.8119638141114913
+    },
+    {
+      "epoch": 30,
+      "training_loss": 0.8063941325121258
+    },
+    {
+      "epoch": 31,
+      "training_loss": 0.8057121815373055
+    },
+    {
+      "epoch": 32,
+      "training_loss": 0.8159359729112085
+    },
+    {
+      "epoch": 33,
+      "training_loss": 0.8020805010748147
+    },
+    {
+      "epoch": 34,
+      "training_loss": 0.7927134265354023
+    },
+    {
+      "epoch": 35,
+      "training_loss": 0.7924353225314202
+    },
+    {
+      "epoch": 36,
+      "training_loss": 0.795527608388692
+    },
+    {
+      "epoch": 37,
+      "training_loss": 0.7787267094227805
+    },
+    {
+      "epoch": 38,
+      "training_loss": 0.773576211721743
+    },
+    {
+      "epoch": 39,
+      "training_loss": 0.7930970067408547
+    },
+    {
+      "epoch": 40,
+      "training_loss": 0.7762688386499585
+    },
+    {
+      "epoch": 41,
+      "training_loss": 0.7849915430913517
+    },
+    {
+      "epoch": 42,
+      "training_loss": 0.7792433215611017
+    },
+    {
+      "epoch": 43,
+      "training_loss": 0.776682484209241
+    },
+    {
+      "epoch": 44,
+      "training_loss": 0.7844350684934588
+    },
+    {
+      "epoch": 45,
+      "training_loss": 0.7600999857062725
+    },
+    {
+      "epoch": 46,
+      "training_loss": 0.7573941364810242
+    },
+    {
+      "epoch": 47,
+      "training_loss": 0.7621769424694688
+    },
+    {
+      "epoch": 48,
+      "training_loss": 0.7634560850574009
+    },
+    {
+      "epoch": 49,
+      "training_loss": 0.7415351855814161
+    },
+    {
+      "epoch": 50,
+      "training_loss": 0.7589072564348059
+    },
+    {
+      "epoch": 51,
+      "training_loss": 0.7405501921378558
+    },
+    {
+      "epoch": 52,
+      "training_loss": 0.7667331768209068
+    },
+    {
+      "epoch": 53,
+      "training_loss": 0.761595800148314
+    },
+    {
+      "epoch": 54,
+      "training_loss": 0.7424978335105364
+    },
+    {
+      "epoch": 55,
+      "training_loss": 0.7403382997014629
+    },
+    {
+      "epoch": 56,
+      "training_loss": 0.7402508771834682
+    },
+    {
+      "epoch": 57,
+      "training_loss": 0.748709909951509
+    },
+    {
+      "epoch": 58,
+      "training_loss": 0.7396188078828119
+    },
+    {
+      "epoch": 59,
+      "training_loss": 0.7290026987369974
+    },
+    {
+      "epoch": 60,
+      "training_loss": 0.736839367975643
+    },
+    {
+      "epoch": 61,
+      "training_loss": 0.7298562615665037
+    },
+    {
+      "epoch": 62,
+      "training_loss": 0.7333052488998394
+    },
+    {
+      "epoch": 63,
+      "training_loss": 0.7359437883196779
+    },
+    {
+      "epoch": 64,
+      "training_loss": 0.7113245435022003
+    },
+    {
+      "epoch": 65,
+      "training_loss": 0.7168274474381214
+    },
+    {
+      "epoch": 66,
+      "training_loss": 0.7207668047046187
+    },
+    {
+      "epoch": 67,
+      "training_loss": 0.7260233495959002
+    },
+    {
+      "epoch": 68,
+      "training_loss": 0.7249541175899221
+    },
+    {
+      "epoch": 69,
+      "training_loss": 0.7265189945401244
+    },
+    {
+      "epoch": 70,
+      "training_loss": 0.7140814638256434
+    },
+    {
+      "epoch": 71,
+      "training_loss": 0.7306728363037109
+    },
+    {
+      "epoch": 72,
+      "training_loss": 0.7047548801151674
+    },
+    {
+      "epoch": 73,
+      "training_loss": 0.7273770526273927
+    },
+    {
+      "epoch": 74,
+      "training_loss": 0.7173533697626484
+    },
+    {
+      "epoch": 75,
+      "training_loss": 0.7110843774098069
+    },
+    {
+      "epoch": 76,
+      "training_loss": 0.7130989814872173
+    },
+    {
+      "epoch": 77,
+      "training_loss": 0.7351433120260191
+    },
+    {
+      "epoch": 78,
+      "training_loss": 0.7017847831124691
+    },
+    {
+      "epoch": 79,
+      "training_loss": 0.6982812285423279
+    },
+    {
+      "epoch": 80,
+      "training_loss": 0.7023139996315116
+    },
+    {
+      "epoch": 81,
+      "training_loss": 0.7004649481963162
+    },
+    {
+      "epoch": 82,
+      "training_loss": 0.6957928538322449
+    },
+    {
+      "epoch": 83,
+      "training_loss": 0.6957629059084612
+    },
+    {
+      "epoch": 84,
+      "training_loss": 0.7085630766194851
+    },
+    {
+      "epoch": 85,
+      "training_loss": 0.6938294652682632
+    },
+    {
+      "epoch": 86,
+      "training_loss": 0.6990209177358827
+    },
+    {
+      "epoch": 87,
+      "training_loss": 0.6841316543408295
+    },
+    {
+      "epoch": 88,
+      "training_loss": 0.6828637563470584
+    },
+    {
+      "epoch": 89,
+      "training_loss": 0.6865783135096232
+    },
+    {
+      "epoch": 90,
+      "training_loss": 0.6944235758994942
+    },
+    {
+      "epoch": 91,
+      "training_loss": 0.6839750843558146
+    },
+    {
+      "epoch": 92,
+      "training_loss": 0.6937093604263381
+    },
+    {
+      "epoch": 93,
+      "training_loss": 0.6919368650782761
+    },
+    {
+      "epoch": 94,
+      "training_loss": 0.667426031472078
+    },
+    {
+      "epoch": 95,
+      "training_loss": 0.6776500459927232
+    },
+    {
+      "epoch": 96,
+      "training_loss": 0.6735359934431997
+    },
+    {
+      "epoch": 97,
+      "training_loss": 0.6719657184176184
+    },
+    {
+      "epoch": 98,
+      "training_loss": 0.6712411166127048
+    },
+    {
+      "epoch": 99,
+      "training_loss": 0.6619226902871582
+    },
+    {
+      "epoch": 100,
+      "training_loss": 0.6543530818834826
+    }
+  ],
+  "training_metrics": {
+    "mae": 0.853329542176381,
+    "rmse": 1.8036803240467927,
+    "mean_error": -0.3174303764736845
+  },
+  "checkpoint": "/Users/arnavjyotshi/fpl-ai/models/model_gw5_experimental.pt"
+}

@@ -1,0 +1,2017 @@
+{
+  "status": "exploratory_loss_comparison",
+  "season_id": "2026-08-21T17:30:00Z",
+  "target": "total_points",
+  "train_gameweeks": [
+    1,
+    2,
+    3
+  ],
+  "validation_gameweeks": [
+    4
+  ],
+  "unscored_gameweeks": [
+    5
+  ],
+  "train_rows": 1890,
+  "validation_rows": 659,
+  "base_options": {
+    "seed": 42,
+    "num_threads": 1,
+    "weight_decay": 0.0001,
+    "huber_delta": 1.0,
+    "type": "mlp",
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "epochs": 100,
+    "early_stopping_patience": 10,
+    "loss": "huber",
+    "predict_horizon_gws": 1,
+    "min_gameweeks_for_training": 6,
+    "validation_window_gws": 4
+  },
+  "losses": [
+    "huber",
+    "mse"
+  ],
+  "seeds": [
+    7,
+    42,
+    123
+  ],
+  "selection_metric": "validation_rmse",
+  "minimum_improvement": 0.0001,
+  "input_columns": [
+    "history_count_last_3",
+    "total_points_mean_last_3",
+    "minutes_mean_last_3",
+    "goals_scored_mean_last_3",
+    "assists_mean_last_3",
+    "expected_goals_mean_last_3",
+    "expected_assists_mean_last_3",
+    "expected_goal_involvements_mean_last_3",
+    "bonus_mean_last_3",
+    "ict_index_mean_last_3",
+    "clean_sheets_mean_last_3",
+    "saves_mean_last_3",
+    "goals_conceded_mean_last_3",
+    "appearance_rate_mean_last_3",
+    "sixty_minutes_rate_mean_last_3",
+    "start_rate_mean_last_3",
+    "history_count_last_5",
+    "total_points_mean_last_5",
+    "minutes_mean_last_5",
+    "goals_scored_mean_last_5",
+    "assists_mean_last_5",
+    "expected_goals_mean_last_5",
+    "expected_assists_mean_last_5",
+    "expected_goal_involvements_mean_last_5",
+    "bonus_mean_last_5",
+    "ict_index_mean_last_5",
+    "clean_sheets_mean_last_5",
+    "saves_mean_last_5",
+    "goals_conceded_mean_last_5",
+    "appearance_rate_mean_last_5",
+    "sixty_minutes_rate_mean_last_5",
+    "start_rate_mean_last_5",
+    "fixture_context_known",
+    "fixture_count",
+    "home_fixture_count",
+    "away_fixture_count",
+    "is_blank",
+    "is_double",
+    "opponent_goals_for_mean_last_3",
+    "opponent_goals_against_mean_last_3",
+    "opponent_xg_for_mean_last_3",
+    "opponent_xg_against_mean_last_3",
+    "opponent_history_matches_last_3",
+    "opponent_goals_for_mean_last_5",
+    "opponent_goals_against_mean_last_5",
+    "opponent_xg_for_mean_last_5",
+    "opponent_xg_against_mean_last_5",
+    "opponent_history_matches_last_5",
+    "price_tenths_prior",
+    "ownership_rank_prior",
+    "ownership_rank_change_prior",
+    "transfers_in_rate_prior",
+    "transfers_out_rate_prior",
+    "transfer_net_rate_prior",
+    "market_age_gameweeks",
+    "history_count_last_3__missing",
+    "total_points_mean_last_3__missing",
+    "minutes_mean_last_3__missing",
+    "goals_scored_mean_last_3__missing",
+    "assists_mean_last_3__missing",
+    "expected_goals_mean_last_3__missing",
+    "expected_assists_mean_last_3__missing",
+    "expected_goal_involvements_mean_last_3__missing",
+    "bonus_mean_last_3__missing",
+    "ict_index_mean_last_3__missing",
+    "clean_sheets_mean_last_3__missing",
+    "saves_mean_last_3__missing",
+    "goals_conceded_mean_last_3__missing",
+    "appearance_rate_mean_last_3__missing",
+    "sixty_minutes_rate_mean_last_3__missing",
+    "start_rate_mean_last_3__missing",
+    "history_count_last_5__missing",
+    "total_points_mean_last_5__missing",
+    "minutes_mean_last_5__missing",
+    "goals_scored_mean_last_5__missing",
+    "assists_mean_last_5__missing",
+    "expected_goals_mean_last_5__missing",
+    "expected_assists_mean_last_5__missing",
+    "expected_goal_involvements_mean_last_5__missing",
+    "bonus_mean_last_5__missing",
+    "ict_index_mean_last_5__missing",
+    "clean_sheets_mean_last_5__missing",
+    "saves_mean_last_5__missing",
+    "goals_conceded_mean_last_5__missing",
+    "appearance_rate_mean_last_5__missing",
+    "sixty_minutes_rate_mean_last_5__missing",
+    "start_rate_mean_last_5__missing",
+    "fixture_context_known__missing",
+    "fixture_count__missing",
+    "home_fixture_count__missing",
+    "away_fixture_count__missing",
+    "is_blank__missing",
+    "is_double__missing",
+    "opponent_goals_for_mean_last_3__missing",
+    "opponent_goals_against_mean_last_3__missing",
+    "opponent_xg_for_mean_last_3__missing",
+    "opponent_xg_against_mean_last_3__missing",
+    "opponent_history_matches_last_3__missing",
+    "opponent_goals_for_mean_last_5__missing",
+    "opponent_goals_against_mean_last_5__missing",
+    "opponent_xg_for_mean_last_5__missing",
+    "opponent_xg_against_mean_last_5__missing",
+    "opponent_history_matches_last_5__missing",
+    "price_tenths_prior__missing",
+    "ownership_rank_prior__missing",
+    "ownership_rank_change_prior__missing",
+    "transfers_in_rate_prior__missing",
+    "transfers_out_rate_prior__missing",
+    "transfer_net_rate_prior__missing",
+    "market_age_gameweeks__missing"
+  ],
+  "excluded_unobserved_columns": [
+    "price_tenths_snapshot",
+    "form_snapshot",
+    "ownership_percent_snapshot",
+    "availability_pct",
+    "is_penalty_taker",
+    "is_corner_taker",
+    "is_freekick_taker",
+    "position_GKP",
+    "position_DEF",
+    "position_MID",
+    "position_FWD",
+    "status_a",
+    "status_d",
+    "status_i",
+    "status_s",
+    "status_u"
+  ],
+  "baseline_feature_column": "total_points_mean_last_5",
+  "baseline_fallback_points": 1.4555555555555555,
+  "ranking_top_k": 10,
+  "baseline": {
+    "metrics": {
+      "mae": 1.2786208059349182,
+      "rmse": 2.3358913245344315,
+      "mean_error": 0.03279379531276343
+    },
+    "per_gameweek": [
+      {
+        "gameweek": 4,
+        "ranking": {
+          "top_k": 10,
+          "selected_element_ids": [
+            367,
+            426,
+            572,
+            279,
+            399,
+            15,
+            69,
+            411,
+            586,
+            277
+          ],
+          "actual_points_total": 26.0,
+          "actual_points_mean": 2.6,
+          "optimal_actual_points_total": 135.0,
+          "points_shortfall": 109.0,
+          "overlap_with_actual_top_k": 0,
+          "precision_at_k": 0.0,
+          "spearman_rank_correlation": 0.6641020583871432
+        }
+      }
+    ],
+    "prediction_spread": {
+      "mean": 1.430365874220199,
+      "std": 1.9716559226222945,
+      "min": -0.6666666666666666,
+      "max": 9.333333333333334,
+      "p90": 4.333333333333333
+    }
+  },
+  "actual_spread": {
+    "mean": 1.3975720789074355,
+    "std": 2.6500024666654,
+    "min": -3.0,
+    "max": 17.0,
+    "p90": 5.0
+  },
+  "runs": [
+    {
+      "run_id": "huber_seed7",
+      "loss": "huber",
+      "seed": 7,
+      "options": {
+        "seed": 7,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "huber",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 13,
+      "epochs_run": 23,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 1.05672129871984,
+          "validation_metrics": {
+            "mae": 1.3001959553166478,
+            "rmse": 2.2805733117907723,
+            "mean_error": -0.17555454210554883
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 0.9304692480929945,
+          "validation_metrics": {
+            "mae": 1.1777177260727911,
+            "rmse": 2.28230361050397,
+            "mean_error": -0.39245759639238914
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 0.928815072806424,
+          "validation_metrics": {
+            "mae": 1.162391329910578,
+            "rmse": 2.279288379973678,
+            "mean_error": -0.4005992254284698
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 0.9224211923659794,
+          "validation_metrics": {
+            "mae": 1.1773884540398312,
+            "rmse": 2.2320733054840574,
+            "mean_error": -0.26787124339021934
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 0.9068893884855603,
+          "validation_metrics": {
+            "mae": 1.152618500572235,
+            "rmse": 2.2430573862999754,
+            "mean_error": -0.337595118534764
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 0.9085972760720228,
+          "validation_metrics": {
+            "mae": 1.1422006262406956,
+            "rmse": 2.3080010487363194,
+            "mean_error": -0.47167024907284333
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 0.8995499724433536,
+          "validation_metrics": {
+            "mae": 1.146179552561687,
+            "rmse": 2.2509514532219277,
+            "mean_error": -0.3613840150611535
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 0.888609546517569,
+          "validation_metrics": {
+            "mae": 1.165773272344755,
+            "rmse": 2.2435828709876895,
+            "mean_error": -0.29933382556045907
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 0.8963902828554627,
+          "validation_metrics": {
+            "mae": 1.14654752281982,
+            "rmse": 2.2557342252252273,
+            "mean_error": -0.35168723449992845
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 0.8852556269004862,
+          "validation_metrics": {
+            "mae": 1.1452091600921157,
+            "rmse": 2.2608238241910614,
+            "mean_error": -0.3629811683242889
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 0.8920691827932994,
+          "validation_metrics": {
+            "mae": 1.1635905495181973,
+            "rmse": 2.229362940138809,
+            "mean_error": -0.25740227114539227
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 0.8801167485575196,
+          "validation_metrics": {
+            "mae": 1.1852647149440731,
+            "rmse": 2.213569171691415,
+            "mean_error": -0.17675563678348916
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 0.8783247564204786,
+          "validation_metrics": {
+            "mae": 1.1700790092371665,
+            "rmse": 2.2117286695129317,
+            "mean_error": -0.2298902547685076
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 0.8738870483857614,
+          "validation_metrics": {
+            "mae": 1.162221756211181,
+            "rmse": 2.251089846267031,
+            "mean_error": -0.3086670450357457
+          }
+        },
+        {
+          "epoch": 15,
+          "training_loss": 0.8711861923258141,
+          "validation_metrics": {
+            "mae": 1.180481243782503,
+            "rmse": 2.2393495406614767,
+            "mean_error": -0.24320592541298483
+          }
+        },
+        {
+          "epoch": 16,
+          "training_loss": 0.8625247317647177,
+          "validation_metrics": {
+            "mae": 1.2076529674401595,
+            "rmse": 2.2238778973971955,
+            "mean_error": -0.11886421169333827
+          }
+        },
+        {
+          "epoch": 17,
+          "training_loss": 0.8680512951795386,
+          "validation_metrics": {
+            "mae": 1.1854598601892794,
+            "rmse": 2.2646506618472895,
+            "mean_error": -0.28451655645697904
+          }
+        },
+        {
+          "epoch": 18,
+          "training_loss": 0.8566187950669142,
+          "validation_metrics": {
+            "mae": 1.1763292590837378,
+            "rmse": 2.2729427461037703,
+            "mean_error": -0.3049861804577939
+          }
+        },
+        {
+          "epoch": 19,
+          "training_loss": 0.8504970752372943,
+          "validation_metrics": {
+            "mae": 1.1735854961305903,
+            "rmse": 2.3116604224760127,
+            "mean_error": -0.3973299869320642
+          }
+        },
+        {
+          "epoch": 20,
+          "training_loss": 0.8507859259686142,
+          "validation_metrics": {
+            "mae": 1.181180355931902,
+            "rmse": 2.2993244592783237,
+            "mean_error": -0.34989830339398115
+          }
+        },
+        {
+          "epoch": 21,
+          "training_loss": 0.8577726314938258,
+          "validation_metrics": {
+            "mae": 1.18748751136846,
+            "rmse": 2.3512578552700467,
+            "mean_error": -0.43114809690775385
+          }
+        },
+        {
+          "epoch": 22,
+          "training_loss": 0.850817264009405,
+          "validation_metrics": {
+            "mae": 1.2199603275075126,
+            "rmse": 2.256604803619965,
+            "mean_error": -0.15635471136418025
+          }
+        },
+        {
+          "epoch": 23,
+          "training_loss": 0.8509333570167501,
+          "validation_metrics": {
+            "mae": 1.224024237332829,
+            "rmse": 2.2619295354287896,
+            "mean_error": -0.16584317510515134
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.1700790092371665,
+          "rmse": 2.2117286695129317,
+          "mean_error": -0.2298902547685076
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.1700790092371665,
+              "rmse": 2.2117286695129317,
+              "mean_error": -0.2298902547685076
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  154,
+                  229,
+                  12,
+                  572,
+                  236,
+                  4,
+                  471,
+                  40
+                ],
+                "actual_points_total": 53.0,
+                "actual_points_mean": 5.3,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 82.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6771622955757668
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.167681824138928,
+        "std": 1.3135724462453982,
+        "min": -0.022992074489593506,
+        "max": 7.370922565460205,
+        "p90": 3.0616131305694583
+      },
+      "summary_metrics": {
+        "mae": 1.1700790092371665,
+        "rmse": 2.2117286695129317,
+        "mean_error": -0.2298902547685076,
+        "top_k_actual_points": 53.0,
+        "prediction_std": 1.3135724462453982
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_huber_seed7.pt"
+    },
+    {
+      "run_id": "huber_seed42",
+      "loss": "huber",
+      "seed": 42,
+      "options": {
+        "seed": 42,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "huber",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 4,
+      "epochs_run": 14,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 1.0061853549467823,
+          "validation_metrics": {
+            "mae": 1.2253590914928136,
+            "rmse": 2.2346647182792707,
+            "mean_error": -0.20300447425277895
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 0.9316804887756469,
+          "validation_metrics": {
+            "mae": 1.142117181479117,
+            "rmse": 2.3078252577206846,
+            "mean_error": -0.4796451104745518
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 0.9096265680575497,
+          "validation_metrics": {
+            "mae": 1.144654283461151,
+            "rmse": 2.2843567131778086,
+            "mean_error": -0.4237744119442287
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 0.8987903223781989,
+          "validation_metrics": {
+            "mae": 1.1880739700834921,
+            "rmse": 2.195286407638771,
+            "mean_error": -0.16824419928745724
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 0.9075395449128731,
+          "validation_metrics": {
+            "mae": 1.1510455654722063,
+            "rmse": 2.2685349973070377,
+            "mean_error": -0.38517032697095854
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 0.9086111259208154,
+          "validation_metrics": {
+            "mae": 1.137006148662028,
+            "rmse": 2.3414571770156662,
+            "mean_error": -0.5499393290448623
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 0.8996460859106962,
+          "validation_metrics": {
+            "mae": 1.1387117715815311,
+            "rmse": 2.2732690002476765,
+            "mean_error": -0.414706860105076
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 0.8960203884139893,
+          "validation_metrics": {
+            "mae": 1.1514593595935652,
+            "rmse": 2.244608159923316,
+            "mean_error": -0.3367522517855142
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 0.9008016170963409,
+          "validation_metrics": {
+            "mae": 1.1751667037945417,
+            "rmse": 2.2253524873855013,
+            "mean_error": -0.24565462248006975
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 0.8794958611644765,
+          "validation_metrics": {
+            "mae": 1.173214927417465,
+            "rmse": 2.2025408879620034,
+            "mean_error": -0.21693597291914213
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 0.8968088247788646,
+          "validation_metrics": {
+            "mae": 1.1426098370113396,
+            "rmse": 2.3044379268077573,
+            "mean_error": -0.4643862556230859
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 0.8854059740979835,
+          "validation_metrics": {
+            "mae": 1.1449105574979768,
+            "rmse": 2.2843736911753627,
+            "mean_error": -0.43903682999346794
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 0.8829815783828655,
+          "validation_metrics": {
+            "mae": 1.137690848335963,
+            "rmse": 2.287297874024329,
+            "mean_error": -0.4539839329031241
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 0.8844075985686489,
+          "validation_metrics": {
+            "mae": 1.192541394309227,
+            "rmse": 2.2026693813014004,
+            "mean_error": -0.19391061448137387
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.1880739700834921,
+          "rmse": 2.195286407638771,
+          "mean_error": -0.16824419928745724
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.1880739700834921,
+              "rmse": 2.195286407638771,
+              "mean_error": -0.16824419928745724
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  15,
+                  12,
+                  367,
+                  154,
+                  40,
+                  236,
+                  379,
+                  399
+                ],
+                "actual_points_total": 41.0,
+                "actual_points_mean": 4.1,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 94.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6865842844506989
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.2293278796199782,
+        "std": 1.2947575851184965,
+        "min": -0.015011504292488098,
+        "max": 5.952935695648193,
+        "p90": 3.178670740127564
+      },
+      "summary_metrics": {
+        "mae": 1.1880739700834921,
+        "rmse": 2.195286407638771,
+        "mean_error": -0.16824419928745724,
+        "top_k_actual_points": 41.0,
+        "prediction_std": 1.2947575851184965
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_huber_seed42.pt"
+    },
+    {
+      "run_id": "huber_seed123",
+      "loss": "huber",
+      "seed": 123,
+      "options": {
+        "seed": 123,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "huber",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 9,
+      "epochs_run": 19,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 1.0325856551922188,
+          "validation_metrics": {
+            "mae": 1.286321031441276,
+            "rmse": 2.265593524305233,
+            "mean_error": -0.1796278522571772
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 0.9374540399622034,
+          "validation_metrics": {
+            "mae": 1.179775943207994,
+            "rmse": 2.322784665169161,
+            "mean_error": -0.48184139006778215
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 0.9352887519452938,
+          "validation_metrics": {
+            "mae": 1.1693306668507493,
+            "rmse": 2.2670507765373014,
+            "mean_error": -0.3557753303004867
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 0.9181885108745919,
+          "validation_metrics": {
+            "mae": 1.1565093750837903,
+            "rmse": 2.3156802760262583,
+            "mean_error": -0.45493139521033704
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 0.904999554598773,
+          "validation_metrics": {
+            "mae": 1.2081984671253898,
+            "rmse": 2.2202773854233895,
+            "mean_error": -0.1700672836852725
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 0.91381186486552,
+          "validation_metrics": {
+            "mae": 1.180846992761394,
+            "rmse": 2.2387440398773153,
+            "mean_error": -0.26291052089249417
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 0.8944255958473871,
+          "validation_metrics": {
+            "mae": 1.1516624055746292,
+            "rmse": 2.271015622766193,
+            "mean_error": -0.38903828252429123
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 0.907258719489688,
+          "validation_metrics": {
+            "mae": 1.1832068050237816,
+            "rmse": 2.2104626927069537,
+            "mean_error": -0.20773262189127426
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 0.9094068232036773,
+          "validation_metrics": {
+            "mae": 1.1777586423437223,
+            "rmse": 2.2081407848962598,
+            "mean_error": -0.218117786263298
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 0.8808906533730724,
+          "validation_metrics": {
+            "mae": 1.1804481769186954,
+            "rmse": 2.2354093385545966,
+            "mean_error": -0.25586071434078883
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 0.8878177814382725,
+          "validation_metrics": {
+            "mae": 1.16293689011623,
+            "rmse": 2.235570413226032,
+            "mean_error": -0.2996856896305663
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 0.8839237524718835,
+          "validation_metrics": {
+            "mae": 1.187168970274455,
+            "rmse": 2.220545688167363,
+            "mean_error": -0.20864935373047958
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 0.8881636353396865,
+          "validation_metrics": {
+            "mae": 1.1430901950154573,
+            "rmse": 2.294123442051128,
+            "mean_error": -0.47204718233421106
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 0.8722183959193961,
+          "validation_metrics": {
+            "mae": 1.1589160909669896,
+            "rmse": 2.304897317389195,
+            "mean_error": -0.4458499480609829
+          }
+        },
+        {
+          "epoch": 15,
+          "training_loss": 0.8631635375123806,
+          "validation_metrics": {
+            "mae": 1.1548731397718688,
+            "rmse": 2.25759894175697,
+            "mean_error": -0.3526429904226287
+          }
+        },
+        {
+          "epoch": 16,
+          "training_loss": 0.8742074832714424,
+          "validation_metrics": {
+            "mae": 1.1669666760562947,
+            "rmse": 2.2769327701288598,
+            "mean_error": -0.3785836867795909
+          }
+        },
+        {
+          "epoch": 17,
+          "training_loss": 0.85359031245822,
+          "validation_metrics": {
+            "mae": 1.2024801538660783,
+            "rmse": 2.2310075894463255,
+            "mean_error": -0.1997651227485609
+          }
+        },
+        {
+          "epoch": 18,
+          "training_loss": 0.8655865037252033,
+          "validation_metrics": {
+            "mae": 1.1923737943014172,
+            "rmse": 2.285649286160545,
+            "mean_error": -0.32845464632570837
+          }
+        },
+        {
+          "epoch": 19,
+          "training_loss": 0.8706571568887701,
+          "validation_metrics": {
+            "mae": 1.1651192185142514,
+            "rmse": 2.2664644285887308,
+            "mean_error": -0.3407126077887502
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.1777586423437223,
+          "rmse": 2.2081407848962598,
+          "mean_error": -0.218117786263298
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.1777586423437223,
+              "rmse": 2.2081407848962598,
+              "mean_error": -0.218117786263298
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  154,
+                  12,
+                  40,
+                  397,
+                  4,
+                  572,
+                  236,
+                  367
+                ],
+                "actual_points_total": 49.0,
+                "actual_points_mean": 4.9,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 86.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6875453096568037
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.1794542926441376,
+        "std": 1.2496019938800642,
+        "min": -0.022725537419319153,
+        "max": 6.160924434661865,
+        "p90": 3.06509804725647
+      },
+      "summary_metrics": {
+        "mae": 1.1777586423437223,
+        "rmse": 2.2081407848962598,
+        "mean_error": -0.218117786263298,
+        "top_k_actual_points": 49.0,
+        "prediction_std": 1.2496019938800642
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_huber_seed123.pt"
+    },
+    {
+      "run_id": "mse_seed7",
+      "loss": "mse",
+      "seed": 7,
+      "options": {
+        "seed": 7,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "mse",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 5,
+      "epochs_run": 15,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 7.306697027771561,
+          "validation_metrics": {
+            "mae": 1.4703609254635157,
+            "rmse": 2.27247164432655,
+            "mean_error": 0.1674393046879081
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 5.516044681286686,
+          "validation_metrics": {
+            "mae": 1.304759753808628,
+            "rmse": 2.2145252412086145,
+            "mean_error": -0.02025045868297629
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 5.565193489619664,
+          "validation_metrics": {
+            "mae": 1.2700135536005717,
+            "rmse": 2.207395948828741,
+            "mean_error": -0.03940779567669302
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 5.3849885869909215,
+          "validation_metrics": {
+            "mae": 1.3481275554695513,
+            "rmse": 2.2135049002517464,
+            "mean_error": 0.22099600453071058
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 5.294384509293491,
+          "validation_metrics": {
+            "mae": 1.2788426554302526,
+            "rmse": 2.196688922032828,
+            "mean_error": 0.04786272389935796
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 5.300784994054724,
+          "validation_metrics": {
+            "mae": 1.2682935611905928,
+            "rmse": 2.199495321946879,
+            "mean_error": 0.01751855297271326
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 5.149509111031023,
+          "validation_metrics": {
+            "mae": 1.269031155792281,
+            "rmse": 2.198553068849944,
+            "mean_error": 0.04925428093474624
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 5.0107678176234005,
+          "validation_metrics": {
+            "mae": 1.2746136909596657,
+            "rmse": 2.205986529604727,
+            "mean_error": 0.029279764283770677
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 5.245457645951125,
+          "validation_metrics": {
+            "mae": 1.3364091702653533,
+            "rmse": 2.2323878536730994,
+            "mean_error": 0.202563370452213
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 4.99002829153071,
+          "validation_metrics": {
+            "mae": 1.2448198818043439,
+            "rmse": 2.213292368327968,
+            "mean_error": -0.03654323542018581
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 5.060551616628334,
+          "validation_metrics": {
+            "mae": 1.2946625014990343,
+            "rmse": 2.2075513354026666,
+            "mean_error": 0.11177530129509378
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 4.932333643978866,
+          "validation_metrics": {
+            "mae": 1.3396772293540704,
+            "rmse": 2.223868665027648,
+            "mean_error": 0.22403459625151884
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 4.997955721900577,
+          "validation_metrics": {
+            "mae": 1.2964459085817222,
+            "rmse": 2.205096006901092,
+            "mean_error": 0.11649514250852992
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 4.829215068918057,
+          "validation_metrics": {
+            "mae": 1.3073095580695793,
+            "rmse": 2.2209564995528317,
+            "mean_error": 0.1174786988538386
+          }
+        },
+        {
+          "epoch": 15,
+          "training_loss": 4.9525848121239395,
+          "validation_metrics": {
+            "mae": 1.3693065027704912,
+            "rmse": 2.2553160721429966,
+            "mean_error": 0.2875509371412904
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.2788426554302526,
+          "rmse": 2.196688922032828,
+          "mean_error": 0.04786272389935796
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.2788426554302526,
+              "rmse": 2.196688922032828,
+              "mean_error": 0.04786272389935796
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  154,
+                  12,
+                  379,
+                  106,
+                  368,
+                  366,
+                  367,
+                  480
+                ],
+                "actual_points_total": 42.0,
+                "actual_points_mean": 4.2,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 93.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.682275128593328
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.4454348028067934,
+        "std": 1.4214250111646638,
+        "min": -0.029067322611808777,
+        "max": 7.124370098114014,
+        "p90": 3.491777849197388
+      },
+      "summary_metrics": {
+        "mae": 1.2788426554302526,
+        "rmse": 2.196688922032828,
+        "mean_error": 0.04786272389935796,
+        "top_k_actual_points": 42.0,
+        "prediction_std": 1.4214250111646638
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_mse_seed7.pt"
+    },
+    {
+      "run_id": "mse_seed42",
+      "loss": "mse",
+      "seed": 42,
+      "options": {
+        "seed": 42,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "mse",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 10,
+      "epochs_run": 20,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 6.553551323703988,
+          "validation_metrics": {
+            "mae": 1.5603199837692592,
+            "rmse": 2.266990484328003,
+            "mean_error": 0.46658463692448027
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 5.594480161313657,
+          "validation_metrics": {
+            "mae": 1.272934644634246,
+            "rmse": 2.214389439488498,
+            "mean_error": -0.0556114810845378
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 5.227589224759864,
+          "validation_metrics": {
+            "mae": 1.299372477748054,
+            "rmse": 2.1980144178769985,
+            "mean_error": 0.08708729305515159
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 5.11748255598482,
+          "validation_metrics": {
+            "mae": 1.3245475994753728,
+            "rmse": 2.2011844279944945,
+            "mean_error": 0.1943009381093458
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 5.211520920102559,
+          "validation_metrics": {
+            "mae": 1.2735545887683881,
+            "rmse": 2.1997174514263027,
+            "mean_error": 0.003634948797851846
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 5.239292675099045,
+          "validation_metrics": {
+            "mae": 1.215315306516808,
+            "rmse": 2.1928907723916313,
+            "mean_error": -0.10638356511799084
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 5.177457500639416,
+          "validation_metrics": {
+            "mae": 1.1972863842960735,
+            "rmse": 2.202983737461871,
+            "mean_error": -0.15916184643467207
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 5.134814994675772,
+          "validation_metrics": {
+            "mae": 1.1992396031462549,
+            "rmse": 2.2047504402384104,
+            "mean_error": -0.16046136032015493
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 5.213950170915593,
+          "validation_metrics": {
+            "mae": 1.2466481978325272,
+            "rmse": 2.1862493062369075,
+            "mean_error": -0.004798082462391832
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 5.056449674676966,
+          "validation_metrics": {
+            "mae": 1.254289282810887,
+            "rmse": 2.179163995247529,
+            "mean_error": 0.029503240028172957
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 5.139574534804733,
+          "validation_metrics": {
+            "mae": 1.2497615185036284,
+            "rmse": 2.2001773028848723,
+            "mean_error": -0.040889425743060336
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 5.065983016150338,
+          "validation_metrics": {
+            "mae": 1.1859641835907522,
+            "rmse": 2.20326132005748,
+            "mean_error": -0.18840826081171383
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 4.993985211407697,
+          "validation_metrics": {
+            "mae": 1.2180284133494714,
+            "rmse": 2.183026656536763,
+            "mean_error": -0.06850853939971721
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 5.0262756867383525,
+          "validation_metrics": {
+            "mae": 1.28629296971697,
+            "rmse": 2.1916289075083824,
+            "mean_error": 0.09201772150347555
+          }
+        },
+        {
+          "epoch": 15,
+          "training_loss": 4.988611070693485,
+          "validation_metrics": {
+            "mae": 1.3025692627060033,
+            "rmse": 2.2045810475247887,
+            "mean_error": 0.14846625203925307
+          }
+        },
+        {
+          "epoch": 16,
+          "training_loss": 4.851991182660299,
+          "validation_metrics": {
+            "mae": 1.2081330384669065,
+            "rmse": 2.18326372849594,
+            "mean_error": -0.0998697023787882
+          }
+        },
+        {
+          "epoch": 17,
+          "training_loss": 4.808463993400493,
+          "validation_metrics": {
+            "mae": 1.3331114619133686,
+            "rmse": 2.219406365034523,
+            "mean_error": 0.2169861638062098
+          }
+        },
+        {
+          "epoch": 18,
+          "training_loss": 4.824481744110269,
+          "validation_metrics": {
+            "mae": 1.2266769679616543,
+            "rmse": 2.204442405012248,
+            "mean_error": -0.07066763921645053
+          }
+        },
+        {
+          "epoch": 19,
+          "training_loss": 4.757853638179719,
+          "validation_metrics": {
+            "mae": 1.3636469844056007,
+            "rmse": 2.237901064767052,
+            "mean_error": 0.2692046381747958
+          }
+        },
+        {
+          "epoch": 20,
+          "training_loss": 4.58560070562615,
+          "validation_metrics": {
+            "mae": 1.3000202064426427,
+            "rmse": 2.222296789525969,
+            "mean_error": 0.12447539823234352
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.254289282810887,
+          "rmse": 2.179163995247529,
+          "mean_error": 0.029503240028172957
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.254289282810887,
+              "rmse": 2.179163995247529,
+              "mean_error": 0.029503240028172957
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  12,
+                  154,
+                  4,
+                  236,
+                  379,
+                  106,
+                  229,
+                  480
+                ],
+                "actual_points_total": 54.0,
+                "actual_points_mean": 5.4,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 81.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6833107042505623
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.4270753189356085,
+        "std": 1.4910994353270173,
+        "min": 0.004950866103172302,
+        "max": 8.685362815856934,
+        "p90": 3.6367597103118903
+      },
+      "summary_metrics": {
+        "mae": 1.254289282810887,
+        "rmse": 2.179163995247529,
+        "mean_error": 0.029503240028172957,
+        "top_k_actual_points": 54.0,
+        "prediction_std": 1.4910994353270173
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_mse_seed42.pt"
+    },
+    {
+      "run_id": "mse_seed123",
+      "loss": "mse",
+      "seed": 123,
+      "options": {
+        "seed": 123,
+        "num_threads": 1,
+        "weight_decay": 0.0001,
+        "huber_delta": 1.0,
+        "type": "mlp",
+        "hidden_layers": [
+          128,
+          64,
+          32
+        ],
+        "dropout": 0.3,
+        "learning_rate": 0.001,
+        "batch_size": 64,
+        "epochs": 100,
+        "early_stopping_patience": 10,
+        "loss": "mse",
+        "predict_horizon_gws": 1,
+        "min_gameweeks_for_training": 6,
+        "validation_window_gws": 4
+      },
+      "best_epoch": 9,
+      "epochs_run": 19,
+      "epoch_history": [
+        {
+          "epoch": 1,
+          "training_loss": 6.985210625582902,
+          "validation_metrics": {
+            "mae": 1.3983267282498986,
+            "rmse": 2.256925116124952,
+            "mean_error": 0.050562701022679235
+          }
+        },
+        {
+          "epoch": 2,
+          "training_loss": 5.700809472704691,
+          "validation_metrics": {
+            "mae": 1.3010963723402647,
+            "rmse": 2.2341251938270386,
+            "mean_error": -0.07886283965682404
+          }
+        },
+        {
+          "epoch": 3,
+          "training_loss": 5.597366123603135,
+          "validation_metrics": {
+            "mae": 1.3378542287894193,
+            "rmse": 2.2112372178208113,
+            "mean_error": 0.07852711335208962
+          }
+        },
+        {
+          "epoch": 4,
+          "training_loss": 5.452174461203278,
+          "validation_metrics": {
+            "mae": 1.2302548672794753,
+            "rmse": 2.262228669822518,
+            "mean_error": -0.2247542112116025
+          }
+        },
+        {
+          "epoch": 5,
+          "training_loss": 5.291418661768474,
+          "validation_metrics": {
+            "mae": 1.383369503460813,
+            "rmse": 2.2381400206272533,
+            "mean_error": 0.29503986214560335
+          }
+        },
+        {
+          "epoch": 6,
+          "training_loss": 5.318089356498112,
+          "validation_metrics": {
+            "mae": 1.2791417918997579,
+            "rmse": 2.2113861731688322,
+            "mean_error": 0.03074620937722225
+          }
+        },
+        {
+          "epoch": 7,
+          "training_loss": 5.1207367991644235,
+          "validation_metrics": {
+            "mae": 1.2877628386970355,
+            "rmse": 2.2064277401332224,
+            "mean_error": 0.031761907188049394
+          }
+        },
+        {
+          "epoch": 8,
+          "training_loss": 5.227726178446774,
+          "validation_metrics": {
+            "mae": 1.3680488278068976,
+            "rmse": 2.222913673793789,
+            "mean_error": 0.26739931996340816
+          }
+        },
+        {
+          "epoch": 9,
+          "training_loss": 5.153806349840114,
+          "validation_metrics": {
+            "mae": 1.2897670898298212,
+            "rmse": 2.2035364875681935,
+            "mean_error": 0.09970428282465667
+          }
+        },
+        {
+          "epoch": 10,
+          "training_loss": 4.942856492441167,
+          "validation_metrics": {
+            "mae": 1.2903001116354114,
+            "rmse": 2.211705351730691,
+            "mean_error": 0.08187708230364124
+          }
+        },
+        {
+          "epoch": 11,
+          "training_loss": 4.94733048141318,
+          "validation_metrics": {
+            "mae": 1.3287921506397098,
+            "rmse": 2.217471481753297,
+            "mean_error": 0.1935881187118963
+          }
+        },
+        {
+          "epoch": 12,
+          "training_loss": 4.971104016379704,
+          "validation_metrics": {
+            "mae": 1.3393800924666373,
+            "rmse": 2.2278079724697597,
+            "mean_error": 0.18731222790135962
+          }
+        },
+        {
+          "epoch": 13,
+          "training_loss": 4.989207929025882,
+          "validation_metrics": {
+            "mae": 1.2486769279326582,
+            "rmse": 2.20939029610546,
+            "mean_error": -0.06781200750282936
+          }
+        },
+        {
+          "epoch": 14,
+          "training_loss": 4.868719466275008,
+          "validation_metrics": {
+            "mae": 1.2648071670658851,
+            "rmse": 2.2188270195654867,
+            "mean_error": -0.054193752081513585
+          }
+        },
+        {
+          "epoch": 15,
+          "training_loss": 4.771629245697506,
+          "validation_metrics": {
+            "mae": 1.2698093447071106,
+            "rmse": 2.2239502650689897,
+            "mean_error": -0.020496245230546672
+          }
+        },
+        {
+          "epoch": 16,
+          "training_loss": 4.893845625781508,
+          "validation_metrics": {
+            "mae": 1.2989329035550763,
+            "rmse": 2.213487432102437,
+            "mean_error": 0.07334076280794664
+          }
+        },
+        {
+          "epoch": 17,
+          "training_loss": 4.683526893898293,
+          "validation_metrics": {
+            "mae": 1.3226962129109185,
+            "rmse": 2.2224624426023234,
+            "mean_error": 0.1149172668934592
+          }
+        },
+        {
+          "epoch": 18,
+          "training_loss": 4.832452850240879,
+          "validation_metrics": {
+            "mae": 1.3421643501280471,
+            "rmse": 2.243465266418786,
+            "mean_error": 0.16456903260602576
+          }
+        },
+        {
+          "epoch": 19,
+          "training_loss": 4.9247239304598045,
+          "validation_metrics": {
+            "mae": 1.2643772471747015,
+            "rmse": 2.234076426682504,
+            "mean_error": -0.05234212440767853
+          }
+        }
+      ],
+      "validation": {
+        "rows": 659,
+        "nn": {
+          "mae": 1.2897670898298212,
+          "rmse": 2.2035364875681935,
+          "mean_error": 0.09970428282465667
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "per_gameweek": [
+          {
+            "gameweek": 4,
+            "rows": 659,
+            "nn": {
+              "mae": 1.2897670898298212,
+              "rmse": 2.2035364875681935,
+              "mean_error": 0.09970428282465667
+            },
+            "baseline": {
+              "mae": 1.2786208059349182,
+              "rmse": 2.3358913245344315,
+              "mean_error": 0.03279379531276343
+            },
+            "ranking": {
+              "nn": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  411,
+                  426,
+                  12,
+                  368,
+                  106,
+                  154,
+                  397,
+                  399,
+                  379,
+                  367
+                ],
+                "actual_points_total": 35.0,
+                "actual_points_mean": 3.5,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 100.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6753830558715016
+              },
+              "baseline": {
+                "top_k": 10,
+                "selected_element_ids": [
+                  367,
+                  426,
+                  572,
+                  279,
+                  399,
+                  15,
+                  69,
+                  411,
+                  586,
+                  277
+                ],
+                "actual_points_total": 26.0,
+                "actual_points_mean": 2.6,
+                "optimal_actual_points_total": 135.0,
+                "points_shortfall": 109.0,
+                "overlap_with_actual_top_k": 0,
+                "precision_at_k": 0.0,
+                "spearman_rank_correlation": 0.6641020583871432
+              }
+            }
+          }
+        ]
+      },
+      "prediction_spread": {
+        "mean": 1.497276361732092,
+        "std": 1.5948961664839043,
+        "min": -0.04351547360420227,
+        "max": 8.801231384277344,
+        "p90": 3.8566321849823
+      },
+      "summary_metrics": {
+        "mae": 1.2897670898298212,
+        "rmse": 2.2035364875681935,
+        "mean_error": 0.09970428282465667,
+        "top_k_actual_points": 35.0,
+        "prediction_std": 1.5948961664839043
+      },
+      "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/loss_comparison/model_mse_seed123.pt"
+    }
+  ],
+  "comparison": {
+    "by_loss": {
+      "huber": {
+        "rmse": {
+          "mean": 2.2050519540159876,
+          "std": 0.007058925840844429
+        },
+        "mae": {
+          "mean": 1.1786372072214604,
+          "std": 0.007372632327217313
+        },
+        "mean_error": {
+          "mean": -0.20541741343975428,
+          "std": 0.02672119809546896
+        },
+        "top_k_actual_points": {
+          "mean": 47.666666666666664,
+          "std": 4.988876515698588
+        },
+        "prediction_std": {
+          "mean": 1.2859773417479863,
+          "std": 0.02684367336003533
+        }
+      },
+      "mse": {
+        "rmse": {
+          "mean": 2.1931298016161835,
+          "std": 0.010263368488150694
+        },
+        "mae": {
+          "mean": 1.2742996760236536,
+          "std": 0.014835715781738186
+        },
+        "mean_error": {
+          "mean": 0.05902341558406252,
+          "std": 0.02972616559631385
+        },
+        "top_k_actual_points": {
+          "mean": 43.666666666666664,
+          "std": 7.845734863959881
+        },
+        "prediction_std": {
+          "mean": 1.5024735376585285,
+          "std": 0.07127453067697129
+        }
+      }
+    },
+    "preferred_loss": "mse",
+    "selection_rule": "Lowest mean GW-validation RMSE across every configured seed; no best-seed selection.",
+    "paired_differences": [
+      {
+        "seed": 7,
+        "mse_minus_huber_rmse": -0.015039747480103838
+      },
+      {
+        "seed": 42,
+        "mse_minus_huber_rmse": -0.016122412391242236
+      },
+      {
+        "seed": 123,
+        "mse_minus_huber_rmse": -0.00460429732806622
+      }
+    ],
+    "std_definition": "Population standard deviation across seed runs (ddof=0), not a confidence interval."
+  },
+  "historical_schedule_assumption": "Saved fixture assignment is assumed to match its pre-deadline schedule; past schedules are not archived.",
+  "limitations": [
+    "The same validation week selects epochs and the preferred loss; this is development evidence, not an untouched test score.",
+    "Three seeds measure sensitivity to initialization and training randomness on this split, not generalization across gameweeks.",
+    "MAE, prediction spread, and top-k actual points are diagnostics; only mean validation RMSE selects the preferred loss.",
+    "Huber delta and architecture are fixed. This compares these settings, not every possible Huber or MSE model.",
+    "No GW5 assessment, GW6 forecast, refit, or automatic model promotion is performed. Reserve later weeks for final evaluation.",
+    "Top-k rankings ignore positions, budget, and club constraints; they are not valid squads."
+  ]
+}

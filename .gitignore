@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Keep documentation locally; never commit it to the repository.
+/docs/
+*.[mM][dD]
+*.[mM][aA][rR][kK][dD][oO][wW][nN]
+
+# Raw API responses — regenerated on every run, no need to version
+data/raw/
+
+# Model weights are derived artefacts; keep the repo light and rebuild in CI
+models/*.pt
+outputs/backtest/*.pt
+outputs/loss_comparison/*.pt
+
+.venv/
+venv/
+
+# Personal transfer state is supplied locally or as a GitHub Actions secret.
+data/manager_state.json
+my-team*.json
+data/my-team*.json

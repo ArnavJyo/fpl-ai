@@ -1,0 +1,487 @@
+{
+  "status": "exploratory_backtest",
+  "season_id": "2026-08-21T17:30:00Z",
+  "target": "total_points",
+  "train_gameweeks": [
+    1,
+    2,
+    3
+  ],
+  "validation_gameweeks": [
+    4
+  ],
+  "test_gameweeks": [
+    5
+  ],
+  "train_rows": 1890,
+  "options": {
+    "seed": 42,
+    "num_threads": 1,
+    "weight_decay": 0.0001,
+    "huber_delta": 1.0,
+    "type": "mlp",
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "dropout": 0.3,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "epochs": 100,
+    "early_stopping_patience": 10,
+    "loss": "huber",
+    "predict_horizon_gws": 1,
+    "min_gameweeks_for_training": 6,
+    "validation_window_gws": 4
+  },
+  "input_columns": [
+    "history_count_last_3",
+    "total_points_mean_last_3",
+    "minutes_mean_last_3",
+    "goals_scored_mean_last_3",
+    "assists_mean_last_3",
+    "expected_goals_mean_last_3",
+    "expected_assists_mean_last_3",
+    "expected_goal_involvements_mean_last_3",
+    "bonus_mean_last_3",
+    "ict_index_mean_last_3",
+    "clean_sheets_mean_last_3",
+    "saves_mean_last_3",
+    "goals_conceded_mean_last_3",
+    "appearance_rate_mean_last_3",
+    "sixty_minutes_rate_mean_last_3",
+    "start_rate_mean_last_3",
+    "history_count_last_5",
+    "total_points_mean_last_5",
+    "minutes_mean_last_5",
+    "goals_scored_mean_last_5",
+    "assists_mean_last_5",
+    "expected_goals_mean_last_5",
+    "expected_assists_mean_last_5",
+    "expected_goal_involvements_mean_last_5",
+    "bonus_mean_last_5",
+    "ict_index_mean_last_5",
+    "clean_sheets_mean_last_5",
+    "saves_mean_last_5",
+    "goals_conceded_mean_last_5",
+    "appearance_rate_mean_last_5",
+    "sixty_minutes_rate_mean_last_5",
+    "start_rate_mean_last_5",
+    "fixture_context_known",
+    "fixture_count",
+    "home_fixture_count",
+    "away_fixture_count",
+    "is_blank",
+    "is_double",
+    "opponent_goals_for_mean_last_3",
+    "opponent_goals_against_mean_last_3",
+    "opponent_xg_for_mean_last_3",
+    "opponent_xg_against_mean_last_3",
+    "opponent_history_matches_last_3",
+    "opponent_goals_for_mean_last_5",
+    "opponent_goals_against_mean_last_5",
+    "opponent_xg_for_mean_last_5",
+    "opponent_xg_against_mean_last_5",
+    "opponent_history_matches_last_5",
+    "price_tenths_prior",
+    "ownership_rank_prior",
+    "ownership_rank_change_prior",
+    "transfers_in_rate_prior",
+    "transfers_out_rate_prior",
+    "transfer_net_rate_prior",
+    "market_age_gameweeks",
+    "history_count_last_3__missing",
+    "total_points_mean_last_3__missing",
+    "minutes_mean_last_3__missing",
+    "goals_scored_mean_last_3__missing",
+    "assists_mean_last_3__missing",
+    "expected_goals_mean_last_3__missing",
+    "expected_assists_mean_last_3__missing",
+    "expected_goal_involvements_mean_last_3__missing",
+    "bonus_mean_last_3__missing",
+    "ict_index_mean_last_3__missing",
+    "clean_sheets_mean_last_3__missing",
+    "saves_mean_last_3__missing",
+    "goals_conceded_mean_last_3__missing",
+    "appearance_rate_mean_last_3__missing",
+    "sixty_minutes_rate_mean_last_3__missing",
+    "start_rate_mean_last_3__missing",
+    "history_count_last_5__missing",
+    "total_points_mean_last_5__missing",
+    "minutes_mean_last_5__missing",
+    "goals_scored_mean_last_5__missing",
+    "assists_mean_last_5__missing",
+    "expected_goals_mean_last_5__missing",
+    "expected_assists_mean_last_5__missing",
+    "expected_goal_involvements_mean_last_5__missing",
+    "bonus_mean_last_5__missing",
+    "ict_index_mean_last_5__missing",
+    "clean_sheets_mean_last_5__missing",
+    "saves_mean_last_5__missing",
+    "goals_conceded_mean_last_5__missing",
+    "appearance_rate_mean_last_5__missing",
+    "sixty_minutes_rate_mean_last_5__missing",
+    "start_rate_mean_last_5__missing",
+    "fixture_context_known__missing",
+    "fixture_count__missing",
+    "home_fixture_count__missing",
+    "away_fixture_count__missing",
+    "is_blank__missing",
+    "is_double__missing",
+    "opponent_goals_for_mean_last_3__missing",
+    "opponent_goals_against_mean_last_3__missing",
+    "opponent_xg_for_mean_last_3__missing",
+    "opponent_xg_against_mean_last_3__missing",
+    "opponent_history_matches_last_3__missing",
+    "opponent_goals_for_mean_last_5__missing",
+    "opponent_goals_against_mean_last_5__missing",
+    "opponent_xg_for_mean_last_5__missing",
+    "opponent_xg_against_mean_last_5__missing",
+    "opponent_history_matches_last_5__missing",
+    "price_tenths_prior__missing",
+    "ownership_rank_prior__missing",
+    "ownership_rank_change_prior__missing",
+    "transfers_in_rate_prior__missing",
+    "transfers_out_rate_prior__missing",
+    "transfer_net_rate_prior__missing",
+    "market_age_gameweeks__missing"
+  ],
+  "excluded_unobserved_columns": [
+    "price_tenths_snapshot",
+    "form_snapshot",
+    "ownership_percent_snapshot",
+    "availability_pct",
+    "is_penalty_taker",
+    "is_corner_taker",
+    "is_freekick_taker",
+    "position_GKP",
+    "position_DEF",
+    "position_MID",
+    "position_FWD",
+    "status_a",
+    "status_d",
+    "status_i",
+    "status_s",
+    "status_u"
+  ],
+  "selection_metric": "validation_mae",
+  "best_epoch": 6,
+  "epochs_run": 16,
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "training_loss": 1.0061853549467823,
+      "validation_metrics": {
+        "mae": 1.2253590914928136,
+        "rmse": 2.2346647182792707,
+        "mean_error": -0.20300447425277895
+      }
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.9316804887756469,
+      "validation_metrics": {
+        "mae": 1.142117181479117,
+        "rmse": 2.3078252577206846,
+        "mean_error": -0.4796451104745518
+      }
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.9096265680575497,
+      "validation_metrics": {
+        "mae": 1.144654283461151,
+        "rmse": 2.2843567131778086,
+        "mean_error": -0.4237744119442287
+      }
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.8987903223781989,
+      "validation_metrics": {
+        "mae": 1.1880739700834921,
+        "rmse": 2.195286407638771,
+        "mean_error": -0.16824419928745724
+      }
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.9075395449128731,
+      "validation_metrics": {
+        "mae": 1.1510455654722063,
+        "rmse": 2.2685349973070377,
+        "mean_error": -0.38517032697095854
+      }
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.9086111259208154,
+      "validation_metrics": {
+        "mae": 1.137006148662028,
+        "rmse": 2.3414571770156662,
+        "mean_error": -0.5499393290448623
+      }
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.8996460859106962,
+      "validation_metrics": {
+        "mae": 1.1387117715815311,
+        "rmse": 2.2732690002476765,
+        "mean_error": -0.414706860105076
+      }
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.8960203884139893,
+      "validation_metrics": {
+        "mae": 1.1514593595935652,
+        "rmse": 2.244608159923316,
+        "mean_error": -0.3367522517855142
+      }
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.9008016170963409,
+      "validation_metrics": {
+        "mae": 1.1751667037945417,
+        "rmse": 2.2253524873855013,
+        "mean_error": -0.24565462248006975
+      }
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.8794958611644765,
+      "validation_metrics": {
+        "mae": 1.173214927417465,
+        "rmse": 2.2025408879620034,
+        "mean_error": -0.21693597291914213
+      }
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.8968088247788646,
+      "validation_metrics": {
+        "mae": 1.1426098370113396,
+        "rmse": 2.3044379268077573,
+        "mean_error": -0.4643862556230859
+      }
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.8854059740979835,
+      "validation_metrics": {
+        "mae": 1.1449105574979768,
+        "rmse": 2.2843736911753627,
+        "mean_error": -0.43903682999346794
+      }
+    },
+    {
+      "epoch": 13,
+      "training_loss": 0.8829815783828655,
+      "validation_metrics": {
+        "mae": 1.137690848335963,
+        "rmse": 2.287297874024329,
+        "mean_error": -0.4539839329031241
+      }
+    },
+    {
+      "epoch": 14,
+      "training_loss": 0.8844075985686489,
+      "validation_metrics": {
+        "mae": 1.192541394309227,
+        "rmse": 2.2026693813014004,
+        "mean_error": -0.19391061448137387
+      }
+    },
+    {
+      "epoch": 15,
+      "training_loss": 0.8792109314096037,
+      "validation_metrics": {
+        "mae": 1.215760515474224,
+        "rmse": 2.193123074238387,
+        "mean_error": -0.08488405456311424
+      }
+    },
+    {
+      "epoch": 16,
+      "training_loss": 0.871593052558798,
+      "validation_metrics": {
+        "mae": 1.1434487216683367,
+        "rmse": 2.288227288559069,
+        "mean_error": -0.4465133395492578
+      }
+    }
+  ],
+  "baseline_feature_column": "total_points_mean_last_5",
+  "baseline_fallback_points": 1.4555555555555555,
+  "ranking_top_k": 10,
+  "validation": {
+    "rows": 659,
+    "nn": {
+      "mae": 1.137006148662028,
+      "rmse": 2.3414571770156662,
+      "mean_error": -0.5499393290448623
+    },
+    "baseline": {
+      "mae": 1.2786208059349182,
+      "rmse": 2.3358913245344315,
+      "mean_error": 0.03279379531276343
+    },
+    "per_gameweek": [
+      {
+        "gameweek": 4,
+        "rows": 659,
+        "nn": {
+          "mae": 1.137006148662028,
+          "rmse": 2.3414571770156662,
+          "mean_error": -0.5499393290448623
+        },
+        "baseline": {
+          "mae": 1.2786208059349182,
+          "rmse": 2.3358913245344315,
+          "mean_error": 0.03279379531276343
+        },
+        "ranking": {
+          "nn": {
+            "top_k": 10,
+            "selected_element_ids": [
+              411,
+              426,
+              154,
+              12,
+              236,
+              15,
+              379,
+              572,
+              367,
+              4
+            ],
+            "actual_points_total": 43.0,
+            "actual_points_mean": 4.3,
+            "optimal_actual_points_total": 135.0,
+            "points_shortfall": 92.0,
+            "overlap_with_actual_top_k": 0,
+            "precision_at_k": 0.0,
+            "spearman_rank_correlation": 0.6839291934307439
+          },
+          "baseline": {
+            "top_k": 10,
+            "selected_element_ids": [
+              367,
+              426,
+              572,
+              279,
+              399,
+              15,
+              69,
+              411,
+              586,
+              277
+            ],
+            "actual_points_total": 26.0,
+            "actual_points_mean": 2.6,
+            "optimal_actual_points_total": 135.0,
+            "points_shortfall": 109.0,
+            "overlap_with_actual_top_k": 0,
+            "precision_at_k": 0.0,
+            "spearman_rank_correlation": 0.6641020583871432
+          }
+        }
+      }
+    ]
+  },
+  "test": {
+    "rows": 667,
+    "nn": {
+      "mae": 1.1385366603329978,
+      "rmse": 2.3223496419835876,
+      "mean_error": -0.5349234261813908
+    },
+    "baseline": {
+      "mae": 1.2393469931700816,
+      "rmse": 2.3344117313157757,
+      "mean_error": -0.02726969848409129
+    },
+    "per_gameweek": [
+      {
+        "gameweek": 5,
+        "rows": 667,
+        "nn": {
+          "mae": 1.1385366603329978,
+          "rmse": 2.3223496419835876,
+          "mean_error": -0.5349234261813908
+        },
+        "baseline": {
+          "mae": 1.2393469931700816,
+          "rmse": 2.3344117313157757,
+          "mean_error": -0.02726969848409129
+        },
+        "ranking": {
+          "nn": {
+            "top_k": 10,
+            "selected_element_ids": [
+              411,
+              426,
+              480,
+              154,
+              4,
+              12,
+              379,
+              572,
+              1,
+              427
+            ],
+            "actual_points_total": 32.0,
+            "actual_points_mean": 3.2,
+            "optimal_actual_points_total": 140.0,
+            "points_shortfall": 108.0,
+            "overlap_with_actual_top_k": 0,
+            "precision_at_k": 0.0,
+            "spearman_rank_correlation": 0.6944494726377871
+          },
+          "baseline": {
+            "top_k": 10,
+            "selected_element_ids": [
+              330,
+              124,
+              165,
+              391,
+              411,
+              115,
+              12,
+              94,
+              1,
+              68
+            ],
+            "actual_points_total": 49.0,
+            "actual_points_mean": 4.9,
+            "optimal_actual_points_total": 140.0,
+            "points_shortfall": 91.0,
+            "overlap_with_actual_top_k": 1,
+            "precision_at_k": 0.1,
+            "spearman_rank_correlation": 0.6842665877336989
+          }
+        }
+      }
+    ]
+  },
+  "test_comparison": {
+    "beats_baseline_mae": true,
+    "beats_baseline_rmse": true
+  },
+  "historical_schedule_assumption": "Saved fixture assignment is assumed to match its pre-deadline schedule; past schedules are not archived.",
+  "limitations": [
+    "One small historical split and one seed; not evidence of stable future performance.",
+    "GW5 is excluded from fitting and epoch selection in this run, but these weeks were already available during project development.",
+    "Repeated changes based on test results turn this period into development data; reserve later weeks for final evaluation.",
+    "Past-only raw features may use outcomes from earlier validation/test weeks for subsequent one-week predictions.",
+    "Top-k ranking ignores squad positions, prices, and club constraints; it is not a squad recommendation."
+  ],
+  "checkpoint": "/Users/arnavjyotshi/fpl-ai/outputs/backtest/model.pt",
+  "chart_files": [
+    "/Users/arnavjyotshi/fpl-ai/outputs/backtest/predicted_vs_actual.png",
+    "/Users/arnavjyotshi/fpl-ai/outputs/backtest/learning_curve.png"
+  ]
+}

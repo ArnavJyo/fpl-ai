@@ -1,0 +1,8 @@
+requests==2.32.3
+pandas==2.2.2
+pyarrow==17.0.0
+PyYAML==6.0.2
+scikit-learn==1.5.1
+torch==2.4.1
+matplotlib==3.9.2
+PuLP==2.8.0

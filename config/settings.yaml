@@ -1,0 +1,123 @@
+# FPL AI pipeline configuration
+
+fpl_api:
+  base_url: "https://fantasy.premierleague.com/api"
+  bootstrap_static: "/bootstrap-static/"
+  fixtures: "/fixtures/"
+  event_live: "/event/{event_id}/live/"
+  element_summary: "/element-summary/{element_id}/"
+  entry: "/entry/{manager_id}/"
+  entry_picks: "/entry/{manager_id}/event/{event_id}/picks/"
+
+paths:
+  raw_data_dir: "data/raw"
+  history_file: "data/history.parquet"
+  players_file: "data/players.parquet"
+  teams_file: "data/teams.parquet"
+  fixtures_file: "data/fixtures.parquet"
+  gw_stats_file: "data/gw_stats.parquet"
+  spine_file: "data/spine.parquet"
+  prices_file: "data/prices.parquet"
+  features_file: "data/features.parquet"
+  rolling_features_file: "data/rolling_features.parquet"
+  prediction_features_file: "data/prediction_features.parquet"
+  training_matrix_file: "data/training_matrix.parquet"
+  prediction_matrix_file: "data/prediction_matrix.parquet"
+  player_snapshots_file: "data/player_snapshots.parquet"
+  feature_preprocessor_file: "data/feature_preprocessor.json"
+  feature_manifest_file: "data/feature_manifest.json"
+  feature_folds_dir: "data/feature_folds"
+  model_dir: "models"
+  outputs_dir: "outputs"
+  predictions_file: "outputs/predictions.json"
+  baseline_metrics_file: "outputs/baseline_metrics.json"
+  baseline_validation_file: "outputs/baseline_validation.parquet"
+  model_metrics_file: "outputs/model_metrics.json"
+  model_validation_file: "outputs/model_validation.parquet"
+  latest_model_file: "models/latest.json"
+  backtest_dir: "outputs/backtest"
+  squad_file: "outputs/squad.json"
+  dashboard_dir: "outputs/dashboard"
+  manager_state_file: "data/manager_state.json"
+  manager_context_file: "outputs/manager_context.json"
+  pipeline_report_file: "outputs/pipeline_report.json"
+
+# Exact transfer mode uses your supplied bank and selling prices. Without that
+# state, this budget applies only to an unrestricted initial comparison squad.
+# All money is in TENTHS of a million (1000 = £100.0m), matching the API,
+# so the optimizer works in exact integers and never trips on float rounding.
+squad_rules:
+  budget_tenths: 1000         # = £100.0m
+  squad_size: 15
+  positions:
+    GKP: 2
+    DEF: 5
+    MID: 5
+    FWD: 3
+  max_players_per_club: 3
+  starting_xi_size: 11
+  min_defenders: 3
+  max_defenders: 5
+  min_midfielders: 2
+  max_midfielders: 5
+  min_forwards: 1
+  max_forwards: 3
+  transfer_hit_cost: 4.0
+  # Max players we are willing to change in a single run.
+  max_transfers: 4
+  solver_time_limit_seconds: 60
+  exclude_unavailable_new_signings: true
+
+features:
+  rolling_windows: [3, 5]
+  rolling_stats:
+    - total_points
+    - minutes
+    - goals_scored
+    - assists
+    - expected_goals
+    - expected_assists
+    - expected_goal_involvements
+    - bonus
+    - ict_index
+    - clean_sheets
+    - saves
+    - goals_conceded
+  categorical:
+    - position
+  target: total_points
+
+model:
+  type: mlp
+  hidden_layers: [128, 64, 32]
+  dropout: 0.3
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 100
+  early_stopping_patience: 10
+  loss: huber
+  huber_delta: 1.0
+  weight_decay: 0.0001
+  seed: 42
+  num_threads: 1
+  predict_horizon_gws: 1
+  min_gameweeks_for_training: 6
+  validation_window_gws: 4
+
+# Separate exploratory assessment; normal model training still uses 6 + 4 GWs.
+backtest:
+  train_gameweeks: [1, 2, 3]
+  validation_gameweeks: [4]
+  test_gameweeks: [5]
+  ranking_top_k: 10
+
+# Uses backtest train/validation weeks; GW5 is not scored or used for selection.
+loss_comparison:
+  losses: [huber, mse]
+  seeds: [7, 42, 123]
+  output_dir: outputs/loss_comparison
+
+# Your FPL team. Set team_id so the optimizer works on your actual squad.
+# Numeric entry ID from the team URL, not the account UUID.
+manager:
+  team_id: 10123827

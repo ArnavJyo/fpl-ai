@@ -1,0 +1,3354 @@
+{
+  "season_id": "2026-08-21T17:30:00Z",
+  "gameweek": 6,
+  "model_checkpoint": "/Users/arnavjyotshi/fpl-ai/models/model_gw5_experimental.pt",
+  "training_status": "experimental",
+  "trained_gameweeks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "validation_metrics": null,
+  "baseline_comparison": null,
+  "predictions": [
+    {
+      "element_id": 1,
+      "gameweek": 6,
+      "predicted_points": 7.241419792175293
+    },
+    {
+      "element_id": 2,
+      "gameweek": 6,
+      "predicted_points": 0.14963361620903015
+    },
+    {
+      "element_id": 3,
+      "gameweek": 6,
+      "predicted_points": 0.1306755244731903
+    },
+    {
+      "element_id": 4,
+      "gameweek": 6,
+      "predicted_points": 9.096000671386719
+    },
+    {
+      "element_id": 5,
+      "gameweek": 6,
+      "predicted_points": 1.5853163003921509
+    },
+    {
+      "element_id": 6,
+      "gameweek": 6,
+      "predicted_points": 0.2382369041442871
+    },
+    {
+      "element_id": 7,
+      "gameweek": 6,
+      "predicted_points": 1.1883171796798706
+    },
+    {
+      "element_id": 8,
+      "gameweek": 6,
+      "predicted_points": 3.805309772491455
+    },
+    {
+      "element_id": 9,
+      "gameweek": 6,
+      "predicted_points": 0.3093414604663849
+    },
+    {
+      "element_id": 10,
+      "gameweek": 6,
+      "predicted_points": 0.7128510475158691
+    },
+    {
+      "element_id": 11,
+      "gameweek": 6,
+      "predicted_points": 0.16294248402118683
+    },
+    {
+      "element_id": 12,
+      "gameweek": 6,
+      "predicted_points": 3.4896228313446045
+    },
+    {
+      "element_id": 13,
+      "gameweek": 6,
+      "predicted_points": 7.462496757507324
+    },
+    {
+      "element_id": 14,
+      "gameweek": 6,
+      "predicted_points": 0.4522858262062073
+    },
+    {
+      "element_id": 15,
+      "gameweek": 6,
+      "predicted_points": 2.706632375717163
+    },
+    {
+      "element_id": 16,
+      "gameweek": 6,
+      "predicted_points": 0.3013381361961365
+    },
+    {
+      "element_id": 17,
+      "gameweek": 6,
+      "predicted_points": 0.7288796305656433
+    },
+    {
+      "element_id": 18,
+      "gameweek": 6,
+      "predicted_points": 0.19631914794445038
+    },
+    {
+      "element_id": 19,
+      "gameweek": 6,
+      "predicted_points": 0.8646550178527832
+    },
+    {
+      "element_id": 20,
+      "gameweek": 6,
+      "predicted_points": 0.22771382331848145
+    },
+    {
+      "element_id": 21,
+      "gameweek": 6,
+      "predicted_points": 0.0878227949142456
+    },
+    {
+      "element_id": 22,
+      "gameweek": 6,
+      "predicted_points": 0.11144742369651794
+    },
+    {
+      "element_id": 23,
+      "gameweek": 6,
+      "predicted_points": 0.1274353563785553
+    },
+    {
+      "element_id": 24,
+      "gameweek": 6,
+      "predicted_points": 0.12596368789672852
+    },
+    {
+      "element_id": 25,
+      "gameweek": 6,
+      "predicted_points": 0.4768974781036377
+    },
+    {
+      "element_id": 26,
+      "gameweek": 6,
+      "predicted_points": 3.456836223602295
+    },
+    {
+      "element_id": 27,
+      "gameweek": 6,
+      "predicted_points": 0.22330328822135925
+    },
+    {
+      "element_id": 28,
+      "gameweek": 6,
+      "predicted_points": 3.028125524520874
+    },
+    {
+      "element_id": 29,
+      "gameweek": 6,
+      "predicted_points": 0.1496225744485855
+    },
+    {
+      "element_id": 30,
+      "gameweek": 6,
+      "predicted_points": 0.10939446091651917
+    },
+    {
+      "element_id": 31,
+      "gameweek": 6,
+      "predicted_points": 4.784509181976318
+    },
+    {
+      "element_id": 32,
+      "gameweek": 6,
+      "predicted_points": 0.9573986530303955
+    },
+    {
+      "element_id": 33,
+      "gameweek": 6,
+      "predicted_points": 7.211884498596191
+    },
+    {
+      "element_id": 34,
+      "gameweek": 6,
+      "predicted_points": 0.1945582777261734
+    },
+    {
+      "element_id": 35,
+      "gameweek": 6,
+      "predicted_points": 0.1670607179403305
+    },
+    {
+      "element_id": 36,
+      "gameweek": 6,
+      "predicted_points": 0.48106810450553894
+    },
+    {
+      "element_id": 37,
+      "gameweek": 6,
+      "predicted_points": 4.895295143127441
+    },
+    {
+      "element_id": 38,
+      "gameweek": 6,
+      "predicted_points": 0.06380307674407959
+    },
+    {
+      "element_id": 39,
+      "gameweek": 6,
+      "predicted_points": 0.03656947612762451
+    },
+    {
+      "element_id": 40,
+      "gameweek": 6,
+      "predicted_points": 3.110569953918457
+    },
+    {
+      "element_id": 41,
+      "gameweek": 6,
+      "predicted_points": 4.4459381103515625
+    },
+    {
+      "element_id": 42,
+      "gameweek": 6,
+      "predicted_points": 0.19081762433052063
+    },
+    {
+      "element_id": 43,
+      "gameweek": 6,
+      "predicted_points": 3.535428285598755
+    },
+    {
+      "element_id": 44,
+      "gameweek": 6,
+      "predicted_points": 0.11308285593986511
+    },
+    {
+      "element_id": 45,
+      "gameweek": 6,
+      "predicted_points": 7.458367347717285
+    },
+    {
+      "element_id": 46,
+      "gameweek": 6,
+      "predicted_points": 4.680759429931641
+    },
+    {
+      "element_id": 47,
+      "gameweek": 6,
+      "predicted_points": 4.584762096405029
+    },
+    {
+      "element_id": 48,
+      "gameweek": 6,
+      "predicted_points": 0.11837910115718842
+    },
+    {
+      "element_id": 49,
+      "gameweek": 6,
+      "predicted_points": 0.10521745681762695
+    },
+    {
+      "element_id": 50,
+      "gameweek": 6,
+      "predicted_points": 0.11939080059528351
+    },
+    {
+      "element_id": 51,
+      "gameweek": 6,
+      "predicted_points": 1.073276162147522
+    },
+    {
+      "element_id": 52,
+      "gameweek": 6,
+      "predicted_points": 1.3357510566711426
+    },
+    {
+      "element_id": 53,
+      "gameweek": 6,
+      "predicted_points": 2.8932392597198486
+    },
+    {
+      "element_id": 54,
+      "gameweek": 6,
+      "predicted_points": 1.2501306533813477
+    },
+    {
+      "element_id": 55,
+      "gameweek": 6,
+      "predicted_points": 0.3026540279388428
+    },
+    {
+      "element_id": 56,
+      "gameweek": 6,
+      "predicted_points": 0.9524613618850708
+    },
+    {
+      "element_id": 57,
+      "gameweek": 6,
+      "predicted_points": 2.689635753631592
+    },
+    {
+      "element_id": 58,
+      "gameweek": 6,
+      "predicted_points": 0.07978826761245728
+    },
+    {
+      "element_id": 59,
+      "gameweek": 6,
+      "predicted_points": 0.044805705547332764
+    },
+    {
+      "element_id": 60,
+      "gameweek": 6,
+      "predicted_points": 2.5944149494171143
+    },
+    {
+      "element_id": 61,
+      "gameweek": 6,
+      "predicted_points": 3.025177478790283
+    },
+    {
+      "element_id": 62,
+      "gameweek": 6,
+      "predicted_points": 0.17734463512897491
+    },
+    {
+      "element_id": 63,
+      "gameweek": 6,
+      "predicted_points": 0.13371485471725464
+    },
+    {
+      "element_id": 64,
+      "gameweek": 6,
+      "predicted_points": 0.43796199560165405
+    },
+    {
+      "element_id": 65,
+      "gameweek": 6,
+      "predicted_points": 0.07508954405784607
+    },
+    {
+      "element_id": 66,
+      "gameweek": 6,
+      "predicted_points": 0.05960407853126526
+    },
+    {
+      "element_id": 67,
+      "gameweek": 6,
+      "predicted_points": 2.291853189468384
+    },
+    {
+      "element_id": 68,
+      "gameweek": 6,
+      "predicted_points": 4.754190921783447
+    },
+    {
+      "element_id": 69,
+      "gameweek": 6,
+      "predicted_points": 4.203113079071045
+    },
+    {
+      "element_id": 70,
+      "gameweek": 6,
+      "predicted_points": 0.5675181746482849
+    },
+    {
+      "element_id": 71,
+      "gameweek": 6,
+      "predicted_points": 0.3533515930175781
+    },
+    {
+      "element_id": 72,
+      "gameweek": 6,
+      "predicted_points": 0.520592451095581
+    },
+    {
+      "element_id": 73,
+      "gameweek": 6,
+      "predicted_points": 1.2867858409881592
+    },
+    {
+      "element_id": 74,
+      "gameweek": 6,
+      "predicted_points": 0.48974689841270447
+    },
+    {
+      "element_id": 75,
+      "gameweek": 6,
+      "predicted_points": 1.4436532258987427
+    },
+    {
+      "element_id": 76,
+      "gameweek": 6,
+      "predicted_points": 0.25698691606521606
+    },
+    {
+      "element_id": 77,
+      "gameweek": 6,
+      "predicted_points": 0.11414575576782227
+    },
+    {
+      "element_id": 78,
+      "gameweek": 6,
+      "predicted_points": 0.515683114528656
+    },
+    {
+      "element_id": 79,
+      "gameweek": 6,
+      "predicted_points": 1.8467848300933838
+    },
+    {
+      "element_id": 80,
+      "gameweek": 6,
+      "predicted_points": 0.19395773112773895
+    },
+    {
+      "element_id": 81,
+      "gameweek": 6,
+      "predicted_points": 0.49191564321517944
+    },
+    {
+      "element_id": 82,
+      "gameweek": 6,
+      "predicted_points": 5.356586933135986
+    },
+    {
+      "element_id": 83,
+      "gameweek": 6,
+      "predicted_points": 0.08451417088508606
+    },
+    {
+      "element_id": 84,
+      "gameweek": 6,
+      "predicted_points": 0.2510238587856293
+    },
+    {
+      "element_id": 85,
+      "gameweek": 6,
+      "predicted_points": 0.11625012755393982
+    },
+    {
+      "element_id": 86,
+      "gameweek": 6,
+      "predicted_points": 1.6203309297561646
+    },
+    {
+      "element_id": 87,
+      "gameweek": 6,
+      "predicted_points": 3.467287540435791
+    },
+    {
+      "element_id": 88,
+      "gameweek": 6,
+      "predicted_points": 0.7068760395050049
+    },
+    {
+      "element_id": 89,
+      "gameweek": 6,
+      "predicted_points": 0.12027119100093842
+    },
+    {
+      "element_id": 90,
+      "gameweek": 6,
+      "predicted_points": 2.7003064155578613
+    },
+    {
+      "element_id": 91,
+      "gameweek": 6,
+      "predicted_points": 10.278650283813477
+    },
+    {
+      "element_id": 92,
+      "gameweek": 6,
+      "predicted_points": 0.06991198658943176
+    },
+    {
+      "element_id": 93,
+      "gameweek": 6,
+      "predicted_points": 5.128050804138184
+    },
+    {
+      "element_id": 94,
+      "gameweek": 6,
+      "predicted_points": 4.110883712768555
+    },
+    {
+      "element_id": 95,
+      "gameweek": 6,
+      "predicted_points": 0.8542265892028809
+    },
+    {
+      "element_id": 96,
+      "gameweek": 6,
+      "predicted_points": 1.7432345151901245
+    },
+    {
+      "element_id": 97,
+      "gameweek": 6,
+      "predicted_points": 0.20090636610984802
+    },
+    {
+      "element_id": 98,
+      "gameweek": 6,
+      "predicted_points": 4.749703407287598
+    },
+    {
+      "element_id": 99,
+      "gameweek": 6,
+      "predicted_points": 0.09033605456352234
+    },
+    {
+      "element_id": 100,
+      "gameweek": 6,
+      "predicted_points": 0.14765247702598572
+    },
+    {
+      "element_id": 101,
+      "gameweek": 6,
+      "predicted_points": 0.24030348658561707
+    },
+    {
+      "element_id": 102,
+      "gameweek": 6,
+      "predicted_points": 2.41983962059021
+    },
+    {
+      "element_id": 103,
+      "gameweek": 6,
+      "predicted_points": 0.06340065598487854
+    },
+    {
+      "element_id": 104,
+      "gameweek": 6,
+      "predicted_points": 5.671582221984863
+    },
+    {
+      "element_id": 105,
+      "gameweek": 6,
+      "predicted_points": 1.933422327041626
+    },
+    {
+      "element_id": 106,
+      "gameweek": 6,
+      "predicted_points": 2.166836977005005
+    },
+    {
+      "element_id": 107,
+      "gameweek": 6,
+      "predicted_points": 0.08413445949554443
+    },
+    {
+      "element_id": 108,
+      "gameweek": 6,
+      "predicted_points": 0.3573383092880249
+    },
+    {
+      "element_id": 109,
+      "gameweek": 6,
+      "predicted_points": 7.007943153381348
+    },
+    {
+      "element_id": 110,
+      "gameweek": 6,
+      "predicted_points": 7.244283676147461
+    },
+    {
+      "element_id": 111,
+      "gameweek": 6,
+      "predicted_points": 0.06317716836929321
+    },
+    {
+      "element_id": 112,
+      "gameweek": 6,
+      "predicted_points": 3.6194229125976562
+    },
+    {
+      "element_id": 113,
+      "gameweek": 6,
+      "predicted_points": 3.0302979946136475
+    },
+    {
+      "element_id": 114,
+      "gameweek": 6,
+      "predicted_points": 2.7163028717041016
+    },
+    {
+      "element_id": 115,
+      "gameweek": 6,
+      "predicted_points": 6.211160659790039
+    },
+    {
+      "element_id": 116,
+      "gameweek": 6,
+      "predicted_points": 3.584301471710205
+    },
+    {
+      "element_id": 117,
+      "gameweek": 6,
+      "predicted_points": 0.04563143849372864
+    },
+    {
+      "element_id": 118,
+      "gameweek": 6,
+      "predicted_points": 0.0236092209815979
+    },
+    {
+      "element_id": 119,
+      "gameweek": 6,
+      "predicted_points": 0.45331501960754395
+    },
+    {
+      "element_id": 120,
+      "gameweek": 6,
+      "predicted_points": 0.16786402463912964
+    },
+    {
+      "element_id": 121,
+      "gameweek": 6,
+      "predicted_points": 0.17311173677444458
+    },
+    {
+      "element_id": 122,
+      "gameweek": 6,
+      "predicted_points": 0.163973867893219
+    },
+    {
+      "element_id": 123,
+      "gameweek": 6,
+      "predicted_points": 0.14283870160579681
+    },
+    {
+      "element_id": 124,
+      "gameweek": 6,
+      "predicted_points": 3.855710983276367
+    },
+    {
+      "element_id": 125,
+      "gameweek": 6,
+      "predicted_points": 0.22306698560714722
+    },
+    {
+      "element_id": 126,
+      "gameweek": 6,
+      "predicted_points": 0.3032437562942505
+    },
+    {
+      "element_id": 127,
+      "gameweek": 6,
+      "predicted_points": 3.816565990447998
+    },
+    {
+      "element_id": 128,
+      "gameweek": 6,
+      "predicted_points": 0.07499083876609802
+    },
+    {
+      "element_id": 129,
+      "gameweek": 6,
+      "predicted_points": 1.491624116897583
+    },
+    {
+      "element_id": 130,
+      "gameweek": 6,
+      "predicted_points": 0.15264442563056946
+    },
+    {
+      "element_id": 131,
+      "gameweek": 6,
+      "predicted_points": 0.11189115047454834
+    },
+    {
+      "element_id": 132,
+      "gameweek": 6,
+      "predicted_points": 0.03835117816925049
+    },
+    {
+      "element_id": 133,
+      "gameweek": 6,
+      "predicted_points": 0.07162699103355408
+    },
+    {
+      "element_id": 134,
+      "gameweek": 6,
+      "predicted_points": 0.07149821519851685
+    },
+    {
+      "element_id": 135,
+      "gameweek": 6,
+      "predicted_points": 0.0626356303691864
+    },
+    {
+      "element_id": 136,
+      "gameweek": 6,
+      "predicted_points": 3.437851905822754
+    },
+    {
+      "element_id": 137,
+      "gameweek": 6,
+      "predicted_points": 0.1219940334558487
+    },
+    {
+      "element_id": 138,
+      "gameweek": 6,
+      "predicted_points": 2.9477992057800293
+    },
+    {
+      "element_id": 139,
+      "gameweek": 6,
+      "predicted_points": 0.08915519714355469
+    },
+    {
+      "element_id": 140,
+      "gameweek": 6,
+      "predicted_points": 0.15810458362102509
+    },
+    {
+      "element_id": 141,
+      "gameweek": 6,
+      "predicted_points": 0.1421629786491394
+    },
+    {
+      "element_id": 142,
+      "gameweek": 6,
+      "predicted_points": 2.8152475357055664
+    },
+    {
+      "element_id": 143,
+      "gameweek": 6,
+      "predicted_points": 0.1899780035018921
+    },
+    {
+      "element_id": 144,
+      "gameweek": 6,
+      "predicted_points": 2.6352345943450928
+    },
+    {
+      "element_id": 145,
+      "gameweek": 6,
+      "predicted_points": 5.004734039306641
+    },
+    {
+      "element_id": 146,
+      "gameweek": 6,
+      "predicted_points": 0.07231628894805908
+    },
+    {
+      "element_id": 147,
+      "gameweek": 6,
+      "predicted_points": 0.18009188771247864
+    },
+    {
+      "element_id": 148,
+      "gameweek": 6,
+      "predicted_points": 0.3783271908760071
+    },
+    {
+      "element_id": 149,
+      "gameweek": 6,
+      "predicted_points": 2.436098098754883
+    },
+    {
+      "element_id": 150,
+      "gameweek": 6,
+      "predicted_points": 0.06340113282203674
+    },
+    {
+      "element_id": 151,
+      "gameweek": 6,
+      "predicted_points": 2.841704845428467
+    },
+    {
+      "element_id": 152,
+      "gameweek": 6,
+      "predicted_points": 0.13428297638893127
+    },
+    {
+      "element_id": 153,
+      "gameweek": 6,
+      "predicted_points": 0.1299663931131363
+    },
+    {
+      "element_id": 154,
+      "gameweek": 6,
+      "predicted_points": 5.67842960357666
+    },
+    {
+      "element_id": 155,
+      "gameweek": 6,
+      "predicted_points": 2.3468668460845947
+    },
+    {
+      "element_id": 156,
+      "gameweek": 6,
+      "predicted_points": 4.779417514801025
+    },
+    {
+      "element_id": 157,
+      "gameweek": 6,
+      "predicted_points": 0.6682604551315308
+    },
+    {
+      "element_id": 158,
+      "gameweek": 6,
+      "predicted_points": 0.1894894689321518
+    },
+    {
+      "element_id": 159,
+      "gameweek": 6,
+      "predicted_points": 0.19994467496871948
+    },
+    {
+      "element_id": 160,
+      "gameweek": 6,
+      "predicted_points": 0.3296903967857361
+    },
+    {
+      "element_id": 161,
+      "gameweek": 6,
+      "predicted_points": 1.1595572233200073
+    },
+    {
+      "element_id": 162,
+      "gameweek": 6,
+      "predicted_points": 0.2831985354423523
+    },
+    {
+      "element_id": 163,
+      "gameweek": 6,
+      "predicted_points": 0.05365702509880066
+    },
+    {
+      "element_id": 164,
+      "gameweek": 6,
+      "predicted_points": 0.2212788164615631
+    },
+    {
+      "element_id": 165,
+      "gameweek": 6,
+      "predicted_points": 1.9863654375076294
+    },
+    {
+      "element_id": 166,
+      "gameweek": 6,
+      "predicted_points": 1.6191973686218262
+    },
+    {
+      "element_id": 167,
+      "gameweek": 6,
+      "predicted_points": 3.783839225769043
+    },
+    {
+      "element_id": 168,
+      "gameweek": 6,
+      "predicted_points": 0.13019347190856934
+    },
+    {
+      "element_id": 169,
+      "gameweek": 6,
+      "predicted_points": 0.1302926242351532
+    },
+    {
+      "element_id": 170,
+      "gameweek": 6,
+      "predicted_points": 0.11225008964538574
+    },
+    {
+      "element_id": 171,
+      "gameweek": 6,
+      "predicted_points": 0.13125671446323395
+    },
+    {
+      "element_id": 172,
+      "gameweek": 6,
+      "predicted_points": 0.20287051796913147
+    },
+    {
+      "element_id": 173,
+      "gameweek": 6,
+      "predicted_points": 9.689522743225098
+    },
+    {
+      "element_id": 174,
+      "gameweek": 6,
+      "predicted_points": 0.08738356828689575
+    },
+    {
+      "element_id": 175,
+      "gameweek": 6,
+      "predicted_points": 6.369787216186523
+    },
+    {
+      "element_id": 176,
+      "gameweek": 6,
+      "predicted_points": 8.055981636047363
+    },
+    {
+      "element_id": 177,
+      "gameweek": 6,
+      "predicted_points": 0.0739264190196991
+    },
+    {
+      "element_id": 178,
+      "gameweek": 6,
+      "predicted_points": 0.1103924810886383
+    },
+    {
+      "element_id": 179,
+      "gameweek": 6,
+      "predicted_points": 0.17682135105133057
+    },
+    {
+      "element_id": 180,
+      "gameweek": 6,
+      "predicted_points": 0.10940822958946228
+    },
+    {
+      "element_id": 181,
+      "gameweek": 6,
+      "predicted_points": 0.073394775390625
+    },
+    {
+      "element_id": 182,
+      "gameweek": 6,
+      "predicted_points": 4.2994279861450195
+    },
+    {
+      "element_id": 183,
+      "gameweek": 6,
+      "predicted_points": 4.654433250427246
+    },
+    {
+      "element_id": 184,
+      "gameweek": 6,
+      "predicted_points": 6.649178504943848
+    },
+    {
+      "element_id": 185,
+      "gameweek": 6,
+      "predicted_points": 0.20387499034404755
+    },
+    {
+      "element_id": 186,
+      "gameweek": 6,
+      "predicted_points": 6.407933235168457
+    },
+    {
+      "element_id": 187,
+      "gameweek": 6,
+      "predicted_points": 0.058203309774398804
+    },
+    {
+      "element_id": 188,
+      "gameweek": 6,
+      "predicted_points": 0.5942216515541077
+    },
+    {
+      "element_id": 189,
+      "gameweek": 6,
+      "predicted_points": 0.15638022124767303
+    },
+    {
+      "element_id": 190,
+      "gameweek": 6,
+      "predicted_points": 2.229888677597046
+    },
+    {
+      "element_id": 191,
+      "gameweek": 6,
+      "predicted_points": 0.11654072999954224
+    },
+    {
+      "element_id": 192,
+      "gameweek": 6,
+      "predicted_points": 0.14109835028648376
+    },
+    {
+      "element_id": 193,
+      "gameweek": 6,
+      "predicted_points": 0.21018186211585999
+    },
+    {
+      "element_id": 194,
+      "gameweek": 6,
+      "predicted_points": 10.316831588745117
+    },
+    {
+      "element_id": 195,
+      "gameweek": 6,
+      "predicted_points": 1.0030659437179565
+    },
+    {
+      "element_id": 196,
+      "gameweek": 6,
+      "predicted_points": 0.1548510640859604
+    },
+    {
+      "element_id": 197,
+      "gameweek": 6,
+      "predicted_points": 0.1475871503353119
+    },
+    {
+      "element_id": 198,
+      "gameweek": 6,
+      "predicted_points": 0.3184577226638794
+    },
+    {
+      "element_id": 199,
+      "gameweek": 6,
+      "predicted_points": 1.2012239694595337
+    },
+    {
+      "element_id": 200,
+      "gameweek": 6,
+      "predicted_points": 3.387113094329834
+    },
+    {
+      "element_id": 201,
+      "gameweek": 6,
+      "predicted_points": 2.679635763168335
+    },
+    {
+      "element_id": 202,
+      "gameweek": 6,
+      "predicted_points": 2.476443290710449
+    },
+    {
+      "element_id": 203,
+      "gameweek": 6,
+      "predicted_points": 1.0492515563964844
+    },
+    {
+      "element_id": 204,
+      "gameweek": 6,
+      "predicted_points": 4.080750942230225
+    },
+    {
+      "element_id": 205,
+      "gameweek": 6,
+      "predicted_points": 0.038250893354415894
+    },
+    {
+      "element_id": 206,
+      "gameweek": 6,
+      "predicted_points": 0.06427329778671265
+    },
+    {
+      "element_id": 207,
+      "gameweek": 6,
+      "predicted_points": 0.1592765599489212
+    },
+    {
+      "element_id": 208,
+      "gameweek": 6,
+      "predicted_points": 0.3074541687965393
+    },
+    {
+      "element_id": 209,
+      "gameweek": 6,
+      "predicted_points": 1.7962307929992676
+    },
+    {
+      "element_id": 210,
+      "gameweek": 6,
+      "predicted_points": 3.7287745475769043
+    },
+    {
+      "element_id": 211,
+      "gameweek": 6,
+      "predicted_points": 1.2692897319793701
+    },
+    {
+      "element_id": 212,
+      "gameweek": 6,
+      "predicted_points": 0.3579656481742859
+    },
+    {
+      "element_id": 213,
+      "gameweek": 6,
+      "predicted_points": 0.33882105350494385
+    },
+    {
+      "element_id": 214,
+      "gameweek": 6,
+      "predicted_points": 5.232353210449219
+    },
+    {
+      "element_id": 215,
+      "gameweek": 6,
+      "predicted_points": 0.04964432120323181
+    },
+    {
+      "element_id": 216,
+      "gameweek": 6,
+      "predicted_points": 0.06217941641807556
+    },
+    {
+      "element_id": 217,
+      "gameweek": 6,
+      "predicted_points": -0.03803268074989319
+    },
+    {
+      "element_id": 218,
+      "gameweek": 6,
+      "predicted_points": 0.09703165292739868
+    },
+    {
+      "element_id": 219,
+      "gameweek": 6,
+      "predicted_points": 0.028456121683120728
+    },
+    {
+      "element_id": 220,
+      "gameweek": 6,
+      "predicted_points": 0.06546804308891296
+    },
+    {
+      "element_id": 221,
+      "gameweek": 6,
+      "predicted_points": 0.06403204798698425
+    },
+    {
+      "element_id": 222,
+      "gameweek": 6,
+      "predicted_points": 3.496155261993408
+    },
+    {
+      "element_id": 223,
+      "gameweek": 6,
+      "predicted_points": 0.3023645281791687
+    },
+    {
+      "element_id": 224,
+      "gameweek": 6,
+      "predicted_points": 0.3749341666698456
+    },
+    {
+      "element_id": 225,
+      "gameweek": 6,
+      "predicted_points": 0.12190736830234528
+    },
+    {
+      "element_id": 226,
+      "gameweek": 6,
+      "predicted_points": 6.85814094543457
+    },
+    {
+      "element_id": 227,
+      "gameweek": 6,
+      "predicted_points": 0.12222221493721008
+    },
+    {
+      "element_id": 228,
+      "gameweek": 6,
+      "predicted_points": 0.07656022906303406
+    },
+    {
+      "element_id": 229,
+      "gameweek": 6,
+      "predicted_points": 5.663647174835205
+    },
+    {
+      "element_id": 230,
+      "gameweek": 6,
+      "predicted_points": 4.753383159637451
+    },
+    {
+      "element_id": 231,
+      "gameweek": 6,
+      "predicted_points": 0.14246684312820435
+    },
+    {
+      "element_id": 232,
+      "gameweek": 6,
+      "predicted_points": 0.6552540063858032
+    },
+    {
+      "element_id": 233,
+      "gameweek": 6,
+      "predicted_points": 1.5066139698028564
+    },
+    {
+      "element_id": 234,
+      "gameweek": 6,
+      "predicted_points": 0.028781801462173462
+    },
+    {
+      "element_id": 235,
+      "gameweek": 6,
+      "predicted_points": -0.001684635877609253
+    },
+    {
+      "element_id": 236,
+      "gameweek": 6,
+      "predicted_points": 2.8996551036834717
+    },
+    {
+      "element_id": 237,
+      "gameweek": 6,
+      "predicted_points": 2.39493465423584
+    },
+    {
+      "element_id": 238,
+      "gameweek": 6,
+      "predicted_points": 2.5875988006591797
+    },
+    {
+      "element_id": 239,
+      "gameweek": 6,
+      "predicted_points": 2.84966778755188
+    },
+    {
+      "element_id": 240,
+      "gameweek": 6,
+      "predicted_points": 1.1134382486343384
+    },
+    {
+      "element_id": 241,
+      "gameweek": 6,
+      "predicted_points": 0.24355162680149078
+    },
+    {
+      "element_id": 242,
+      "gameweek": 6,
+      "predicted_points": 0.48979777097702026
+    },
+    {
+      "element_id": 243,
+      "gameweek": 6,
+      "predicted_points": 0.1933537870645523
+    },
+    {
+      "element_id": 244,
+      "gameweek": 6,
+      "predicted_points": 1.8273088932037354
+    },
+    {
+      "element_id": 245,
+      "gameweek": 6,
+      "predicted_points": 0.34215959906578064
+    },
+    {
+      "element_id": 246,
+      "gameweek": 6,
+      "predicted_points": 0.22784525156021118
+    },
+    {
+      "element_id": 247,
+      "gameweek": 6,
+      "predicted_points": 1.2550926208496094
+    },
+    {
+      "element_id": 248,
+      "gameweek": 6,
+      "predicted_points": 0.2205568104982376
+    },
+    {
+      "element_id": 249,
+      "gameweek": 6,
+      "predicted_points": 1.983784794807434
+    },
+    {
+      "element_id": 250,
+      "gameweek": 6,
+      "predicted_points": 6.497170925140381
+    },
+    {
+      "element_id": 251,
+      "gameweek": 6,
+      "predicted_points": 0.038348883390426636
+    },
+    {
+      "element_id": 252,
+      "gameweek": 6,
+      "predicted_points": 0.0036940574645996094
+    },
+    {
+      "element_id": 253,
+      "gameweek": 6,
+      "predicted_points": 0.5210309624671936
+    },
+    {
+      "element_id": 254,
+      "gameweek": 6,
+      "predicted_points": 2.5275707244873047
+    },
+    {
+      "element_id": 255,
+      "gameweek": 6,
+      "predicted_points": 0.10414066910743713
+    },
+    {
+      "element_id": 256,
+      "gameweek": 6,
+      "predicted_points": 0.18524698913097382
+    },
+    {
+      "element_id": 257,
+      "gameweek": 6,
+      "predicted_points": 2.851106882095337
+    },
+    {
+      "element_id": 258,
+      "gameweek": 6,
+      "predicted_points": 1.7294317483901978
+    },
+    {
+      "element_id": 259,
+      "gameweek": 6,
+      "predicted_points": 1.1723841428756714
+    },
+    {
+      "element_id": 260,
+      "gameweek": 6,
+      "predicted_points": 0.43698203563690186
+    },
+    {
+      "element_id": 261,
+      "gameweek": 6,
+      "predicted_points": 2.7383198738098145
+    },
+    {
+      "element_id": 262,
+      "gameweek": 6,
+      "predicted_points": 0.48162737488746643
+    },
+    {
+      "element_id": 263,
+      "gameweek": 6,
+      "predicted_points": 0.5825651288032532
+    },
+    {
+      "element_id": 264,
+      "gameweek": 6,
+      "predicted_points": 2.2314507961273193
+    },
+    {
+      "element_id": 265,
+      "gameweek": 6,
+      "predicted_points": 1.4602166414260864
+    },
+    {
+      "element_id": 266,
+      "gameweek": 6,
+      "predicted_points": 0.05460485816001892
+    },
+    {
+      "element_id": 267,
+      "gameweek": 6,
+      "predicted_points": 0.7619925141334534
+    },
+    {
+      "element_id": 268,
+      "gameweek": 6,
+      "predicted_points": 1.6555684804916382
+    },
+    {
+      "element_id": 269,
+      "gameweek": 6,
+      "predicted_points": 0.16615208983421326
+    },
+    {
+      "element_id": 270,
+      "gameweek": 6,
+      "predicted_points": 0.05935850739479065
+    },
+    {
+      "element_id": 271,
+      "gameweek": 6,
+      "predicted_points": 0.7046395540237427
+    },
+    {
+      "element_id": 272,
+      "gameweek": 6,
+      "predicted_points": 0.09716224670410156
+    },
+    {
+      "element_id": 273,
+      "gameweek": 6,
+      "predicted_points": 0.057381004095077515
+    },
+    {
+      "element_id": 274,
+      "gameweek": 6,
+      "predicted_points": 0.0859813392162323
+    },
+    {
+      "element_id": 275,
+      "gameweek": 6,
+      "predicted_points": 0.022760093212127686
+    },
+    {
+      "element_id": 276,
+      "gameweek": 6,
+      "predicted_points": 0.025182873010635376
+    },
+    {
+      "element_id": 277,
+      "gameweek": 6,
+      "predicted_points": 1.208158254623413
+    },
+    {
+      "element_id": 278,
+      "gameweek": 6,
+      "predicted_points": 0.031854212284088135
+    },
+    {
+      "element_id": 279,
+      "gameweek": 6,
+      "predicted_points": 2.5784921646118164
+    },
+    {
+      "element_id": 280,
+      "gameweek": 6,
+      "predicted_points": 0.5888552665710449
+    },
+    {
+      "element_id": 281,
+      "gameweek": 6,
+      "predicted_points": 0.05918267369270325
+    },
+    {
+      "element_id": 282,
+      "gameweek": 6,
+      "predicted_points": 0.8249638080596924
+    },
+    {
+      "element_id": 283,
+      "gameweek": 6,
+      "predicted_points": 0.0026742517948150635
+    },
+    {
+      "element_id": 284,
+      "gameweek": 6,
+      "predicted_points": 0.03402349352836609
+    },
+    {
+      "element_id": 285,
+      "gameweek": 6,
+      "predicted_points": 0.06392374634742737
+    },
+    {
+      "element_id": 286,
+      "gameweek": 6,
+      "predicted_points": 0.6263600587844849
+    },
+    {
+      "element_id": 287,
+      "gameweek": 6,
+      "predicted_points": 0.10599300265312195
+    },
+    {
+      "element_id": 288,
+      "gameweek": 6,
+      "predicted_points": 0.07358142733573914
+    },
+    {
+      "element_id": 289,
+      "gameweek": 6,
+      "predicted_points": 0.3452610969543457
+    },
+    {
+      "element_id": 290,
+      "gameweek": 6,
+      "predicted_points": 1.991774559020996
+    },
+    {
+      "element_id": 291,
+      "gameweek": 6,
+      "predicted_points": 0.0698101818561554
+    },
+    {
+      "element_id": 292,
+      "gameweek": 6,
+      "predicted_points": 0.10995957255363464
+    },
+    {
+      "element_id": 293,
+      "gameweek": 6,
+      "predicted_points": 0.08853444457054138
+    },
+    {
+      "element_id": 294,
+      "gameweek": 6,
+      "predicted_points": 0.08978292346000671
+    },
+    {
+      "element_id": 295,
+      "gameweek": 6,
+      "predicted_points": 4.372941970825195
+    },
+    {
+      "element_id": 296,
+      "gameweek": 6,
+      "predicted_points": 0.0011590123176574707
+    },
+    {
+      "element_id": 297,
+      "gameweek": 6,
+      "predicted_points": 0.06819617748260498
+    },
+    {
+      "element_id": 298,
+      "gameweek": 6,
+      "predicted_points": 0.06800231337547302
+    },
+    {
+      "element_id": 299,
+      "gameweek": 6,
+      "predicted_points": 0.0680985152721405
+    },
+    {
+      "element_id": 300,
+      "gameweek": 6,
+      "predicted_points": 0.20532074570655823
+    },
+    {
+      "element_id": 301,
+      "gameweek": 6,
+      "predicted_points": 0.05082395672798157
+    },
+    {
+      "element_id": 302,
+      "gameweek": 6,
+      "predicted_points": 0.04298582673072815
+    },
+    {
+      "element_id": 303,
+      "gameweek": 6,
+      "predicted_points": 0.01609542965888977
+    },
+    {
+      "element_id": 304,
+      "gameweek": 6,
+      "predicted_points": 1.7336663007736206
+    },
+    {
+      "element_id": 305,
+      "gameweek": 6,
+      "predicted_points": 3.2980871200561523
+    },
+    {
+      "element_id": 306,
+      "gameweek": 6,
+      "predicted_points": 0.4460713267326355
+    },
+    {
+      "element_id": 307,
+      "gameweek": 6,
+      "predicted_points": -0.02498045563697815
+    },
+    {
+      "element_id": 308,
+      "gameweek": 6,
+      "predicted_points": 0.04860249161720276
+    },
+    {
+      "element_id": 309,
+      "gameweek": 6,
+      "predicted_points": 0.20558294653892517
+    },
+    {
+      "element_id": 310,
+      "gameweek": 6,
+      "predicted_points": 0.11662057042121887
+    },
+    {
+      "element_id": 311,
+      "gameweek": 6,
+      "predicted_points": 0.09414532780647278
+    },
+    {
+      "element_id": 312,
+      "gameweek": 6,
+      "predicted_points": 0.058599382638931274
+    },
+    {
+      "element_id": 313,
+      "gameweek": 6,
+      "predicted_points": 1.7258827686309814
+    },
+    {
+      "element_id": 314,
+      "gameweek": 6,
+      "predicted_points": 0.05041790008544922
+    },
+    {
+      "element_id": 315,
+      "gameweek": 6,
+      "predicted_points": 2.109199285507202
+    },
+    {
+      "element_id": 316,
+      "gameweek": 6,
+      "predicted_points": 3.1197805404663086
+    },
+    {
+      "element_id": 317,
+      "gameweek": 6,
+      "predicted_points": 0.11185446381568909
+    },
+    {
+      "element_id": 318,
+      "gameweek": 6,
+      "predicted_points": 0.47102808952331543
+    },
+    {
+      "element_id": 319,
+      "gameweek": 6,
+      "predicted_points": 0.060914576053619385
+    },
+    {
+      "element_id": 320,
+      "gameweek": 6,
+      "predicted_points": 0.2738194465637207
+    },
+    {
+      "element_id": 321,
+      "gameweek": 6,
+      "predicted_points": 0.11104124784469604
+    },
+    {
+      "element_id": 322,
+      "gameweek": 6,
+      "predicted_points": 0.10258957743644714
+    },
+    {
+      "element_id": 323,
+      "gameweek": 6,
+      "predicted_points": 0.2505369782447815
+    },
+    {
+      "element_id": 324,
+      "gameweek": 6,
+      "predicted_points": 0.11179417371749878
+    },
+    {
+      "element_id": 325,
+      "gameweek": 6,
+      "predicted_points": 0.07396280765533447
+    },
+    {
+      "element_id": 326,
+      "gameweek": 6,
+      "predicted_points": 0.09029039740562439
+    },
+    {
+      "element_id": 327,
+      "gameweek": 6,
+      "predicted_points": 0.48760461807250977
+    },
+    {
+      "element_id": 328,
+      "gameweek": 6,
+      "predicted_points": 0.8481841087341309
+    },
+    {
+      "element_id": 329,
+      "gameweek": 6,
+      "predicted_points": 0.09337195754051208
+    },
+    {
+      "element_id": 330,
+      "gameweek": 6,
+      "predicted_points": 3.4196367263793945
+    },
+    {
+      "element_id": 331,
+      "gameweek": 6,
+      "predicted_points": 2.4804794788360596
+    },
+    {
+      "element_id": 332,
+      "gameweek": 6,
+      "predicted_points": 6.049036502838135
+    },
+    {
+      "element_id": 333,
+      "gameweek": 6,
+      "predicted_points": 0.03909370303153992
+    },
+    {
+      "element_id": 334,
+      "gameweek": 6,
+      "predicted_points": 3.8747024536132812
+    },
+    {
+      "element_id": 335,
+      "gameweek": 6,
+      "predicted_points": 4.11228609085083
+    },
+    {
+      "element_id": 336,
+      "gameweek": 6,
+      "predicted_points": 2.3805453777313232
+    },
+    {
+      "element_id": 337,
+      "gameweek": 6,
+      "predicted_points": 0.6839743852615356
+    },
+    {
+      "element_id": 338,
+      "gameweek": 6,
+      "predicted_points": 3.8075106143951416
+    },
+    {
+      "element_id": 339,
+      "gameweek": 6,
+      "predicted_points": 0.21939703822135925
+    },
+    {
+      "element_id": 340,
+      "gameweek": 6,
+      "predicted_points": 0.1816808134317398
+    },
+    {
+      "element_id": 341,
+      "gameweek": 6,
+      "predicted_points": 0.04926183819770813
+    },
+    {
+      "element_id": 342,
+      "gameweek": 6,
+      "predicted_points": 0.05594998598098755
+    },
+    {
+      "element_id": 343,
+      "gameweek": 6,
+      "predicted_points": 0.44202107191085815
+    },
+    {
+      "element_id": 344,
+      "gameweek": 6,
+      "predicted_points": 0.08658584952354431
+    },
+    {
+      "element_id": 345,
+      "gameweek": 6,
+      "predicted_points": 4.03744649887085
+    },
+    {
+      "element_id": 346,
+      "gameweek": 6,
+      "predicted_points": 3.330244779586792
+    },
+    {
+      "element_id": 347,
+      "gameweek": 6,
+      "predicted_points": 0.8050590753555298
+    },
+    {
+      "element_id": 348,
+      "gameweek": 6,
+      "predicted_points": 0.10241785645484924
+    },
+    {
+      "element_id": 349,
+      "gameweek": 6,
+      "predicted_points": 0.06957957148551941
+    },
+    {
+      "element_id": 350,
+      "gameweek": 6,
+      "predicted_points": 3.29310941696167
+    },
+    {
+      "element_id": 351,
+      "gameweek": 6,
+      "predicted_points": 0.1697707623243332
+    },
+    {
+      "element_id": 352,
+      "gameweek": 6,
+      "predicted_points": 0.08189505338668823
+    },
+    {
+      "element_id": 353,
+      "gameweek": 6,
+      "predicted_points": 0.06349000334739685
+    },
+    {
+      "element_id": 354,
+      "gameweek": 6,
+      "predicted_points": 0.08038505911827087
+    },
+    {
+      "element_id": 355,
+      "gameweek": 6,
+      "predicted_points": 0.08255985379219055
+    },
+    {
+      "element_id": 356,
+      "gameweek": 6,
+      "predicted_points": 7.928786754608154
+    },
+    {
+      "element_id": 357,
+      "gameweek": 6,
+      "predicted_points": 0.7264662981033325
+    },
+    {
+      "element_id": 358,
+      "gameweek": 6,
+      "predicted_points": 1.5089572668075562
+    },
+    {
+      "element_id": 359,
+      "gameweek": 6,
+      "predicted_points": 0.15702813863754272
+    },
+    {
+      "element_id": 360,
+      "gameweek": 6,
+      "predicted_points": 0.13672329485416412
+    },
+    {
+      "element_id": 361,
+      "gameweek": 6,
+      "predicted_points": 0.05918082594871521
+    },
+    {
+      "element_id": 362,
+      "gameweek": 6,
+      "predicted_points": 2.047271490097046
+    },
+    {
+      "element_id": 363,
+      "gameweek": 6,
+      "predicted_points": 0.05478304624557495
+    },
+    {
+      "element_id": 364,
+      "gameweek": 6,
+      "predicted_points": 0.4097159504890442
+    },
+    {
+      "element_id": 365,
+      "gameweek": 6,
+      "predicted_points": 0.04786452651023865
+    },
+    {
+      "element_id": 366,
+      "gameweek": 6,
+      "predicted_points": 6.630152225494385
+    },
+    {
+      "element_id": 367,
+      "gameweek": 6,
+      "predicted_points": 3.2509899139404297
+    },
+    {
+      "element_id": 368,
+      "gameweek": 6,
+      "predicted_points": 5.102646827697754
+    },
+    {
+      "element_id": 369,
+      "gameweek": 6,
+      "predicted_points": 0.41703009605407715
+    },
+    {
+      "element_id": 370,
+      "gameweek": 6,
+      "predicted_points": 0.1654595136642456
+    },
+    {
+      "element_id": 371,
+      "gameweek": 6,
+      "predicted_points": 0.9031128883361816
+    },
+    {
+      "element_id": 372,
+      "gameweek": 6,
+      "predicted_points": 3.4702816009521484
+    },
+    {
+      "element_id": 373,
+      "gameweek": 6,
+      "predicted_points": 0.180130273103714
+    },
+    {
+      "element_id": 374,
+      "gameweek": 6,
+      "predicted_points": 0.14955298602581024
+    },
+    {
+      "element_id": 375,
+      "gameweek": 6,
+      "predicted_points": 0.37853094935417175
+    },
+    {
+      "element_id": 376,
+      "gameweek": 6,
+      "predicted_points": 0.12746575474739075
+    },
+    {
+      "element_id": 377,
+      "gameweek": 6,
+      "predicted_points": 1.9327137470245361
+    },
+    {
+      "element_id": 378,
+      "gameweek": 6,
+      "predicted_points": 0.11346331238746643
+    },
+    {
+      "element_id": 379,
+      "gameweek": 6,
+      "predicted_points": 4.458265781402588
+    },
+    {
+      "element_id": 380,
+      "gameweek": 6,
+      "predicted_points": 0.2532123625278473
+    },
+    {
+      "element_id": 381,
+      "gameweek": 6,
+      "predicted_points": 0.4841580390930176
+    },
+    {
+      "element_id": 382,
+      "gameweek": 6,
+      "predicted_points": 0.10841965675354004
+    },
+    {
+      "element_id": 383,
+      "gameweek": 6,
+      "predicted_points": 0.1516091525554657
+    },
+    {
+      "element_id": 384,
+      "gameweek": 6,
+      "predicted_points": 3.087437152862549
+    },
+    {
+      "element_id": 385,
+      "gameweek": 6,
+      "predicted_points": 5.007126808166504
+    },
+    {
+      "element_id": 386,
+      "gameweek": 6,
+      "predicted_points": 0.060943275690078735
+    },
+    {
+      "element_id": 387,
+      "gameweek": 6,
+      "predicted_points": 0.7361917495727539
+    },
+    {
+      "element_id": 388,
+      "gameweek": 6,
+      "predicted_points": 4.896754741668701
+    },
+    {
+      "element_id": 389,
+      "gameweek": 6,
+      "predicted_points": 1.1782705783843994
+    },
+    {
+      "element_id": 390,
+      "gameweek": 6,
+      "predicted_points": 2.948917865753174
+    },
+    {
+      "element_id": 391,
+      "gameweek": 6,
+      "predicted_points": 2.676966905593872
+    },
+    {
+      "element_id": 392,
+      "gameweek": 6,
+      "predicted_points": 0.18313056230545044
+    },
+    {
+      "element_id": 393,
+      "gameweek": 6,
+      "predicted_points": 0.8691967725753784
+    },
+    {
+      "element_id": 394,
+      "gameweek": 6,
+      "predicted_points": 0.07951077818870544
+    },
+    {
+      "element_id": 395,
+      "gameweek": 6,
+      "predicted_points": 0.09392309188842773
+    },
+    {
+      "element_id": 396,
+      "gameweek": 6,
+      "predicted_points": 0.0854019820690155
+    },
+    {
+      "element_id": 397,
+      "gameweek": 6,
+      "predicted_points": 3.0009725093841553
+    },
+    {
+      "element_id": 398,
+      "gameweek": 6,
+      "predicted_points": 0.1717587113380432
+    },
+    {
+      "element_id": 399,
+      "gameweek": 6,
+      "predicted_points": 1.4385846853256226
+    },
+    {
+      "element_id": 400,
+      "gameweek": 6,
+      "predicted_points": 0.384835422039032
+    },
+    {
+      "element_id": 401,
+      "gameweek": 6,
+      "predicted_points": 3.4999818801879883
+    },
+    {
+      "element_id": 402,
+      "gameweek": 6,
+      "predicted_points": 0.19117218255996704
+    },
+    {
+      "element_id": 403,
+      "gameweek": 6,
+      "predicted_points": 3.6515700817108154
+    },
+    {
+      "element_id": 404,
+      "gameweek": 6,
+      "predicted_points": 0.18241214752197266
+    },
+    {
+      "element_id": 405,
+      "gameweek": 6,
+      "predicted_points": 0.38343295454978943
+    },
+    {
+      "element_id": 406,
+      "gameweek": 6,
+      "predicted_points": 0.22729483246803284
+    },
+    {
+      "element_id": 407,
+      "gameweek": 6,
+      "predicted_points": 0.06276905536651611
+    },
+    {
+      "element_id": 408,
+      "gameweek": 6,
+      "predicted_points": 0.08024263381958008
+    },
+    {
+      "element_id": 409,
+      "gameweek": 6,
+      "predicted_points": 0.04154980182647705
+    },
+    {
+      "element_id": 410,
+      "gameweek": 6,
+      "predicted_points": 0.06321486830711365
+    },
+    {
+      "element_id": 411,
+      "gameweek": 6,
+      "predicted_points": 3.8924007415771484
+    },
+    {
+      "element_id": 412,
+      "gameweek": 6,
+      "predicted_points": 3.9486329555511475
+    },
+    {
+      "element_id": 413,
+      "gameweek": 6,
+      "predicted_points": 0.06688889861106873
+    },
+    {
+      "element_id": 414,
+      "gameweek": 6,
+      "predicted_points": 0.017605215311050415
+    },
+    {
+      "element_id": 415,
+      "gameweek": 6,
+      "predicted_points": 6.033888816833496
+    },
+    {
+      "element_id": 416,
+      "gameweek": 6,
+      "predicted_points": 0.11786645650863647
+    },
+    {
+      "element_id": 417,
+      "gameweek": 6,
+      "predicted_points": 2.2161829471588135
+    },
+    {
+      "element_id": 418,
+      "gameweek": 6,
+      "predicted_points": 2.2155396938323975
+    },
+    {
+      "element_id": 419,
+      "gameweek": 6,
+      "predicted_points": 2.2374956607818604
+    },
+    {
+      "element_id": 420,
+      "gameweek": 6,
+      "predicted_points": 0.302470862865448
+    },
+    {
+      "element_id": 421,
+      "gameweek": 6,
+      "predicted_points": 0.09041354060173035
+    },
+    {
+      "element_id": 422,
+      "gameweek": 6,
+      "predicted_points": 0.23640252649784088
+    },
+    {
+      "element_id": 423,
+      "gameweek": 6,
+      "predicted_points": 0.26561152935028076
+    },
+    {
+      "element_id": 424,
+      "gameweek": 6,
+      "predicted_points": 0.014693766832351685
+    },
+    {
+      "element_id": 425,
+      "gameweek": 6,
+      "predicted_points": 0.00012701749801635742
+    },
+    {
+      "element_id": 426,
+      "gameweek": 6,
+      "predicted_points": 5.248713493347168
+    },
+    {
+      "element_id": 427,
+      "gameweek": 6,
+      "predicted_points": 2.73929762840271
+    },
+    {
+      "element_id": 428,
+      "gameweek": 6,
+      "predicted_points": 2.2620975971221924
+    },
+    {
+      "element_id": 429,
+      "gameweek": 6,
+      "predicted_points": 3.6326394081115723
+    },
+    {
+      "element_id": 430,
+      "gameweek": 6,
+      "predicted_points": 0.2155766487121582
+    },
+    {
+      "element_id": 431,
+      "gameweek": 6,
+      "predicted_points": 0.18757522106170654
+    },
+    {
+      "element_id": 432,
+      "gameweek": 6,
+      "predicted_points": 5.047788619995117
+    },
+    {
+      "element_id": 433,
+      "gameweek": 6,
+      "predicted_points": 0.10482266545295715
+    },
+    {
+      "element_id": 434,
+      "gameweek": 6,
+      "predicted_points": 0.09639927744865417
+    },
+    {
+      "element_id": 435,
+      "gameweek": 6,
+      "predicted_points": 0.14831086993217468
+    },
+    {
+      "element_id": 436,
+      "gameweek": 6,
+      "predicted_points": 0.08967253565788269
+    },
+    {
+      "element_id": 437,
+      "gameweek": 6,
+      "predicted_points": 0.08088448643684387
+    },
+    {
+      "element_id": 438,
+      "gameweek": 6,
+      "predicted_points": 0.06646832823753357
+    },
+    {
+      "element_id": 439,
+      "gameweek": 6,
+      "predicted_points": 0.6947988271713257
+    },
+    {
+      "element_id": 440,
+      "gameweek": 6,
+      "predicted_points": 0.5589985847473145
+    },
+    {
+      "element_id": 441,
+      "gameweek": 6,
+      "predicted_points": 0.05863910913467407
+    },
+    {
+      "element_id": 442,
+      "gameweek": 6,
+      "predicted_points": 0.19498446583747864
+    },
+    {
+      "element_id": 443,
+      "gameweek": 6,
+      "predicted_points": 0.09516116976737976
+    },
+    {
+      "element_id": 444,
+      "gameweek": 6,
+      "predicted_points": 0.0786479115486145
+    },
+    {
+      "element_id": 445,
+      "gameweek": 6,
+      "predicted_points": 1.8645751476287842
+    },
+    {
+      "element_id": 446,
+      "gameweek": 6,
+      "predicted_points": 0.32034337520599365
+    },
+    {
+      "element_id": 447,
+      "gameweek": 6,
+      "predicted_points": 1.9044934511184692
+    },
+    {
+      "element_id": 448,
+      "gameweek": 6,
+      "predicted_points": 0.17764030396938324
+    },
+    {
+      "element_id": 449,
+      "gameweek": 6,
+      "predicted_points": 6.339448928833008
+    },
+    {
+      "element_id": 450,
+      "gameweek": 6,
+      "predicted_points": 0.2201835662126541
+    },
+    {
+      "element_id": 451,
+      "gameweek": 6,
+      "predicted_points": 0.03266385197639465
+    },
+    {
+      "element_id": 452,
+      "gameweek": 6,
+      "predicted_points": 1.2253730297088623
+    },
+    {
+      "element_id": 453,
+      "gameweek": 6,
+      "predicted_points": 7.20771598815918
+    },
+    {
+      "element_id": 454,
+      "gameweek": 6,
+      "predicted_points": 0.13573455810546875
+    },
+    {
+      "element_id": 455,
+      "gameweek": 6,
+      "predicted_points": 2.9056944847106934
+    },
+    {
+      "element_id": 456,
+      "gameweek": 6,
+      "predicted_points": 0.1989593803882599
+    },
+    {
+      "element_id": 457,
+      "gameweek": 6,
+      "predicted_points": 2.5306169986724854
+    },
+    {
+      "element_id": 458,
+      "gameweek": 6,
+      "predicted_points": 0.16813573241233826
+    },
+    {
+      "element_id": 459,
+      "gameweek": 6,
+      "predicted_points": 1.0894968509674072
+    },
+    {
+      "element_id": 460,
+      "gameweek": 6,
+      "predicted_points": 2.6444039344787598
+    },
+    {
+      "element_id": 461,
+      "gameweek": 6,
+      "predicted_points": 0.4707707166671753
+    },
+    {
+      "element_id": 462,
+      "gameweek": 6,
+      "predicted_points": 1.689603328704834
+    },
+    {
+      "element_id": 463,
+      "gameweek": 6,
+      "predicted_points": 0.2604259252548218
+    },
+    {
+      "element_id": 464,
+      "gameweek": 6,
+      "predicted_points": 3.2971994876861572
+    },
+    {
+      "element_id": 465,
+      "gameweek": 6,
+      "predicted_points": 0.25314807891845703
+    },
+    {
+      "element_id": 466,
+      "gameweek": 6,
+      "predicted_points": 0.1146622896194458
+    },
+    {
+      "element_id": 467,
+      "gameweek": 6,
+      "predicted_points": 5.704459190368652
+    },
+    {
+      "element_id": 468,
+      "gameweek": 6,
+      "predicted_points": 0.0923672616481781
+    },
+    {
+      "element_id": 469,
+      "gameweek": 6,
+      "predicted_points": 3.4261021614074707
+    },
+    {
+      "element_id": 470,
+      "gameweek": 6,
+      "predicted_points": 0.08268633484840393
+    },
+    {
+      "element_id": 471,
+      "gameweek": 6,
+      "predicted_points": 0.40296471118927
+    },
+    {
+      "element_id": 472,
+      "gameweek": 6,
+      "predicted_points": 3.6926207542419434
+    },
+    {
+      "element_id": 473,
+      "gameweek": 6,
+      "predicted_points": 0.26843857765197754
+    },
+    {
+      "element_id": 474,
+      "gameweek": 6,
+      "predicted_points": 0.3993752598762512
+    },
+    {
+      "element_id": 475,
+      "gameweek": 6,
+      "predicted_points": 0.041057735681533813
+    },
+    {
+      "element_id": 476,
+      "gameweek": 6,
+      "predicted_points": 0.027521580457687378
+    },
+    {
+      "element_id": 477,
+      "gameweek": 6,
+      "predicted_points": 0.004943668842315674
+    },
+    {
+      "element_id": 478,
+      "gameweek": 6,
+      "predicted_points": 0.21536263823509216
+    },
+    {
+      "element_id": 479,
+      "gameweek": 6,
+      "predicted_points": 0.012966006994247437
+    },
+    {
+      "element_id": 480,
+      "gameweek": 6,
+      "predicted_points": 3.250196933746338
+    },
+    {
+      "element_id": 481,
+      "gameweek": 6,
+      "predicted_points": 4.254944801330566
+    },
+    {
+      "element_id": 482,
+      "gameweek": 6,
+      "predicted_points": 0.27042096853256226
+    },
+    {
+      "element_id": 483,
+      "gameweek": 6,
+      "predicted_points": 0.9463679790496826
+    },
+    {
+      "element_id": 484,
+      "gameweek": 6,
+      "predicted_points": 0.17684930562973022
+    },
+    {
+      "element_id": 485,
+      "gameweek": 6,
+      "predicted_points": 0.13460278511047363
+    },
+    {
+      "element_id": 486,
+      "gameweek": 6,
+      "predicted_points": 3.054037570953369
+    },
+    {
+      "element_id": 487,
+      "gameweek": 6,
+      "predicted_points": 0.1582997739315033
+    },
+    {
+      "element_id": 488,
+      "gameweek": 6,
+      "predicted_points": 0.3904913067817688
+    },
+    {
+      "element_id": 489,
+      "gameweek": 6,
+      "predicted_points": 0.10670474171638489
+    },
+    {
+      "element_id": 490,
+      "gameweek": 6,
+      "predicted_points": 0.6348822116851807
+    },
+    {
+      "element_id": 491,
+      "gameweek": 6,
+      "predicted_points": 1.45673406124115
+    },
+    {
+      "element_id": 492,
+      "gameweek": 6,
+      "predicted_points": 0.43043196201324463
+    },
+    {
+      "element_id": 493,
+      "gameweek": 6,
+      "predicted_points": 0.19640758633613586
+    },
+    {
+      "element_id": 494,
+      "gameweek": 6,
+      "predicted_points": 0.06669965386390686
+    },
+    {
+      "element_id": 495,
+      "gameweek": 6,
+      "predicted_points": 0.028694897890090942
+    },
+    {
+      "element_id": 496,
+      "gameweek": 6,
+      "predicted_points": 5.068952560424805
+    },
+    {
+      "element_id": 497,
+      "gameweek": 6,
+      "predicted_points": 0.052994370460510254
+    },
+    {
+      "element_id": 498,
+      "gameweek": 6,
+      "predicted_points": 0.332096129655838
+    },
+    {
+      "element_id": 499,
+      "gameweek": 6,
+      "predicted_points": 0.8299728631973267
+    },
+    {
+      "element_id": 500,
+      "gameweek": 6,
+      "predicted_points": 0.15286698937416077
+    },
+    {
+      "element_id": 501,
+      "gameweek": 6,
+      "predicted_points": 4.992118835449219
+    },
+    {
+      "element_id": 502,
+      "gameweek": 6,
+      "predicted_points": 1.9879988431930542
+    },
+    {
+      "element_id": 503,
+      "gameweek": 6,
+      "predicted_points": 3.543757915496826
+    },
+    {
+      "element_id": 504,
+      "gameweek": 6,
+      "predicted_points": 5.977018356323242
+    },
+    {
+      "element_id": 505,
+      "gameweek": 6,
+      "predicted_points": 0.08093050122261047
+    },
+    {
+      "element_id": 506,
+      "gameweek": 6,
+      "predicted_points": 0.22374854981899261
+    },
+    {
+      "element_id": 507,
+      "gameweek": 6,
+      "predicted_points": 0.048127323389053345
+    },
+    {
+      "element_id": 508,
+      "gameweek": 6,
+      "predicted_points": 0.02010682225227356
+    },
+    {
+      "element_id": 509,
+      "gameweek": 6,
+      "predicted_points": -0.007964223623275757
+    },
+    {
+      "element_id": 510,
+      "gameweek": 6,
+      "predicted_points": -0.0019414722919464111
+    },
+    {
+      "element_id": 511,
+      "gameweek": 6,
+      "predicted_points": -0.01285824179649353
+    },
+    {
+      "element_id": 512,
+      "gameweek": 6,
+      "predicted_points": 1.7818608283996582
+    },
+    {
+      "element_id": 513,
+      "gameweek": 6,
+      "predicted_points": 0.18026044964790344
+    },
+    {
+      "element_id": 514,
+      "gameweek": 6,
+      "predicted_points": 0.934971809387207
+    },
+    {
+      "element_id": 515,
+      "gameweek": 6,
+      "predicted_points": 0.5354017019271851
+    },
+    {
+      "element_id": 516,
+      "gameweek": 6,
+      "predicted_points": 2.067594051361084
+    },
+    {
+      "element_id": 517,
+      "gameweek": 6,
+      "predicted_points": 0.13576318323612213
+    },
+    {
+      "element_id": 518,
+      "gameweek": 6,
+      "predicted_points": 0.07075262069702148
+    },
+    {
+      "element_id": 519,
+      "gameweek": 6,
+      "predicted_points": 0.24727089703083038
+    },
+    {
+      "element_id": 520,
+      "gameweek": 6,
+      "predicted_points": 0.7451016306877136
+    },
+    {
+      "element_id": 521,
+      "gameweek": 6,
+      "predicted_points": 0.2275572270154953
+    },
+    {
+      "element_id": 522,
+      "gameweek": 6,
+      "predicted_points": 1.541890263557434
+    },
+    {
+      "element_id": 523,
+      "gameweek": 6,
+      "predicted_points": 0.15802761912345886
+    },
+    {
+      "element_id": 524,
+      "gameweek": 6,
+      "predicted_points": 0.050261348485946655
+    },
+    {
+      "element_id": 525,
+      "gameweek": 6,
+      "predicted_points": 1.0681769847869873
+    },
+    {
+      "element_id": 526,
+      "gameweek": 6,
+      "predicted_points": 1.0533562898635864
+    },
+    {
+      "element_id": 527,
+      "gameweek": 6,
+      "predicted_points": 0.2758433222770691
+    },
+    {
+      "element_id": 528,
+      "gameweek": 6,
+      "predicted_points": 0.09649834036827087
+    },
+    {
+      "element_id": 529,
+      "gameweek": 6,
+      "predicted_points": 1.248648762702942
+    },
+    {
+      "element_id": 530,
+      "gameweek": 6,
+      "predicted_points": 0.08070895075798035
+    },
+    {
+      "element_id": 531,
+      "gameweek": 6,
+      "predicted_points": 0.12857815623283386
+    },
+    {
+      "element_id": 532,
+      "gameweek": 6,
+      "predicted_points": 1.8600200414657593
+    },
+    {
+      "element_id": 533,
+      "gameweek": 6,
+      "predicted_points": 3.735042095184326
+    },
+    {
+      "element_id": 534,
+      "gameweek": 6,
+      "predicted_points": 0.3713194727897644
+    },
+    {
+      "element_id": 535,
+      "gameweek": 6,
+      "predicted_points": 0.16202965378761292
+    },
+    {
+      "element_id": 536,
+      "gameweek": 6,
+      "predicted_points": 0.5113590359687805
+    },
+    {
+      "element_id": 537,
+      "gameweek": 6,
+      "predicted_points": 0.09262961149215698
+    },
+    {
+      "element_id": 538,
+      "gameweek": 6,
+      "predicted_points": 0.07396557927131653
+    },
+    {
+      "element_id": 539,
+      "gameweek": 6,
+      "predicted_points": 0.08478248119354248
+    },
+    {
+      "element_id": 540,
+      "gameweek": 6,
+      "predicted_points": 0.07143136858940125
+    },
+    {
+      "element_id": 541,
+      "gameweek": 6,
+      "predicted_points": 0.9948045015335083
+    },
+    {
+      "element_id": 542,
+      "gameweek": 6,
+      "predicted_points": 2.7603018283843994
+    },
+    {
+      "element_id": 543,
+      "gameweek": 6,
+      "predicted_points": 0.13106441497802734
+    },
+    {
+      "element_id": 544,
+      "gameweek": 6,
+      "predicted_points": 2.2964632511138916
+    },
+    {
+      "element_id": 545,
+      "gameweek": 6,
+      "predicted_points": 2.865534782409668
+    },
+    {
+      "element_id": 546,
+      "gameweek": 6,
+      "predicted_points": 0.08984062075614929
+    },
+    {
+      "element_id": 547,
+      "gameweek": 6,
+      "predicted_points": 0.1012955904006958
+    },
+    {
+      "element_id": 548,
+      "gameweek": 6,
+      "predicted_points": 0.15803849697113037
+    },
+    {
+      "element_id": 549,
+      "gameweek": 6,
+      "predicted_points": 0.1781103014945984
+    },
+    {
+      "element_id": 550,
+      "gameweek": 6,
+      "predicted_points": 0.12695564329624176
+    },
+    {
+      "element_id": 551,
+      "gameweek": 6,
+      "predicted_points": 1.7485002279281616
+    },
+    {
+      "element_id": 552,
+      "gameweek": 6,
+      "predicted_points": 2.5189647674560547
+    },
+    {
+      "element_id": 553,
+      "gameweek": 6,
+      "predicted_points": 1.9390054941177368
+    },
+    {
+      "element_id": 554,
+      "gameweek": 6,
+      "predicted_points": 0.04820731282234192
+    },
+    {
+      "element_id": 555,
+      "gameweek": 6,
+      "predicted_points": 0.05587738752365112
+    },
+    {
+      "element_id": 556,
+      "gameweek": 6,
+      "predicted_points": 0.06729936599731445
+    },
+    {
+      "element_id": 557,
+      "gameweek": 6,
+      "predicted_points": 3.509491443634033
+    },
+    {
+      "element_id": 558,
+      "gameweek": 6,
+      "predicted_points": 2.24782395362854
+    },
+    {
+      "element_id": 559,
+      "gameweek": 6,
+      "predicted_points": 0.4670688211917877
+    },
+    {
+      "element_id": 560,
+      "gameweek": 6,
+      "predicted_points": 0.10278144478797913
+    },
+    {
+      "element_id": 561,
+      "gameweek": 6,
+      "predicted_points": 0.10793301463127136
+    },
+    {
+      "element_id": 562,
+      "gameweek": 6,
+      "predicted_points": 1.804186224937439
+    },
+    {
+      "element_id": 563,
+      "gameweek": 6,
+      "predicted_points": 0.08776775002479553
+    },
+    {
+      "element_id": 564,
+      "gameweek": 6,
+      "predicted_points": 1.010992407798767
+    },
+    {
+      "element_id": 565,
+      "gameweek": 6,
+      "predicted_points": 1.915221929550171
+    },
+    {
+      "element_id": 566,
+      "gameweek": 6,
+      "predicted_points": 1.890030860900879
+    },
+    {
+      "element_id": 567,
+      "gameweek": 6,
+      "predicted_points": 4.130738735198975
+    },
+    {
+      "element_id": 568,
+      "gameweek": 6,
+      "predicted_points": 2.490598201751709
+    },
+    {
+      "element_id": 569,
+      "gameweek": 6,
+      "predicted_points": 1.9801669120788574
+    },
+    {
+      "element_id": 570,
+      "gameweek": 6,
+      "predicted_points": 0.3254585266113281
+    },
+    {
+      "element_id": 571,
+      "gameweek": 6,
+      "predicted_points": 0.3602411448955536
+    },
+    {
+      "element_id": 572,
+      "gameweek": 6,
+      "predicted_points": 2.9115216732025146
+    },
+    {
+      "element_id": 573,
+      "gameweek": 6,
+      "predicted_points": 0.11083188652992249
+    },
+    {
+      "element_id": 574,
+      "gameweek": 6,
+      "predicted_points": 0.19158661365509033
+    },
+    {
+      "element_id": 575,
+      "gameweek": 6,
+      "predicted_points": 3.6445960998535156
+    },
+    {
+      "element_id": 576,
+      "gameweek": 6,
+      "predicted_points": 1.174588680267334
+    },
+    {
+      "element_id": 577,
+      "gameweek": 6,
+      "predicted_points": 0.8152561187744141
+    },
+    {
+      "element_id": 578,
+      "gameweek": 6,
+      "predicted_points": 0.13499534130096436
+    },
+    {
+      "element_id": 579,
+      "gameweek": 6,
+      "predicted_points": 2.1002018451690674
+    },
+    {
+      "element_id": 580,
+      "gameweek": 6,
+      "predicted_points": 3.6664488315582275
+    },
+    {
+      "element_id": 581,
+      "gameweek": 6,
+      "predicted_points": 1.79582941532135
+    },
+    {
+      "element_id": 582,
+      "gameweek": 6,
+      "predicted_points": 0.17632362246513367
+    },
+    {
+      "element_id": 583,
+      "gameweek": 6,
+      "predicted_points": 6.959105968475342
+    },
+    {
+      "element_id": 584,
+      "gameweek": 6,
+      "predicted_points": 0.6403512358665466
+    },
+    {
+      "element_id": 585,
+      "gameweek": 6,
+      "predicted_points": 1.2686898708343506
+    },
+    {
+      "element_id": 586,
+      "gameweek": 6,
+      "predicted_points": 0.3428077697753906
+    },
+    {
+      "element_id": 587,
+      "gameweek": 6,
+      "predicted_points": 0.10412159562110901
+    },
+    {
+      "element_id": 588,
+      "gameweek": 6,
+      "predicted_points": 2.129978656768799
+    },
+    {
+      "element_id": 589,
+      "gameweek": 6,
+      "predicted_points": 1.4658044576644897
+    },
+    {
+      "element_id": 590,
+      "gameweek": 6,
+      "predicted_points": 0.08717560768127441
+    },
+    {
+      "element_id": 591,
+      "gameweek": 6,
+      "predicted_points": 2.4092445373535156
+    },
+    {
+      "element_id": 592,
+      "gameweek": 6,
+      "predicted_points": 1.0231703519821167
+    },
+    {
+      "element_id": 593,
+      "gameweek": 6,
+      "predicted_points": 0.414991170167923
+    },
+    {
+      "element_id": 594,
+      "gameweek": 6,
+      "predicted_points": 0.2538601756095886
+    },
+    {
+      "element_id": 595,
+      "gameweek": 6,
+      "predicted_points": 0.18817564845085144
+    },
+    {
+      "element_id": 596,
+      "gameweek": 6,
+      "predicted_points": 1.274577260017395
+    },
+    {
+      "element_id": 597,
+      "gameweek": 6,
+      "predicted_points": 3.1495513916015625
+    },
+    {
+      "element_id": 598,
+      "gameweek": 6,
+      "predicted_points": 4.6840620040893555
+    },
+    {
+      "element_id": 599,
+      "gameweek": 6,
+      "predicted_points": 0.6508238315582275
+    },
+    {
+      "element_id": 600,
+      "gameweek": 6,
+      "predicted_points": 0.22119027376174927
+    },
+    {
+      "element_id": 601,
+      "gameweek": 6,
+      "predicted_points": 0.06792554259300232
+    },
+    {
+      "element_id": 602,
+      "gameweek": 6,
+      "predicted_points": 0.02435705065727234
+    },
+    {
+      "element_id": 603,
+      "gameweek": 6,
+      "predicted_points": 0.029088973999023438
+    },
+    {
+      "element_id": 604,
+      "gameweek": 6,
+      "predicted_points": 0.08043819665908813
+    },
+    {
+      "element_id": 605,
+      "gameweek": 6,
+      "predicted_points": 0.5254404544830322
+    },
+    {
+      "element_id": 606,
+      "gameweek": 6,
+      "predicted_points": 0.0573478639125824
+    },
+    {
+      "element_id": 607,
+      "gameweek": 6,
+      "predicted_points": 0.06957602500915527
+    },
+    {
+      "element_id": 608,
+      "gameweek": 6,
+      "predicted_points": 0.3187807500362396
+    },
+    {
+      "element_id": 609,
+      "gameweek": 6,
+      "predicted_points": 0.0028533637523651123
+    },
+    {
+      "element_id": 610,
+      "gameweek": 6,
+      "predicted_points": -0.01928231120109558
+    },
+    {
+      "element_id": 611,
+      "gameweek": 6,
+      "predicted_points": 0.9924203157424927
+    },
+    {
+      "element_id": 612,
+      "gameweek": 6,
+      "predicted_points": 0.40004292130470276
+    },
+    {
+      "element_id": 613,
+      "gameweek": 6,
+      "predicted_points": 0.11468550562858582
+    },
+    {
+      "element_id": 614,
+      "gameweek": 6,
+      "predicted_points": 0.03577113151550293
+    },
+    {
+      "element_id": 615,
+      "gameweek": 6,
+      "predicted_points": 0.07089915871620178
+    },
+    {
+      "element_id": 616,
+      "gameweek": 6,
+      "predicted_points": 0.35767021775245667
+    },
+    {
+      "element_id": 617,
+      "gameweek": 6,
+      "predicted_points": 0.6285690069198608
+    },
+    {
+      "element_id": 618,
+      "gameweek": 6,
+      "predicted_points": 0.06840214133262634
+    },
+    {
+      "element_id": 619,
+      "gameweek": 6,
+      "predicted_points": 1.8069528341293335
+    },
+    {
+      "element_id": 620,
+      "gameweek": 6,
+      "predicted_points": 0.29758894443511963
+    },
+    {
+      "element_id": 621,
+      "gameweek": 6,
+      "predicted_points": 0.20884822309017181
+    },
+    {
+      "element_id": 622,
+      "gameweek": 6,
+      "predicted_points": 0.029500633478164673
+    },
+    {
+      "element_id": 623,
+      "gameweek": 6,
+      "predicted_points": 0.14360147714614868
+    },
+    {
+      "element_id": 624,
+      "gameweek": 6,
+      "predicted_points": 0.026472806930541992
+    },
+    {
+      "element_id": 625,
+      "gameweek": 6,
+      "predicted_points": 0.030160218477249146
+    },
+    {
+      "element_id": 626,
+      "gameweek": 6,
+      "predicted_points": 0.06015351414680481
+    },
+    {
+      "element_id": 627,
+      "gameweek": 6,
+      "predicted_points": 2.0409998893737793
+    },
+    {
+      "element_id": 628,
+      "gameweek": 6,
+      "predicted_points": 0.13848187029361725
+    },
+    {
+      "element_id": 629,
+      "gameweek": 6,
+      "predicted_points": 0.042799681425094604
+    },
+    {
+      "element_id": 630,
+      "gameweek": 6,
+      "predicted_points": 0.07346206903457642
+    },
+    {
+      "element_id": 631,
+      "gameweek": 6,
+      "predicted_points": 0.985119104385376
+    },
+    {
+      "element_id": 632,
+      "gameweek": 6,
+      "predicted_points": 0.0006107091903686523
+    },
+    {
+      "element_id": 633,
+      "gameweek": 6,
+      "predicted_points": 0.2315305769443512
+    },
+    {
+      "element_id": 634,
+      "gameweek": 6,
+      "predicted_points": 3.017092704772949
+    },
+    {
+      "element_id": 635,
+      "gameweek": 6,
+      "predicted_points": 1.249574899673462
+    },
+    {
+      "element_id": 636,
+      "gameweek": 6,
+      "predicted_points": 0.07992520928382874
+    },
+    {
+      "element_id": 637,
+      "gameweek": 6,
+      "predicted_points": 0.3876449763774872
+    },
+    {
+      "element_id": 638,
+      "gameweek": 6,
+      "predicted_points": 0.3390793800354004
+    },
+    {
+      "element_id": 639,
+      "gameweek": 6,
+      "predicted_points": 0.6859612464904785
+    },
+    {
+      "element_id": 640,
+      "gameweek": 6,
+      "predicted_points": 0.4808240234851837
+    },
+    {
+      "element_id": 641,
+      "gameweek": 6,
+      "predicted_points": 0.16251790523529053
+    },
+    {
+      "element_id": 642,
+      "gameweek": 6,
+      "predicted_points": 1.4275192022323608
+    },
+    {
+      "element_id": 643,
+      "gameweek": 6,
+      "predicted_points": 0.23349657654762268
+    },
+    {
+      "element_id": 644,
+      "gameweek": 6,
+      "predicted_points": 2.3079538345336914
+    },
+    {
+      "element_id": 645,
+      "gameweek": 6,
+      "predicted_points": 0.12730029225349426
+    },
+    {
+      "element_id": 646,
+      "gameweek": 6,
+      "predicted_points": 0.9925591945648193
+    },
+    {
+      "element_id": 647,
+      "gameweek": 6,
+      "predicted_points": 0.159309983253479
+    },
+    {
+      "element_id": 648,
+      "gameweek": 6,
+      "predicted_points": 0.1275152564048767
+    },
+    {
+      "element_id": 649,
+      "gameweek": 6,
+      "predicted_points": 0.30398428440093994
+    },
+    {
+      "element_id": 650,
+      "gameweek": 6,
+      "predicted_points": 0.9488623142242432
+    },
+    {
+      "element_id": 651,
+      "gameweek": 6,
+      "predicted_points": 0.1074032187461853
+    },
+    {
+      "element_id": 652,
+      "gameweek": 6,
+      "predicted_points": 0.10360690951347351
+    },
+    {
+      "element_id": 653,
+      "gameweek": 6,
+      "predicted_points": 0.02867874503135681
+    },
+    {
+      "element_id": 654,
+      "gameweek": 6,
+      "predicted_points": 0.09277978539466858
+    },
+    {
+      "element_id": 655,
+      "gameweek": 6,
+      "predicted_points": 0.2631022334098816
+    },
+    {
+      "element_id": 656,
+      "gameweek": 6,
+      "predicted_points": 2.9511632919311523
+    },
+    {
+      "element_id": 657,
+      "gameweek": 6,
+      "predicted_points": 0.10296440124511719
+    },
+    {
+      "element_id": 658,
+      "gameweek": 6,
+      "predicted_points": 0.10437431931495667
+    },
+    {
+      "element_id": 659,
+      "gameweek": 6,
+      "predicted_points": 0.13030147552490234
+    },
+    {
+      "element_id": 660,
+      "gameweek": 6,
+      "predicted_points": 0.024827271699905396
+    },
+    {
+      "element_id": 661,
+      "gameweek": 6,
+      "predicted_points": 0.024827271699905396
+    },
+    {
+      "element_id": 662,
+      "gameweek": 6,
+      "predicted_points": 0.24726217985153198
+    },
+    {
+      "element_id": 663,
+      "gameweek": 6,
+      "predicted_points": 0.03678387403488159
+    },
+    {
+      "element_id": 664,
+      "gameweek": 6,
+      "predicted_points": 0.08551707863807678
+    },
+    {
+      "element_id": 665,
+      "gameweek": 6,
+      "predicted_points": 0.08551707863807678
+    },
+    {
+      "element_id": 666,
+      "gameweek": 6,
+      "predicted_points": 0.08551707863807678
+    },
+    {
+      "element_id": 667,
+      "gameweek": 6,
+      "predicted_points": 0.03945499658584595
+    }
+  ],
+  "generated_at": "2026-10-04T13:18:42.923335+00:00",
+  "deadline": "2026-10-10T10:00:00+00:00"
+}
