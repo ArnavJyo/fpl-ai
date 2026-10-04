@@ -1,5 +1,5 @@
 {
-  "status": "transfers_pending",
+  "status": "transfers_verified",
   "plan": {
     "format_version": 1,
     "team_id": 10123827,
@@ -316,6 +316,10 @@
     {
       "at": "2026-10-04T14:36:46.735142+00:00",
       "message": "Sending a single transfer/chip commit; automatic POST retries disabled."
+    },
+    {
+      "at": "2026-10-04T14:39:27.357932+00:00",
+      "message": "Recovered an earlier transfer commit by reading the live team."
     }
   ]
 }
