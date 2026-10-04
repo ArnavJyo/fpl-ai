@@ -84,6 +84,7 @@ jobs:
         if: steps.window.outputs.run == 'true'
         env:
           FPL_AUTH_JSON: ${{ secrets.FPL_AUTH_JSON }}
+          FPL_SESSION_KEY: ${{ secrets.FPL_SESSION_KEY }}
           GH_TOKEN: ${{ github.token }}
           APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
         run: |

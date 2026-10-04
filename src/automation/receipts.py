@@ -22,8 +22,9 @@ from src.automation.client import FplActionError
 class ReceiptStore:
     branch = "fpl-automation-state"
 
-    def __init__(self, repository: str, filename: str):
-        if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository) or not re.fullmatch(r"receipt-[a-f0-9]+\.json", filename):
+    def __init__(self, repository: str, filename: str, session=False):
+        pattern = r"entry-[1-9][0-9]*\.json" if session else r"receipt-[a-f0-9]+\.json"
+        if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository) or not re.fullmatch(pattern, filename):
             raise FplActionError("Invalid receipt repository or filename.")
         token = os.environ.get("GH_TOKEN")
         if not token:
@@ -32,7 +33,7 @@ class ReceiptStore:
                 raise FplActionError("GitHub login is required to persist team receipts before live execution.")
             token = result.stdout.strip()
         self.root = "https://api.github.com/repos/" + repository
-        self.path = "receipts/" + filename
+        self.path = ("sessions/" if session else "receipts/") + filename
         self.sha = None
         self.branch_exists = False
         self.session = requests.Session()
@@ -62,14 +63,17 @@ class ReceiptStore:
         return json.loads(base64.b64decode(result["content"]))
 
     def save(self, receipt: dict) -> None:
+        self.save_value(receipt, f"Record GW{receipt['plan']['gameweek']} execution: {receipt['status']}")
+
+    def save_value(self, value: dict, message: str) -> None:
         if not self.branch_exists:
             # Branch creation is done before committing a pending action. No FPL
             # write happens until both operations receive successful responses.
             main = self.request("GET", "/git/ref/heads/main")
             self.request("POST", "/git/refs", {"ref": "refs/heads/" + self.branch, "sha": main["object"]["sha"]})
             self.branch_exists = True
-        content = base64.b64encode(json.dumps(receipt, indent=2, allow_nan=False).encode()).decode()
-        body = {"branch": self.branch, "message": f"Record GW{receipt['plan']['gameweek']} execution: {receipt['status']}", "content": content}
+        content = base64.b64encode(json.dumps(value, indent=2, allow_nan=False).encode()).decode()
+        body = {"branch": self.branch, "message": message, "content": content}
         if self.sha:
             body["sha"] = self.sha
         result = self.request("PUT", "/contents/" + self.path, body)

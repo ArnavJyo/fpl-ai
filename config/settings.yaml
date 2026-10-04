@@ -126,6 +126,7 @@ manager:
 # --apply-team is passed. Google sign-in supplies an ignored local session.
 automation:
   auth_file: data/fpl_auth.json
+  session_key_file: data/fpl_session_key.json
   actions_dir: outputs/actions
   receipt_repository: ArnavJyo/fpl-ai
   max_additional_hit_points: 0

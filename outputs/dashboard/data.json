@@ -1,6 +1,6 @@
 {
   "squad": {
-    "mode": "initial_squad",
+    "mode": "transfers",
     "solver": "CBC",
     "solver_status": "Optimal",
     "squad_ids": [
@@ -53,9 +53,9 @@
       "FWD": 1
     },
     "market_value_tenths": 897,
-    "budget_tenths": 1000,
-    "bank_after_tenths": 103,
-    "active_chip": null,
+    "budget_tenths": 996,
+    "bank_after_tenths": 101,
+    "active_chip": "freehit",
     "starting_xi_points": 90.52182865142822,
     "gross_expected_points": 100.83866024017334,
     "additional_transfer_hit_points": 0.0,
@@ -68,15 +68,15 @@
       "out": [],
       "count": 0,
       "paid_count": 0,
-      "free_transfers_before": null
+      "free_transfers_before": 3
     },
     "season_id": "2026-08-21T17:30:00Z",
     "gameweek": 6,
-    "generated_at": "2026-10-04T13:22:49.499008+00:00",
+    "generated_at": "2026-10-04T14:47:47.668272+00:00",
     "training_status": "experimental",
     "model_checkpoint": "/Users/arnavjyotshi/fpl-ai/models/model_gw5_experimental.pt",
     "validation_metrics": null,
-    "source_snapshot_observed_at": "2026-10-02T11:17:52.480733871+00:00",
+    "source_snapshot_observed_at": "2026-10-04T14:47:30.809145212+00:00",
     "manager_context": {
       "status": "public_last_deadline_snapshot",
       "team_id": 10123827,
@@ -102,7 +102,7 @@
       "last_deadline_bank_tenths": 36,
       "note": "Public squad from the GW5 deadline; later transfers may not be reflected. Exact transfer planning needs your current squad, selling prices, bank, and remaining free transfers."
     },
-    "manager_state_observed_at": null,
+    "manager_state_observed_at": "2026-10-04T14:47:46.457954+00:00",
     "public_snapshot_lineup": {
       "mode": "initial_squad",
       "solver": "CBC",
@@ -156,8 +156,8 @@
         "MID": 5,
         "FWD": 2
       },
-      "market_value_tenths": 967,
-      "budget_tenths": 967,
+      "market_value_tenths": 966,
+      "budget_tenths": 966,
       "bank_after_tenths": 0,
       "active_chip": null,
       "starting_xi_points": 39.15284836292267,
@@ -175,8 +175,8 @@
         "free_transfers_before": null
       }
     },
-    "current_squad_net_expected_points": null,
-    "expected_gain_after_hits": null,
+    "current_squad_net_expected_points": 100.83866024017334,
+    "expected_gain_after_hits": 0.0,
     "scope": "One-gameweek expected points. Auto-substitution probabilities and future transfer value are not modeled.",
     "squad": [
       {
@@ -746,7 +746,7 @@
       "web_name": "Szoboszlai",
       "position": "MID",
       "short_name": "LIV",
-      "price_tenths": 70,
+      "price_tenths": 69,
       "predicted_points": 5.102646827697754,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -1046,7 +1046,7 @@
       "web_name": "Gro\u00df",
       "position": "MID",
       "short_name": "BHA",
-      "price_tenths": 58,
+      "price_tenths": 59,
       "predicted_points": 3.855710983276367,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -1208,7 +1208,7 @@
       "short_name": "ARS",
       "price_tenths": 63,
       "predicted_points": 3.509491443634033,
-      "availability_pct": 100.0,
+      "availability_pct": 75.0,
       "fixture_count": 1
     },
     {
@@ -1586,7 +1586,7 @@
       "web_name": "James",
       "position": "DEF",
       "short_name": "CHE",
-      "price_tenths": 54,
+      "price_tenths": 53,
       "predicted_points": 2.8152475357055664,
       "availability_pct": 75.0,
       "fixture_count": 1
@@ -1906,7 +1906,7 @@
       "web_name": "Martinez",
       "position": "DEF",
       "short_name": "MUN",
-      "price_tenths": 50,
+      "price_tenths": 49,
       "predicted_points": 2.2374956607818604,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -2228,7 +2228,7 @@
       "short_name": "BRE",
       "price_tenths": 54,
       "predicted_points": 1.7432345151901245,
-      "availability_pct": 100.0,
+      "availability_pct": 75.0,
       "fixture_count": 1
     },
     {
@@ -3326,7 +3326,7 @@
       "web_name": "I.Sangar\u00e9",
       "position": "MID",
       "short_name": "NFO",
-      "price_tenths": 49,
+      "price_tenths": 48,
       "predicted_points": 0.3904913067817688,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -3736,7 +3736,7 @@
       "web_name": "McNeil",
       "position": "MID",
       "short_name": "CRY",
-      "price_tenths": 54,
+      "price_tenths": 53,
       "predicted_points": 0.24355162680149078,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -3796,7 +3796,7 @@
       "web_name": "Kova\u010di\u0107",
       "position": "MID",
       "short_name": "MCI",
-      "price_tenths": 54,
+      "price_tenths": 53,
       "predicted_points": 0.22729483246803284,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -3856,7 +3856,7 @@
       "web_name": "Longstaff",
       "position": "MID",
       "short_name": "LEE",
-      "price_tenths": 49,
+      "price_tenths": 48,
       "predicted_points": 0.21939703822135925,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -4026,7 +4026,7 @@
       "web_name": "A\u00eft-Nouri",
       "position": "DEF",
       "short_name": "MCI",
-      "price_tenths": 53,
+      "price_tenths": 52,
       "predicted_points": 0.18313056230545044,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -4086,7 +4086,7 @@
       "web_name": "Mamardashvili",
       "position": "GKP",
       "short_name": "LIV",
-      "price_tenths": 49,
+      "price_tenths": 48,
       "predicted_points": 0.1697707623243332,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -4836,7 +4836,7 @@
       "web_name": "Dowell",
       "position": "MID",
       "short_name": "HUL",
-      "price_tenths": 45,
+      "price_tenths": 44,
       "predicted_points": 0.07358142733573914,
       "availability_pct": 100.0,
       "fixture_count": 1
@@ -5316,7 +5316,7 @@
       "web_name": "Henderson",
       "position": "GKP",
       "short_name": "CRY",
-      "price_tenths": 50,
+      "price_tenths": 49,
       "predicted_points": 0.0,
       "availability_pct": 0.0,
       "fixture_count": 1
@@ -5696,7 +5696,7 @@
       "web_name": "Woolfenden",
       "position": "DEF",
       "short_name": "COV",
-      "price_tenths": 40,
+      "price_tenths": 39,
       "predicted_points": 0.0,
       "availability_pct": 0.0,
       "fixture_count": 1
@@ -7083,7 +7083,7 @@
     }
   ],
   "tracker": [],
-  "source_observed_at": "2026-10-02T11:17:52.480733871+00:00",
+  "source_observed_at": "2026-10-04T14:47:30.809145212+00:00",
   "finished_gameweeks": [
     1,
     2,

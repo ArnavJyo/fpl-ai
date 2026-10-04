@@ -3,10 +3,12 @@
 import copy
 import json
 import tempfile
+import time
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
+from types import SimpleNamespace
 
 import requests
 
@@ -76,10 +78,9 @@ class FakeFpl:
                 pick["element"] = transfer["element_in"]
                 pick["selling_price"] = transfer["purchase_price"]
                 self.payload["transfers"]["bank"] += transfer["selling_price"] - transfer["purchase_price"]
-                self.payload["transfers"]["made"] += 1
+                if not body["chip"]:
+                    self.payload["transfers"]["made"] += 1
             chip = body["chip"]
-            if chip:
-                self.payload["transfers"]["limit"] = None
             if self.fail_transfer == "after":
                 self.set_chip(chip)
                 raise FplActionError("Accepted but response lost.")
@@ -284,6 +285,52 @@ class ExecutionTests(unittest.TestCase):
 
 
 class TransportTests(unittest.TestCase):
+    def test_rotating_token_is_persisted_before_an_fpl_request(self):
+        auth = {"team_id": 10123827, "access_token": "old-test-token", "refresh_token": "old-test-refresh",
+                "client_id": "bfcbaf69-aade-4c1b-8f00-c1cb8a193030", "expires_at": 0, "cookies": []}
+        client = AuthenticatedFplClient(auth, 10123827)
+        self.addCleanup(client.close)
+        vault = Mock()
+        client.vault = vault
+        response = Mock(ok=True)
+        response.json.return_value = {"access_token": "new-test-token", "refresh_token": "new-test-refresh", "expires_in": 1800}
+        actual = Mock(ok=True, is_redirect=False, status_code=200, content=b'{}')
+        actual.json.return_value = {}
+        calls = []
+        vault.begin_refresh.side_effect = lambda a: calls.append('reserve')
+        vault.save.side_effect = lambda a: calls.append('persist')
+        with patch('src.automation.client.requests.post', side_effect=lambda *a, **k: (calls.append('renew'),response)[1]), patch.object(client.session,'request',side_effect=lambda *a,**k: (calls.append('fpl'),actual)[1]):
+            client.request('GET','/me/')
+        self.assertEqual(calls,['reserve','renew','persist','fpl'])
+        self.assertEqual(client.auth['refresh_token'],'new-test-refresh')
+        self.assertGreater(client.auth['expires_at'],time.time())
+        self.assertEqual(client.session.headers['X-API-Authorization'],'Bearer new-test-token')
+
+    def test_failed_renewal_reservation_prevents_token_and_account_requests(self):
+        client = AuthenticatedFplClient({"team_id":10123827,"access_token":"test-token","refresh_token":"test-refresh",
+                    "client_id":"bfcbaf69-aade-4c1b-8f00-c1cb8a193030","expires_at":0,"cookies":[]},10123827)
+        self.addCleanup(client.close)
+        client.vault = Mock()
+        client.vault.begin_refresh.side_effect = FplActionError('Concurrent renewal blocked.')
+        with patch('src.automation.client.requests.post') as renew, patch.object(client.session,'request') as request:
+            with self.assertRaises(FplActionError):client.request('POST','/transfers/',{})
+            renew.assert_not_called()
+            request.assert_not_called()
+
+    def test_modern_fpl_token_authentication_does_not_require_legacy_csrf_cookie(self):
+        client = AuthenticatedFplClient({"team_id": 10123827, "access_token": "unit-test-only", "cookies": []}, 10123827)
+        self.addCleanup(client.close)
+        self.assertEqual(client.session.headers["X-API-Authorization"], "Bearer unit-test-only")
+        self.assertEqual(client.session.headers["X-API-Language"], "en")
+        response = Mock(ok=True, is_redirect=False, status_code=200, content=b'{}')
+        response.json.return_value = {}
+        with patch.object(client.session, "request", return_value=response) as request:
+            self.assertEqual(client.request("POST", "/transfers/", {}), {})
+            request.assert_called_once()
+            self.assertNotIn("X-CSRFToken", request.call_args.kwargs["headers"])
+        with self.assertRaises(FplActionError):
+            AuthenticatedFplClient({"team_id": 10123827, "access_token": "bad\r\ntoken"}, 10123827)
+
     def test_cookie_scope_csrf_and_no_write_retries(self):
         auth = {"team_id": 10123827, "cookies": [{"name": "csrftoken", "value": "test-only", "domain": "fantasy.premierleague.com"}]}
         client = AuthenticatedFplClient(auth, 10123827)
@@ -300,6 +347,60 @@ class TransportTests(unittest.TestCase):
         auth["cookies"][0]["domain"] = "google.com"
         with self.assertRaises(FplActionError):
             AuthenticatedFplClient(auth, 10123827)
+
+
+class SessionVaultTests(unittest.TestCase):
+    def test_rotating_credentials_are_encrypted_and_authenticated_to_the_entry(self):
+        from src.automation.session import SessionVault
+        store = Mock()
+        vault = SessionVault('ArnavJyo/fpl-ai',10123827,'ab'*32,store=store)
+        auth={'team_id':10123827,'access_token':'test-access-secret','refresh_token':'test-refresh-secret','cookies':[]}
+        vault.save(auth)
+        envelope=store.save_value.call_args.args[0]
+        self.assertNotIn('test-access-secret',json.dumps(envelope))
+        self.assertNotIn('test-refresh-secret',json.dumps(envelope))
+        store.load.return_value=envelope
+        self.assertEqual(vault.load(),auth)
+        other=SessionVault('ArnavJyo/fpl-ai',999,'ab'*32,store=store)
+        with self.assertRaises(FplActionError):other.load()
+        envelope['status']='renewing'
+        with self.assertRaises(FplActionError):vault.load()
+
+
+class ExistingProfileTests(unittest.TestCase):
+    def test_selected_profile_reads_only_current_fpl_record_and_rejects_deletion(self):
+        from src.automation.login import existing_chrome_session
+        record=SimpleNamespace(leveldb_seq_number=1,is_live=True,value=json.dumps({
+            'access_token':'profile-test-access','refresh_token':'profile-test-refresh','expires_at':time.time()+1800,
+            'profile':{'email':'must-not-export@example.test'}}))
+        database=Mock()
+        database.iter_records_for_script_key.return_value=[record]
+        factory=Mock()
+        factory.return_value.__enter__=Mock(return_value=database)
+        factory.return_value.__exit__=Mock(return_value=False)
+        module=SimpleNamespace(ccl_chromium_localstorage=SimpleNamespace(LocalStoreDb=factory))
+        with patch.dict('sys.modules',{'ccl_chromium_reader':module}):
+            auth=existing_chrome_session('Profile 1',10123827)
+            self.assertEqual(auth['access_token'],'profile-test-access')
+            self.assertNotIn('profile',auth)
+            self.assertNotIn('must-not-export@example.test',json.dumps(auth))
+            self.assertEqual(database.iter_records_for_script_key.call_args.args[0],'https://fantasy.premierleague.com')
+            database.iter_records_for_script_key.return_value=[record,SimpleNamespace(leveldb_seq_number=2,is_live=False,value=None)]
+            with self.assertRaises(FplActionError):existing_chrome_session('Profile 1',10123827)
+            with self.assertRaises(FplActionError):existing_chrome_session('../another-profile',10123827)
+
+    def test_reconnecting_an_older_browser_record_preserves_newer_rotated_pair(self):
+        from src.automation.login import save_connection
+        settings=copy.deepcopy(load_config())
+        older={'team_id':10123827,'access_token':'old-access','refresh_token':'old-refresh','expires_at':100}
+        newer={**older,'access_token':'new-access','refresh_token':'new-refresh','expires_at':200}
+        vault=Mock()
+        vault.load.return_value=newer
+        with patch('src.automation.session.configured_vault',return_value=vault), patch('src.automation.login.AuthenticatedFplClient') as Client, patch('src.automation.login.private_json') as save:
+            Client.return_value.auth=newer
+            save_connection(settings,older,False,'ArnavJyo/fpl-ai')
+            Client.assert_called_once_with(newer,10123827)
+            self.assertEqual(save.call_args.args[1]['refresh_token'],'new-refresh')
 
 
 if __name__ == "__main__":

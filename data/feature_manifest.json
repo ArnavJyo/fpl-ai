@@ -275,8 +275,8 @@
   "folds": [],
   "training_ready": false,
   "validation_ready": false,
-  "bootstrap_cache_observed_at": "2026-10-02T11:17:52.480733871+00:00",
-  "bootstrap_cache_age_hours": 50.01279832416667,
+  "bootstrap_cache_observed_at": "2026-10-04T14:47:30.809145212+00:00",
+  "bootstrap_cache_age_hours": 0.0026456402777777777,
   "full_history_preprocessor_fit_gameweeks": [
     1,
     2,

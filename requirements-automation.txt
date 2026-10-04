@@ -1,2 +1,4 @@
 # Needed only for the interactive Google/FPL browser connection.
 playwright==1.63.0
+# Optional import from an explicitly selected existing Chrome profile.
+ccl_chromium_reader @ git+https://github.com/cclgroupltd/ccl_chromium_reader.git@ef840de30221c4d65bc96d2f4d9057e9ef2f526d

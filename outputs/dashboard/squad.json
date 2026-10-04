@@ -1,5 +1,5 @@
 {
-  "mode": "initial_squad",
+  "mode": "transfers",
   "solver": "CBC",
   "solver_status": "Optimal",
   "squad_ids": [
@@ -52,9 +52,9 @@
     "FWD": 1
   },
   "market_value_tenths": 897,
-  "budget_tenths": 1000,
-  "bank_after_tenths": 103,
-  "active_chip": null,
+  "budget_tenths": 996,
+  "bank_after_tenths": 101,
+  "active_chip": "freehit",
   "starting_xi_points": 90.52182865142822,
   "gross_expected_points": 100.83866024017334,
   "additional_transfer_hit_points": 0.0,
@@ -67,15 +67,15 @@
     "out": [],
     "count": 0,
     "paid_count": 0,
-    "free_transfers_before": null
+    "free_transfers_before": 3
   },
   "season_id": "2026-08-21T17:30:00Z",
   "gameweek": 6,
-  "generated_at": "2026-10-04T13:22:49.499008+00:00",
+  "generated_at": "2026-10-04T14:47:47.668272+00:00",
   "training_status": "experimental",
   "model_checkpoint": "/Users/arnavjyotshi/fpl-ai/models/model_gw5_experimental.pt",
   "validation_metrics": null,
-  "source_snapshot_observed_at": "2026-10-02T11:17:52.480733871+00:00",
+  "source_snapshot_observed_at": "2026-10-04T14:47:30.809145212+00:00",
   "manager_context": {
     "status": "public_last_deadline_snapshot",
     "team_id": 10123827,
@@ -101,7 +101,7 @@
     "last_deadline_bank_tenths": 36,
     "note": "Public squad from the GW5 deadline; later transfers may not be reflected. Exact transfer planning needs your current squad, selling prices, bank, and remaining free transfers."
   },
-  "manager_state_observed_at": null,
+  "manager_state_observed_at": "2026-10-04T14:47:46.457954+00:00",
   "public_snapshot_lineup": {
     "mode": "initial_squad",
     "solver": "CBC",
@@ -155,8 +155,8 @@
       "MID": 5,
       "FWD": 2
     },
-    "market_value_tenths": 967,
-    "budget_tenths": 967,
+    "market_value_tenths": 966,
+    "budget_tenths": 966,
     "bank_after_tenths": 0,
     "active_chip": null,
     "starting_xi_points": 39.15284836292267,
@@ -174,8 +174,8 @@
       "free_transfers_before": null
     }
   },
-  "current_squad_net_expected_points": null,
-  "expected_gain_after_hits": null,
+  "current_squad_net_expected_points": 100.83866024017334,
+  "expected_gain_after_hits": 0.0,
   "scope": "One-gameweek expected points. Auto-substitution probabilities and future transfer value are not modeled.",
   "squad": [
     {

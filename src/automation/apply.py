@@ -49,10 +49,13 @@ def transfers_match(payload: dict, plan: dict) -> bool:
     expected = {p["element"] for p in plan["lineup_request"]["picks"]}
     if {p["element"] for p in payload["picks"]} != expected or payload["transfers"]["bank"] != plan["bank_after_tenths"]:
         return False
+    if plan["chip"] in TRANSFER_CHIPS:
+        # Live FPL preserves the ordinary free-transfer counter during Free Hit
+        # and Wildcard; 13 chip transfers can correctly leave `made` at zero.
+        # Confirm exact squad/bank and the active unlimited-transfer chip.
+        return chip_matches(payload, plan)
     if payload["transfers"]["made"] != plan["source_transfer_made"] + len(plan["transfer_request"]["transfers"]):
         return False
-    if plan["chip"] in TRANSFER_CHIPS:
-        return chip_matches(payload, plan)
     if len(plan["transfer_request"]["transfers"]) > plan["free_transfers_before"]:
         return False
     # Scoring chips are applied at the later lineup step.

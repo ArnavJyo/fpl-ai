@@ -26,4 +26,5 @@ data/my-team*.json
 # Authenticated FPL sessions and private action receipts never enter Git.
 .local/
 data/fpl_auth.json*
+data/fpl_session_key.json*
 outputs/actions/

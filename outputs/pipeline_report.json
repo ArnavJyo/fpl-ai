@@ -1,16 +1,16 @@
 {
   "status": "complete",
-  "started_at": "2026-10-04T13:18:34.704118+00:00",
+  "started_at": "2026-10-04T14:47:30.735864+00:00",
   "stages": [
     {
       "name": "Refresh source tables",
       "status": "complete",
-      "duration_seconds": 0.545
+      "duration_seconds": 6.427
     },
     {
       "name": "Build past-only features",
       "status": "complete",
-      "duration_seconds": 3.307
+      "duration_seconds": 3.173
     },
     {
       "name": "Score baseline on available full folds",
@@ -18,38 +18,39 @@
       "duration_seconds": 0.015
     },
     {
-      "name": "Train points model",
-      "status": "complete",
-      "duration_seconds": 4.327
-    },
-    {
       "name": "Generate upcoming forecasts",
       "status": "complete",
-      "duration_seconds": 0.025
+      "duration_seconds": 0.083
     },
     {
       "name": "Archive forecast before deadline",
       "status": "complete",
-      "duration_seconds": 0.021
+      "duration_seconds": 0.022
+    },
+    {
+      "name": "Apply authenticated team changes",
+      "status": "complete",
+      "duration_seconds": 6.003
     },
     {
       "name": "Optimize squad and lineup",
       "status": "complete",
-      "duration_seconds": 0.57
+      "duration_seconds": 1.213
     },
     {
       "name": "Build dashboard and performance tracker",
       "status": "complete",
-      "duration_seconds": 0.033
+      "duration_seconds": 0.038
     }
   ],
   "offline": false,
-  "refresh": false,
+  "refresh": true,
   "team_id": 10123827,
   "allow_experimental": true,
-  "skip_training": false,
+  "skip_training": true,
+  "team_execution": "applied",
   "gameweek": 6,
   "training_status": "experimental",
   "dashboard": "/Users/arnavjyotshi/fpl-ai/outputs/dashboard/index.html",
-  "finished_at": "2026-10-04T13:18:43.547874+00:00"
+  "finished_at": "2026-10-04T14:47:47.710222+00:00"
 }
