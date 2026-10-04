@@ -1,5 +1,5 @@
 {
-  "status": "transfers_verified",
+  "status": "lineup_pending",
   "plan": {
     "format_version": 1,
     "team_id": 10123827,
@@ -320,6 +320,10 @@
     {
       "at": "2026-10-04T14:39:27.357932+00:00",
       "message": "Recovered an earlier transfer commit by reading the live team."
+    },
+    {
+      "at": "2026-10-04T14:39:28.819096+00:00",
+      "message": "Saving XI, bench order, captain, vice captain and scoring chip."
     }
   ]
 }
