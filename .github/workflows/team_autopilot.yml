@@ -1,0 +1,116 @@
+name: Apply FPL team
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply account changes (false generates a live preview)
+        type: boolean
+        default: false
+
+permissions:
+  # Persist receipts on a separate state branch BEFORE FPL writes. A cache
+  # eviction or failed job cannot make a committed transfer look unexecuted.
+  contents: write
+
+concurrency:
+  group: fpl-weekly-pipeline
+  cancel-in-progress: false
+
+jobs:
+  manage:
+    if: github.event_name == 'workflow_dispatch' || vars.FPL_AUTOPILOT_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      FPL_TEAM_ID: ${{ vars.FPL_TEAM_ID || '10123827' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Check scheduled deadline window before installing ML packages
+        id: window
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          python -m pip install PyYAML==6.0.2
+          python - <<'PY'
+          import json, os, urllib.request, yaml
+          from datetime import datetime, timezone
+          policy = yaml.safe_load(open('config/settings.yaml'))['automation']
+          if os.environ['MANUAL'] == 'true':
+              allowed = True
+          else:
+              with urllib.request.urlopen('https://fantasy.premierleague.com/api/bootstrap-static/', timeout=30) as r:
+                  events = json.load(r)['events']
+              upcoming = next((e for e in events if e.get('is_next')), None)
+              remaining = (datetime.fromisoformat(upcoming['deadline_time'].replace('Z', '+00:00')) - datetime.now(timezone.utc)).total_seconds() if upcoming else -1
+              allowed = policy['deadline_buffer_seconds'] < remaining <= policy['scheduled_apply_window_minutes'] * 60
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as stream:
+              stream.write(f"run={'true' if allowed else 'false'}\n")
+          print('Running inside deadline window.' if allowed else 'Outside deadline window; no team changes.')
+          PY
+      - name: Install CPU dependencies
+        if: steps.window.outputs.run == 'true'
+        run: |
+          python -m pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+      - name: Test before account changes
+        if: steps.window.outputs.run == 'true'
+        run: python -m unittest discover -s tests -q
+      - name: Restore action receipts
+        if: steps.window.outputs.run == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: outputs/actions/
+          key: fpl-actions-${{ github.repository_id }}-${{ env.FPL_TEAM_ID }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: fpl-actions-${{ github.repository_id }}-${{ env.FPL_TEAM_ID }}-
+      - name: Restore observations
+        if: steps.window.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/player_snapshots.parquet
+            outputs/forecast_archive/
+          key: fpl-observations-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: fpl-observations-${{ github.repository_id }}-
+      - name: Refresh forecasts and apply or preview live team
+        if: steps.window.outputs.run == 'true'
+        env:
+          FPL_AUTH_JSON: ${{ secrets.FPL_AUTH_JSON }}
+          GH_TOKEN: ${{ github.token }}
+          APPLY: ${{ github.event_name == 'schedule' || inputs.apply }}
+        run: |
+          if [ -z "$FPL_AUTH_JSON" ]; then
+            echo 'FPL browser login is missing. Connect it locally with src.automation.login --enable-actions.'
+            exit 1
+          fi
+          if [ "$APPLY" = 'true' ]; then
+            python run_pipeline.py --end-to-end --refresh --allow-experimental --apply-team
+          else
+            python run_pipeline.py --end-to-end --refresh --allow-experimental
+            python -m src.automation.apply --preview
+          fi
+      - name: Persist receipts even after a partial write or verification failure
+        if: always() && steps.window.outputs.run == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: outputs/actions/
+          key: fpl-actions-${{ github.repository_id }}-${{ env.FPL_TEAM_ID }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Upload private action receipts and dashboard (sessions excluded)
+        if: always() && steps.window.outputs.run == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: fpl-team-${{ github.run_id }}
+          retention-days: 90
+          if-no-files-found: ignore
+          path: |
+            outputs/actions/*.json
+            outputs/dashboard/
+            outputs/pipeline_report.json

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -56,6 +57,8 @@ def run_prediction(settings: dict | None = None, checkpoint_path: Path | None = 
         for (player, week), points in zip(dataset.prediction[KEY].itertuples(index=False, name=None), predicted)
     ]
     result = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source_snapshot_observed_at": dataset.manifest.get("bootstrap_cache_observed_at"),
         "season_id": checkpoint["season_id"], "gameweek": next_week, "model_checkpoint": str(checkpoint_path),
         "training_status": checkpoint["training_status"], "trained_gameweeks": checkpoint["trained_gameweeks"],
         "validation_metrics": checkpoint["validation_metrics"], "baseline_comparison": checkpoint["baseline_comparison"],

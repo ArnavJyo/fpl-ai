@@ -130,6 +130,10 @@ def solve_squad(candidates: pd.DataFrame, rules: dict, manager_state: dict | Non
     paid = pulp.LpVariable("paid_transfers", lowBound=0, upBound=15, cat="Integer")
     transfer_chip = chip in {"wildcard", "freehit"}
     if current:
+        if rules.get("freeze_current_squad", False):
+            # Display the actually saved squad after execution, including weeks
+            # with a transfer chip where ordinary max_transfers is bypassed.
+            problem += transfers == 0
         problem += pulp.lpSum(prices[player] * squad[player] for player in ids if player not in current) <= bank + pulp.lpSum(selling[player] * (1 - squad[player]) for player in current)
         problem += transfers <= (15 if transfer_chip else rules["max_transfers"])
         if transfer_chip:
@@ -142,7 +146,8 @@ def solve_squad(candidates: pd.DataFrame, rules: dict, manager_state: dict | Non
     scoring = squad if chip == "bboost" else start
     captain_extra = 2 if chip == "3xc" else 1
     gross = pulp.lpSum(points[player] * (scoring[player] + captain_extra * captain[player]) for player in ids)
-    existing_hit = float(manager_state.get("existing_transfer_hit_points", 0)) if manager_state else 0.0
+    # Transfer chips refund earlier hits from this same gameweek.
+    existing_hit = float(manager_state.get("existing_transfer_hit_points", 0)) if manager_state and not transfer_chip else 0.0
     primary = gross - rules["transfer_hit_cost"] * paid - existing_hit
     problem.setObjective(primary)
     solver = pulp.PULP_CBC_CMD(msg=False, timeLimit=rules["solver_time_limit_seconds"], threads=1, gapRel=0, options=["randomSeed 42"])

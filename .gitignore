@@ -19,6 +19,11 @@ outputs/loss_comparison/*.pt
 venv/
 
 # Personal transfer state is supplied locally or as a GitHub Actions secret.
-data/manager_state.json
+data/manager_state.json*
 my-team*.json
 data/my-team*.json
+
+# Authenticated FPL sessions and private action receipts never enter Git.
+.local/
+data/fpl_auth.json*
+outputs/actions/

@@ -234,12 +234,13 @@ class ModelTrainingTests(unittest.TestCase):
             with patch("src.models.predict.load_feature_dataset", return_value=dataset), redirect_stdout(io.StringIO()):
                 result = run_prediction(settings)
                 repeated = run_prediction(settings)
-            self.assertEqual(result, repeated)
+            self.assertLessEqual(result["generated_at"], repeated["generated_at"])
+            self.assertEqual({**result, "generated_at": repeated["generated_at"]}, repeated)
             self.assertEqual(result["training_status"], "experimental")
             self.assertEqual(result["gameweek"], 6)
             self.assertEqual([row["element_id"] for row in result["predictions"]], [11, 22])
             np.testing.assert_array_equal([row["predicted_points"] for row in result["predictions"]], expected)
-            self.assertEqual(json.loads(Path(settings["paths"]["predictions_file"]).read_text()), result)
+            self.assertEqual(json.loads(Path(settings["paths"]["predictions_file"]).read_text()), repeated)
             wrong_season = copy.deepcopy(dataset)
             wrong_season.manifest["season_id"] = "different"
             with patch("src.models.predict.load_feature_dataset", return_value=wrong_season):

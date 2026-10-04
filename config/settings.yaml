@@ -121,3 +121,23 @@ loss_comparison:
 # Numeric entry ID from the team URL, not the account UUID.
 manager:
   team_id: 10123827
+
+# User-authorized live execution. The normal pipeline remains read-only unless
+# --apply-team is passed. Google sign-in supplies an ignored local session.
+automation:
+  auth_file: data/fpl_auth.json
+  actions_dir: outputs/actions
+  receipt_repository: ArnavJyo/fpl-ai
+  max_additional_hit_points: 0
+  allow_experimental: true
+  deadline_buffer_seconds: 300
+  max_forecast_age_hours: 6
+  scheduled_apply_window_minutes: 120
+  allowed_chips: [wildcard, freehit, bboost, 3xc]
+  # Minimum marginal GW points to justify spending a scarce chip. These are
+  # configurable heuristics, not a learned multi-gameweek chip strategy.
+  chip_min_gain:
+    wildcard: 15
+    freehit: 15
+    bboost: 12
+    3xc: 10

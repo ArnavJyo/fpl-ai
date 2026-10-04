@@ -102,6 +102,12 @@ class SquadSolverTests(unittest.TestCase):
         with self.assertRaises(OptimizationError):
             solve_squad(roster(), self.rules, exact_state(selling_price=51))
 
+    def test_post_execution_display_keeps_saved_squad_even_on_a_wildcard(self):
+        frozen = {**self.rules, "max_transfers": 0, "freeze_current_squad": True}
+        result = solve_squad(roster(100), frozen, exact_state(chip="wildcard"))
+        self.assertEqual(result["squad_ids"], list(range(1, 16)))
+        self.assertEqual(result["transfers"]["count"], 0)
+
     def test_unavailable_new_signing_cannot_be_selected_or_captained(self):
         candidates = roster(100)
         candidates.loc[candidates.element_id == 16, "can_start"] = False

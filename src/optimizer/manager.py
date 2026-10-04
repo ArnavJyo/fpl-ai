@@ -70,7 +70,9 @@ def import_my_team(payload: dict, team_id: int, season_id: str, gameweek: int,
              "observed_at": datetime.now(timezone.utc).isoformat(),
              "bank_tenths": integer(transfers.get("bank"), "transfers.bank"),
              "free_transfers": remaining, "active_chip": active_chip,
-             "existing_transfer_hit_points": integer(transfers.get("cost", 0), "transfers.cost"),
+             # The live API's cost is points PER paid transfer, not the total.
+             "existing_transfer_hit_points": (max(0, made - limit) * integer(transfers.get("cost", 4), "transfers.cost"))
+                 if isinstance(limit, int) and active_chip not in {"wildcard", "freehit"} else 0,
              "picks": [{"element_id": pick["element"], "selling_price_tenths": pick["selling_price"]}
                        for pick in payload["picks"]]}
     return validate_manager_state(state, season_id, gameweek)

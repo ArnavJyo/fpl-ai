@@ -2,6 +2,7 @@ name: Tests
 
 on:
   push:
+    branches-ignore: [fpl-automation-state]
   pull_request:
   workflow_dispatch:
 

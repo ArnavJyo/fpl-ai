@@ -1,0 +1,2 @@
+# Needed only for the interactive Google/FPL browser connection.
+playwright==1.63.0

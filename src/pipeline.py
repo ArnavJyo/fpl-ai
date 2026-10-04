@@ -41,7 +41,7 @@ def runtime_settings() -> dict:
 
 def run_end_to_end(settings: dict | None = None, refresh: bool = False, offline: bool = False,
                    skip_training: bool = False, allow_experimental: bool = False,
-                   workers: int = 6, manager_path: Path | None = None) -> dict:
+                   workers: int = 6, manager_path: Path | None = None, apply_team: bool = False) -> dict:
     """Stop on stage failure and record it; never report downstream success.
 
     The model uses the raw feature pipeline, so the old inner-joined history
@@ -51,6 +51,16 @@ def run_end_to_end(settings: dict | None = None, refresh: bool = False, offline:
     integer(workers, "workers", 1)
     if offline and refresh:
         raise ValueError("--offline and --refresh cannot be used together.")
+    if apply_team and (offline or not refresh or manager_path is not None):
+        raise ValueError("--apply-team requires --refresh and a live login; omit --offline and --manager-state.")
+    if apply_team:
+        from src.automation.client import AuthenticatedFplClient
+        client = AuthenticatedFplClient.from_settings(settings)
+        try:
+            client.verify_identity()
+            client.my_team()
+        finally:
+            client.close()
     report = {"status": "running", "started_at": datetime.now(timezone.utc).isoformat(), "stages": [],
               "offline": offline, "refresh": refresh, "team_id": settings["manager"]["team_id"],
               "allow_experimental": allow_experimental, "skip_training": skip_training}
@@ -94,7 +104,16 @@ def run_end_to_end(settings: dict | None = None, refresh: bool = False, offline:
         if not allow_experimental and predictions["training_status"] == "experimental":
             raise ValueError("Saved model is experimental. Pass --allow-experimental explicitly to use its projections.")
         stage("Archive forecast before deadline", lambda: archive_forecast(settings, predictions))
-        stage("Optimize squad and lineup", lambda: run_optimization(settings, manager_path,
+        optimization_settings = settings
+        if apply_team:
+            from src.automation.apply import run_live_actions
+            report["team_execution"] = stage("Apply authenticated team changes", lambda: run_live_actions(settings, apply=True))["status"]
+            optimization_settings = copy.deepcopy(settings)
+            # Show the saved team after applying, rather than suggesting a second
+            # batch of transfers after the actual gameweek commit.
+            optimization_settings["squad_rules"]["max_transfers"] = 0
+            optimization_settings["squad_rules"]["freeze_current_squad"] = True
+        stage("Optimize squad and lineup", lambda: run_optimization(optimization_settings, manager_path,
                                                                     fetch_manager=not offline, refresh=refresh))
         dashboard = stage("Build dashboard and performance tracker", lambda: run_dashboard(settings))
         report.update(status="complete", gameweek=predictions["gameweek"], training_status=predictions["training_status"], dashboard=str(dashboard))
@@ -117,6 +136,7 @@ def main() -> None:
     parser.add_argument("--allow-experimental", action="store_true", help="explicitly allow a model before full folds exist")
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--manager-state", type=Path)
+    parser.add_argument("--apply-team", action="store_true", help="apply live transfers, XI, captain and selected chip; requires --refresh")
     args = parser.parse_args()
     try:
         state_json = os.environ.get("FPL_MANAGER_STATE_JSON")
@@ -125,7 +145,8 @@ def main() -> None:
             state = json.loads(state_json)
             save_json(PROJECT_ROOT / load_config()["paths"]["manager_state_file"], state)
         run_end_to_end(refresh=args.refresh, offline=args.offline, skip_training=args.skip_training,
-                       allow_experimental=args.allow_experimental, workers=args.workers, manager_path=args.manager_state)
+                       allow_experimental=args.allow_experimental, workers=args.workers, manager_path=args.manager_state,
+                       apply_team=args.apply_team)
     except (ValueError, FileNotFoundError) as exc:
         parser.exit(1, f"Pipeline stopped: {exc}\n")
 
