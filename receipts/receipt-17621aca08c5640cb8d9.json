@@ -1,0 +1,321 @@
+{
+  "status": "transfers_pending",
+  "plan": {
+    "format_version": 1,
+    "team_id": 10123827,
+    "season_id": "2026-08-21T17:30:00Z",
+    "gameweek": 6,
+    "created_at": "2026-10-04T14:36:45.097445+00:00",
+    "forecast_generated_at": "2026-10-04T14:36:41.937368+00:00",
+    "training_status": "experimental",
+    "source_snapshot_observed_at": "2026-10-04T14:36:17.796612740+00:00",
+    "deadline": "2026-10-10T10:00:00Z",
+    "source_fingerprint": "99f8baf493f447529014d62259979c0f38fbd4f5b2fa99cf92a7bead38e82deb",
+    "source_bank_tenths": 36,
+    "source_transfer_made": 0,
+    "free_transfers_before": 3,
+    "source_active_chip": null,
+    "chip": "freehit",
+    "bank_after_tenths": 101,
+    "transfer_request": {
+      "entry": 10123827,
+      "event": 6,
+      "chip": "freehit",
+      "transfers": [
+        {
+          "element_in": 109,
+          "element_out": 496,
+          "purchase_price": 45,
+          "selling_price": 45
+        },
+        {
+          "element_in": 4,
+          "element_out": 145,
+          "purchase_price": 80,
+          "selling_price": 50
+        },
+        {
+          "element_in": 33,
+          "element_out": 391,
+          "purchase_price": 45,
+          "selling_price": 56
+        },
+        {
+          "element_in": 91,
+          "element_out": 393,
+          "purchase_price": 45,
+          "selling_price": 54
+        },
+        {
+          "element_in": 173,
+          "element_out": 422,
+          "purchase_price": 40,
+          "selling_price": 44
+        },
+        {
+          "element_in": 356,
+          "element_out": 579,
+          "purchase_price": 65,
+          "selling_price": 54
+        },
+        {
+          "element_in": 13,
+          "element_out": 7,
+          "purchase_price": 74,
+          "selling_price": 54
+        },
+        {
+          "element_in": 45,
+          "element_out": 15,
+          "purchase_price": 54,
+          "selling_price": 67
+        },
+        {
+          "element_in": 366,
+          "element_out": 368,
+          "purchase_price": 73,
+          "selling_price": 69
+        },
+        {
+          "element_in": 415,
+          "element_out": 399,
+          "purchase_price": 58,
+          "selling_price": 77
+        },
+        {
+          "element_in": 453,
+          "element_out": 426,
+          "purchase_price": 61,
+          "selling_price": 119
+        },
+        {
+          "element_in": 194,
+          "element_out": 165,
+          "purchase_price": 50,
+          "selling_price": 76
+        },
+        {
+          "element_in": 295,
+          "element_out": 441,
+          "purchase_price": 55,
+          "selling_price": 45
+        }
+      ]
+    },
+    "lineup_request": {
+      "chip": null,
+      "picks": [
+        {
+          "element": 1,
+          "position": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 4,
+          "position": 2,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 33,
+          "position": 3,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 91,
+          "position": 4,
+          "is_captain": false,
+          "is_vice_captain": true
+        },
+        {
+          "element": 173,
+          "position": 5,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 356,
+          "position": 6,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 13,
+          "position": 7,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 45,
+          "position": 8,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 366,
+          "position": 9,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 453,
+          "position": 10,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 194,
+          "position": 11,
+          "is_captain": true,
+          "is_vice_captain": false
+        },
+        {
+          "element": 109,
+          "position": 12,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 415,
+          "position": 13,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 379,
+          "position": 14,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 295,
+          "position": 15,
+          "is_captain": false,
+          "is_vice_captain": false
+        }
+      ]
+    },
+    "net_expected_points": 100.83866024017334,
+    "additional_hit_points": 0,
+    "chip_evaluation": [
+      {
+        "chip": null,
+        "net_expected_points": 75.14141726493835,
+        "eligible": true
+      },
+      {
+        "chip": "3xc",
+        "net_expected_points": 85.45824885368347,
+        "gain_over_no_chip": 10.316831588745117,
+        "minimum_gain": 10.0,
+        "eligible": true
+      },
+      {
+        "chip": "bboost",
+        "net_expected_points": 84.82363712787628,
+        "gain_over_no_chip": 9.682219862937927,
+        "minimum_gain": 12.0,
+        "eligible": false
+      },
+      {
+        "chip": "freehit",
+        "net_expected_points": 100.83866024017334,
+        "gain_over_no_chip": 25.697242975234985,
+        "minimum_gain": 15.0,
+        "eligible": true
+      },
+      {
+        "chip": "wildcard",
+        "net_expected_points": 100.83866024017334,
+        "gain_over_no_chip": 25.697242975234985,
+        "minimum_gain": 15.0,
+        "eligible": true
+      }
+    ],
+    "players": [
+      {
+        "element_id": 1,
+        "name": "Raya",
+        "position": "GKP"
+      },
+      {
+        "element_id": 4,
+        "name": "Gabriel",
+        "position": "DEF"
+      },
+      {
+        "element_id": 33,
+        "name": "Mings",
+        "position": "DEF"
+      },
+      {
+        "element_id": 91,
+        "name": "Pinnock",
+        "position": "DEF"
+      },
+      {
+        "element_id": 173,
+        "name": "Thomas",
+        "position": "DEF"
+      },
+      {
+        "element_id": 356,
+        "name": "Virgil",
+        "position": "DEF"
+      },
+      {
+        "element_id": 13,
+        "name": "Rice",
+        "position": "MID"
+      },
+      {
+        "element_id": 45,
+        "name": "McGinn",
+        "position": "MID"
+      },
+      {
+        "element_id": 366,
+        "name": "Wirtz",
+        "position": "MID"
+      },
+      {
+        "element_id": 453,
+        "name": "Barnes",
+        "position": "MID"
+      },
+      {
+        "element_id": 194,
+        "name": "Thomas-Asante",
+        "position": "FWD"
+      },
+      {
+        "element_id": 109,
+        "name": "Verbruggen",
+        "position": "GKP"
+      },
+      {
+        "element_id": 415,
+        "name": "Dorgu",
+        "position": "MID"
+      },
+      {
+        "element_id": 379,
+        "name": "Isak",
+        "position": "FWD"
+      },
+      {
+        "element_id": 295,
+        "name": "McBurnie",
+        "position": "FWD"
+      }
+    ]
+  },
+  "events": [
+    {
+      "at": "2026-10-04T14:36:46.735142+00:00",
+      "message": "Sending a single transfer/chip commit; automatic POST retries disabled."
+    }
+  ]
+}
