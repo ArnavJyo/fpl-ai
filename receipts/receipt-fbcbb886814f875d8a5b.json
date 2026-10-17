@@ -1,0 +1,314 @@
+{
+  "status": "transfers_pending",
+  "plan": {
+    "format_version": 1,
+    "team_id": 10123827,
+    "season_id": "2026-08-21T17:30:00Z",
+    "gameweek": 8,
+    "created_at": "2026-10-17T11:08:21.296135+00:00",
+    "forecast_generated_at": "2026-10-17T11:08:18.781855+00:00",
+    "training_status": "experimental",
+    "source_snapshot_observed_at": "2026-10-17T11:07:57.663524628+00:00",
+    "deadline": "2026-10-23T17:30:00Z",
+    "source_fingerprint": "86d1edfe93240683b63557864b97f9a1716e39e849d545018d0375d1d2b0b8b9",
+    "source_bank_tenths": 36,
+    "source_transfer_made": 0,
+    "free_transfers_before": 4,
+    "source_active_chip": null,
+    "chip": "wildcard",
+    "bank_after_tenths": 103,
+    "transfer_request": {
+      "entry": 10123827,
+      "event": 8,
+      "chip": "wildcard",
+      "transfers": [
+        {
+          "element_in": 110,
+          "element_out": 1,
+          "purchase_price": 45,
+          "selling_price": 60
+        },
+        {
+          "element_in": 226,
+          "element_out": 496,
+          "purchase_price": 55,
+          "selling_price": 45
+        },
+        {
+          "element_in": 8,
+          "element_out": 145,
+          "purchase_price": 59,
+          "selling_price": 50
+        },
+        {
+          "element_in": 113,
+          "element_out": 393,
+          "purchase_price": 44,
+          "selling_price": 54
+        },
+        {
+          "element_in": 115,
+          "element_out": 422,
+          "purchase_price": 52,
+          "selling_price": 43
+        },
+        {
+          "element_in": 332,
+          "element_out": 579,
+          "purchase_price": 45,
+          "selling_price": 54
+        },
+        {
+          "element_in": 13,
+          "element_out": 7,
+          "purchase_price": 73,
+          "selling_price": 54
+        },
+        {
+          "element_in": 16,
+          "element_out": 15,
+          "purchase_price": 62,
+          "selling_price": 67
+        },
+        {
+          "element_in": 124,
+          "element_out": 368,
+          "purchase_price": 61,
+          "selling_price": 68
+        },
+        {
+          "element_in": 403,
+          "element_out": 399,
+          "purchase_price": 65,
+          "selling_price": 77
+        },
+        {
+          "element_in": 428,
+          "element_out": 426,
+          "purchase_price": 79,
+          "selling_price": 118
+        },
+        {
+          "element_in": 222,
+          "element_out": 379,
+          "purchase_price": 60,
+          "selling_price": 90
+        },
+        {
+          "element_in": 526,
+          "element_out": 441,
+          "purchase_price": 58,
+          "selling_price": 45
+        }
+      ]
+    },
+    "lineup_request": {
+      "chip": null,
+      "picks": [
+        {
+          "element": 110,
+          "position": 1,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 8,
+          "position": 2,
+          "is_captain": false,
+          "is_vice_captain": true
+        },
+        {
+          "element": 113,
+          "position": 3,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 115,
+          "position": 4,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 332,
+          "position": 5,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 391,
+          "position": 6,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 13,
+          "position": 7,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 16,
+          "position": 8,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 124,
+          "position": 9,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 403,
+          "position": 10,
+          "is_captain": true,
+          "is_vice_captain": false
+        },
+        {
+          "element": 165,
+          "position": 11,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 226,
+          "position": 12,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 428,
+          "position": 13,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 526,
+          "position": 14,
+          "is_captain": false,
+          "is_vice_captain": false
+        },
+        {
+          "element": 222,
+          "position": 15,
+          "is_captain": false,
+          "is_vice_captain": false
+        }
+      ]
+    },
+    "net_expected_points": 109.38054966926575,
+    "additional_hit_points": 0,
+    "chip_evaluation": [
+      {
+        "chip": null,
+        "net_expected_points": 87.14204007387161,
+        "eligible": true
+      },
+      {
+        "chip": "3xc",
+        "net_expected_points": 99.03134423494339,
+        "gain_over_no_chip": 11.889304161071777,
+        "minimum_gain": 10.0,
+        "eligible": true
+      },
+      {
+        "chip": "bboost",
+        "net_expected_points": 88.84628656506538,
+        "gain_over_no_chip": 1.7042464911937714,
+        "minimum_gain": 12.0,
+        "eligible": false
+      },
+      {
+        "chip": "wildcard",
+        "net_expected_points": 109.38054966926575,
+        "gain_over_no_chip": 22.238509595394135,
+        "minimum_gain": 15.0,
+        "eligible": true
+      }
+    ],
+    "players": [
+      {
+        "element_id": 110,
+        "name": "Rushworth",
+        "position": "GKP"
+      },
+      {
+        "element_id": 8,
+        "name": "Calafiori",
+        "position": "DEF"
+      },
+      {
+        "element_id": 113,
+        "name": "F.Kad\u0131o\u011flu",
+        "position": "DEF"
+      },
+      {
+        "element_id": 115,
+        "name": "De Cuyper",
+        "position": "DEF"
+      },
+      {
+        "element_id": 332,
+        "name": "Justin",
+        "position": "DEF"
+      },
+      {
+        "element_id": 391,
+        "name": "Gvardiol",
+        "position": "DEF"
+      },
+      {
+        "element_id": 13,
+        "name": "Rice",
+        "position": "MID"
+      },
+      {
+        "element_id": 16,
+        "name": "Madueke",
+        "position": "MID"
+      },
+      {
+        "element_id": 124,
+        "name": "Gro\u00df",
+        "position": "MID"
+      },
+      {
+        "element_id": 403,
+        "name": "S\u00e1vio",
+        "position": "MID"
+      },
+      {
+        "element_id": 165,
+        "name": "Jo\u00e3o Pedro",
+        "position": "FWD"
+      },
+      {
+        "element_id": 226,
+        "name": "Pickford",
+        "position": "GKP"
+      },
+      {
+        "element_id": 428,
+        "name": "Cunha",
+        "position": "MID"
+      },
+      {
+        "element_id": 526,
+        "name": "Solanke",
+        "position": "FWD"
+      },
+      {
+        "element_id": 222,
+        "name": "Strand Larsen",
+        "position": "FWD"
+      }
+    ]
+  },
+  "events": [
+    {
+      "at": "2026-10-17T11:08:22.164256+00:00",
+      "message": "Sending a single transfer/chip commit; automatic POST retries disabled."
+    }
+  ]
+}
