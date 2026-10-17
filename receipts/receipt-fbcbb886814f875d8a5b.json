@@ -1,5 +1,5 @@
 {
-  "status": "lineup_pending",
+  "status": "applied",
   "plan": {
     "format_version": 1,
     "team_id": 10123827,
@@ -317,6 +317,10 @@
     {
       "at": "2026-10-17T11:08:24.635352+00:00",
       "message": "Saving XI, bench order, captain, vice captain and scoring chip."
+    },
+    {
+      "at": "2026-10-17T11:08:25.852075+00:00",
+      "message": "Confirmed live squad, XI, bench order, captain, vice captain, chip and bank."
     }
   ]
 }
